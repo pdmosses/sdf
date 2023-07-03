@@ -10,8 +10,8 @@ Both the highlighting and the hyperlinks will be based on the metadata used by S
 
 Spoofax is to generate the sources of the webpages from raw files in the SDF3 metalanguage:
 
-- `sdf/docs/template/syntax/DIR/.pages` is to be generated from `sdf/org.metaborg.meta.lang.template/syntax/DIR/`
-- `sdf/docs/template/syntax/DIR/FILE.sdf3.md` is to be generated from `sdf/org.metaborg.meta.lang.template/syntax/DIR/FILE.sdf3`
+- `docs/TemplateLang/syntax/DIR/FILE.sdf3.md` is to be generated from `metaborg/sdf/org.metaborg.meta.lang.template/syntax/DIR/FILE.sdf3`
+- `docs/TemplateLang/syntax/DIR/.pages` is to be generated from `metaborg/sdf/org.metaborg.meta.lang.template/syntax/DIR/`
 
 The [Material for MkDocs] theme generates the website from the Markdown source files.
 

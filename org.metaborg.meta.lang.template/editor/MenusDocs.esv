@@ -1,0 +1,12 @@
+module MenusDocs
+
+menus
+
+   menu: "Docs"
+    
+    action: "Generate docs directories" = generate-syntax-docs
+    action: "Generate one doc page"     = generate-ast-markup
+    action: "Generate all doc pages"    = generate-project-markup
+
+    action: "Test docs strategies"      = test-docs
+    action: "Test markup generation"    = test-gen-markup

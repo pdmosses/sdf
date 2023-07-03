@@ -1,0 +1,37 @@
+module generation/docs/gen-syntax-docs
+
+imports
+    libspoofax/core/-
+    libspoofax/resource/-
+    generation/docs/traverse
+
+rules // gen-syntax-docs-dirs
+
+//  For each directory PROJECT/syntax/DIR, generate the configuration file 
+//  PROJECT/docs/syntax/DIR/.pages for use by the plugin mkdocs-awesome-pages
+
+  generate-syntax-docs :
+    (_, _, ast, path, project-path) -> ()
+    with <gen-syntax-docs-dirs> project-path
+
+  gen-syntax-docs-dirs :
+    project-path -> ()
+    with <traverse-dirs(gen-docs-dir(|project-path))> $[[project-path]/syntax]
+
+  gen-docs-dir(|project-path) :
+    dir -> ()
+    with repo := $[[<project-path;local-path>]/..]
+    ; pages-file := $[[repo]/docs/[<language>]/syntax/[dir]/.pages] ; debug
+    ; pages-contents := $[title: [dir]]
+    ; stream := <fopen> (pages-file, "w")
+    ; <fputs> (pages-contents, stream)
+    ; <fclose> stream
+
+  test-ast-root :
+    (_, _, ast, path, project-path) -> None()
+    where <get-annos;debug> ast
+    
+  test-docs :
+    (_, _, ast, path, project-path) -> None()
+    where current-language-source-files ; debug
+    ; <parse-file-with-current-lang> "eclipse:///org.metaborg.meta.lang.template/syntax/labels/Labels.sdf3"; debug

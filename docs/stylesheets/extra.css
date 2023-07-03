@@ -1,0 +1,111 @@
+// TemplateLang
+
+/* @font-face {
+  font-family: "JetBrains Mono";
+  src: "https://fonts.googleapis.com/css2?family=JetBrains+Mono";
+} */
+
+/* .TemplateLang code {
+  --md-code-font: "JetBrains Mono", monospace;
+} */
+
+// Tokens:
+
+code .keyword {
+  color: rgb(127 0 85);
+  font-weight: bold;
+}
+
+code .identifier {
+  color: --md-code-fg-color;
+}
+
+code .string {
+  color: rgb(0 0 255);
+}
+
+code .number {
+  color: rgb(0 128 0);
+}
+
+code .var {
+  color: rgb(139 69 19);
+  font-style: italic;
+}
+
+code .operator {
+  color: rgb(0 0 128);
+}
+
+code .layout {
+  color: rgb(63 127 95);
+  font-style: italic;
+}
+
+// Constructors:
+
+.TemplateLang > pre > code .cons_String {
+  color: rgb(0 0 255);
+}
+
+code .cons_Constructor {
+  color: rgb(0 0 128);
+}
+
+code .cons_Lit,
+code .cons_CiLit {
+  color: rgb(0 0 255);
+}
+
+code .cons_Quoted,
+code .cons_Unquoted {
+  color: rgb(128 128 128);
+}
+
+code .cons_PosRef {
+  color: rgb(0 128 0);
+}
+
+code .cons_LiteralRef {
+  color: rgb(0 0 255);
+}
+
+code .cons_LabelRef {
+  color: rgb(128 128 128);
+}
+
+code .cons_Regular {
+  color: rgb(0 128 0);
+}
+
+code .cons_Binary {
+  color: rgb(127 0 85);
+}
+
+code .cons_Octal {
+  color: rgb(127 0 85);
+}
+
+code .cons_Decimal {
+  color: rgb(127 0 85);
+}
+
+code .cons_Hexadecimal {
+  color: rgb(127 0 85);
+}
+
+// Sorts:
+
+code .sort_Label {
+  color: rgb(128 128 128);
+}
+
+code .sort_Character {
+  color: rgb(0 0 255);
+}
+
+// Sorts with constructors:
+
+code .sort_Character.cons_Regular {
+  color: rgb(0 128 0);
+}

@@ -39,7 +39,7 @@ imports
   generation/signatures/-
   generation/syntax/-
   generation/textmate/-
-
+  generation/docs/-
 
 
 rules // Analysis
