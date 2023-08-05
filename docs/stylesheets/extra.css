@@ -1,15 +1,28 @@
-// TemplateLang
+/* TemplateLang */
 
 /* @font-face {
   font-family: "JetBrains Mono";
   src: "https://fonts.googleapis.com/css2?family=JetBrains+Mono";
-} */
+}
 
-/* .TemplateLang code {
+:root {
   --md-code-font: "JetBrains Mono", monospace;
 } */
 
-// Tokens:
+.TemplateLang code {
+  background-color: hsla(0, 0%, 100%, 1);
+}
+
+.TemplateLang pre code {
+  tab-size: 8 !important;
+}
+
+code a:hover {
+  text-decoration: underline;
+}
+
+
+/* Tokens: */
 
 code .keyword {
   color: rgb(127 0 85);
@@ -44,7 +57,7 @@ code .layout {
 
 // Constructors:
 
-.TemplateLang > pre > code .cons_String {
+code .cons_String {
   color: rgb(0 0 255);
 }
 

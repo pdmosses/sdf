@@ -102,7 +102,7 @@ rules // Nodes
     ; rel-url := <origin-relative-path> definition
     ; gen-tokens-markup(| ins, outs, <subti> (q, p))
     ; <fputs> ($[<a href="/[repo-name]/[<language>]/[rel-url]/#[node]_[s]_[t]">], outs)
-    ; gen-tokens-markup(| ins, outs, <subti> (r, q))
+    ; gen-copy(| ins, outs, <subti> (r, q))
     ; <fputs> ($[</a>], outs)
   
   // gen-node-markup embeds a definition node in a <span> element with an id attribute
@@ -115,7 +115,7 @@ rules // Nodes
     ; (q, r) := <origin-offset> node
     ; gen-tokens-markup(| ins, outs, <subti> (q, p))
     ; <fputs> ($[<span id="[node]_[q]_[r]">], outs)
-    ; gen-tokens-markup(| ins, outs, <subti> (r, q))
+    ; gen-copy(| ins, outs, <subti> (r, q))
     ; <fputs> ($[</span>], outs)
   
   // gen-node-markup embeds a node to be highlighted in a <span> element with a class attribute
@@ -132,8 +132,17 @@ rules // Nodes
           + ?Unquoted(_)
           + ?PosRef(_)
           + ?LiteralRef(_)
-          + ?LabelRef(_)
-          + ?Regular(_)
+          + ?LabelRef(_)> node
+    ; (q, r) := <origin-offset> node
+    ; gen-tokens-markup(| ins, outs, <subti> (q, p))
+    ; <fputs> ($[<span class="cons_[f]">], outs)
+    ; r' := <gen-node-markup-map(|ins, outs, repo-name)> (q, node*)
+    ; gen-copy(| ins, outs, <subti> (r, r'))
+    ; <fputs> ($[</span>], outs)
+
+  gen-node-markup(|ins, outs, repo-name):
+    (p, node@f#(node*)) -> r
+    where < ?Regular(_)
           + ?Binary(_)
           + ?Octal(_)
           + ?Decimal(_)
@@ -141,8 +150,7 @@ rules // Nodes
     ; (q, r) := <origin-offset> node
     ; gen-tokens-markup(| ins, outs, <subti> (q, p))
     ; <fputs> ($[<span class="cons_[f]">], outs)
-    ; r' := <gen-node-markup-map(|ins, outs, repo-name)> (q, node*)
-    ; gen-tokens-markup(| ins, outs, <subti> (r, r'))
+    ; gen-copy(| ins, outs, <subti> (r, q))
     ; <fputs> ($[</span>], outs)
   
   // gen-node-markup otherwise generates markup only for the branches of the node
@@ -178,6 +186,9 @@ rules // Tokens
 
   gen-tokens-markup(|ins, outs, n) =
     <fputs> (<gen-fgetcs(|n); map(char-to-html-string); concat-strings; markup-tokens> ins, outs)
+  
+  gen-copy(|ins, outs, n) =
+    repeat(<fputs> (<fgetc; char-to-html-string> ins, outs) | n)
   
   gen-fgetcs:
     ins -> [c | c*]
@@ -223,21 +234,21 @@ rules // Tokens
     <+
     scan-token(scan-comment,    markup-token-kind(|"layout"))
     <+
-    scan-token(scan-string-1,   markup-token-kind(|"string"))
-    <+
-    scan-token(scan-string-2,   markup-token-kind(|"string"))
-    <+
-    scan-token(scan-number,     markup-token-kind(|"number"))
-    <+
-    scan-token(scan-identifier, markup-token-kind(|"identifier"))
-    <+
-//    scan-token(scan-var,        markup-token-kind(|"var"))
-//    <+
-    scan-token(scan-operator,   markup-token-kind(|"operator"))
-    <+
     scan-token(scan-keyword,    markup-token-kind(|"keyword"))
     <+
-    scan-token(scan-unknown,       markup-token-kind(|"unknown"))
+	scan-token(scan-string-1,   markup-token-kind(|"string"))
+	<+
+	scan-token(scan-string-2,   markup-token-kind(|"string"))
+//	<+
+//	scan-token(scan-number,     markup-token-kind(|"number"))
+    <+
+    scan-token(scan-unknown,    id)
+//	  <+
+//	  scan-token(scan-identifier, markup-token-kind(|"identifier"))
+//    <+
+//    scan-token(scan-operator,   markup-token-kind(|"operator"))
+//    <+
+//    scan-token(scan-var,        markup-token-kind(|"var"))
 
   // scan-token(scanner, kinder): html:string -> (token:string, html':string)
   // - assumes scanner: (char*, char*) -> (char*, char*)
@@ -254,11 +265,39 @@ rules // Tokens
     (scanned-char*, [char|unscanned-char*]) -> ([char|scanned-char*], unscanned-char*)
     where <p> char
   
-  markup-token-kind(|kind): token -> $[<span class="[kind]">[token]</>]
+  markup-token-kind(|kind): token -> $[<span class="[kind]">[token]</span>]
   
   scan-whitespace = 
     repeat1( scan-char(?' ' + ?'\t' + ?'\n' + ?'\r') )
+
+  scan-comment =
+    ( scan-char(?'%') ; scan-char(?'%') ; repeat( scan-char(not(?'\n' + ?'\r')) ) )
+    +
+    ( scan-char(?'%') ; repeat1( scan-char(not(?'%' + ?'\n' + ?'\r'))) ; scan-char(?'%') )
+    +
+    ( scan-char(?'/') ; scan-char(?'*') ; repeat( scan-comment-char ) ; scan-char(?'*') ; scan-char(?'/') )
+    +
+    ( scan-char(?'/') ; scan-char(?'/') ; repeat( scan-char(not(?'\n' + ?'\r')) ) )
+    
+  scan-comment-char =
+    scan-char(not(?'*'))
+    +
+    ( scan-char(?'*') ; try( scan-char( not(?'/') ) ) )
   
+  scan-keyword =
+    scan-char(is-alpha) ; repeat( scan-char(is-alpha + ?'-') )
+    +
+    scan-char(?'-') ; scan-char(?'C') ; scan-char(?'F')
+    +
+    scan-char(?'-') ; scan-char(?'L') ; scan-char(?'E') ; scan-char(?'X')
+    +
+    scan-char(?'-') ; scan-char(?'V') ; scan-char(?'A') ; scan-char(?'R')
+
+  scan-unknown =
+    scan-char(?'&') ; repeat1( scan-char(is-lower) ) ; scan-char(?';')
+    <+
+    scan-char(id)
+
   scan-string-1 =
     scan-char(?'\'') ;
     repeat( scan-string-char-1 ) ;
@@ -283,37 +322,21 @@ rules // Tokens
     +
     ( scan-char(?'\') ; repeat( scan-char(is-num) | 3 ) )
 
-  scan-comment =
-    ( scan-char(?'%') ; scan-char(?'%') ; repeat( scan-char(not(?'\n' + ?'\r')) ) )
-    +
-    ( scan-char(?'%') ; repeat1( scan-char(not(?'%' + ?'\n' + ?'\r'))) ; scan-char(?'%') )
-    +
-    ( scan-char(?'/') ; scan-char(?'*') ; repeat( scan-comment-char ) ; scan-char(?'*') ; scan-char(?'/') )
-    +
-    ( scan-char(?'/') ; scan-char(?'/') ; repeat( scan-char(not(?'\n' + ?'\r')) ) )
-    
-  scan-comment-char =
-    scan-char(not(?'*'))
-    +
-    ( scan-char(?'*') ; try( scan-char( not(?'/') ) ) )
-
   scan-integer =
-    try( scan-char(?'+' + ?'-') ) ; repeat1( is-num )
+    try( scan-char(?'+' + ?'-') ) ; repeat1( scan-char(?is-num) )
    
   scan-number =
-    scan-integer ; try( scan-char(?'.') ; repeat1( is-num ) ; scan-char(?'e') ; scan-integer )
+    scan-integer ; try( scan-char(?'.') ; repeat1( scan-char(?is-num) ) ; scan-char(?'e') ; scan-integer )
 
-  scan-identifier =
-    scan-char(is-alpha) ; repeat( scan-char(is-alphanum + ?'-' + ?'_') )
+//  scan-identifier =
+//    scan-char(is-alpha) ; repeat( scan-char(is-alphanum + ?'-' + ?'_') )
+//
+//  scan-operator =
+//    repeat1( scan-char(not(is-alpha)) ) // ...
+//
+//  scan-literal = fail
 
-  scan-operator =
-    repeat1( scan-char(not(is-alpha)) ) // ...
-  
-  scan-keyword =
-    scan-char(is-alpha) ; repeat( scan-char(is-alpha + ?'-') )
-
-  scan-unknown =
-    scan-char(id)
+rules // Name binding
 
   use-to-def:
     node -> definition
