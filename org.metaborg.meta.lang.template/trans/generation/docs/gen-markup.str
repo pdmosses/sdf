@@ -236,15 +236,15 @@ rules // Tokens
     <+
     scan-token(scan-keyword,    markup-token-kind(|"keyword"))
     <+
-	scan-token(scan-string-1,   markup-token-kind(|"string"))
-	<+
-	scan-token(scan-string-2,   markup-token-kind(|"string"))
-//	<+
-//	scan-token(scan-number,     markup-token-kind(|"number"))
+    scan-token(scan-string-1,   markup-token-kind(|"string"))
+    <+
+    scan-token(scan-string-2,   markup-token-kind(|"string"))
+//    <+
+//    scan-token(scan-number,     markup-token-kind(|"number"))
     <+
     scan-token(scan-unknown,    id)
-//	  <+
-//	  scan-token(scan-identifier, markup-token-kind(|"identifier"))
+//    <+
+//    scan-token(scan-identifier, markup-token-kind(|"identifier"))
 //    <+
 //    scan-token(scan-operator,   markup-token-kind(|"operator"))
 //    <+
