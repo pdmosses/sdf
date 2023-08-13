@@ -99,9 +99,12 @@ rules // Nodes
     where definition := <is-string; use-to-def> node
     ; (s, t) := <origin-offset> definition
     ; (q, r) := <origin-offset> node
-    ; rel-url := <origin-relative-path> definition
+    ; target-path := <origin-file> definition
+    ; source-path := <origin-file> node
+    ; direct-path :=
+        <direct-path> (<string-tokenize(|['/'])> source-path, <string-tokenize(|['/'])> target-path)
     ; gen-tokens-markup(| ins, outs, <subti> (q, p))
-    ; <fputs> ($[<a href="/[repo-name]/[<language>]/[rel-url]/#[node]_[s]_[t]">], outs)
+    ; <fputs> ($[<a href="[direct-path]#[node]_[s]_[t]">], outs)
     ; gen-copy(| ins, outs, <subti> (r, q))
     ; <fputs> ($[</a>], outs)
   
@@ -210,6 +213,7 @@ rules // Tokens
   char-to-html-string: '&' -> "&amp;"
   char-to-html-string: '<' -> "&lt;"
   char-to-html-string: '>' -> "&gt;"
+  char-to-html-string: '\t' -> "        " // 8 spaces (Python-Markdown maps tabs in HTML to 4 spaces)
   char-to-html-string: c -> <implode-string> [c]
 
   // markup-tokens: html:string -> html':string
@@ -234,13 +238,15 @@ rules // Tokens
     <+
     scan-token(scan-comment,    markup-token-kind(|"layout"))
     <+
-    scan-token(scan-keyword,    markup-token-kind(|"keyword"))
+    scan-token(scan-keywords,   markup-token-kind(|"keyword"))
     <+
-    scan-token(scan-string-1,   markup-token-kind(|"string"))
+    scan-token(scan-string-1,   id)
     <+
-    scan-token(scan-string-2,   markup-token-kind(|"string"))
+    scan-token(scan-string-2,   id)
 //    <+
 //    scan-token(scan-number,     markup-token-kind(|"number"))
+    <+
+    scan-token(scan-escape,     markup-token-kind(|"string"))
     <+
     scan-token(scan-unknown,    id)
 //    <+
@@ -268,7 +274,7 @@ rules // Tokens
   markup-token-kind(|kind): token -> $[<span class="[kind]">[token]</span>]
   
   scan-whitespace = 
-    repeat1( scan-char(?' ' + ?'\t' + ?'\n' + ?'\r') )
+    repeat1( scan-char(?' ' + ?'\n' + ?'\r') ) // '\t' already mapped to spaces
 
   scan-comment =
     ( scan-char(?'%') ; scan-char(?'%') ; repeat( scan-char(not(?'\n' + ?'\r')) ) )
@@ -284,6 +290,9 @@ rules // Tokens
     +
     ( scan-char(?'*') ; try( scan-char( not(?'/') ) ) )
   
+  scan-keywords =
+    scan-keyword ; repeat( repeat1( scan-char(?' ') ) ; scan-keyword )
+  
   scan-keyword =
     scan-char(is-alpha) ; repeat( scan-char(is-alpha + ?'-') )
     +
@@ -297,6 +306,15 @@ rules // Tokens
     scan-char(?'&') ; repeat1( scan-char(is-lower) ) ; scan-char(?';')
     <+
     scan-char(id)
+
+  scan-escape =
+    scan-char(?'\') ; scan-char( not(?'&') )
+    <+
+    scan-char(?'\') ; scan-char(?'&') ; scan-char(?'a') ; scan-char(?'m') ; scan-char(?'p') ; scan-char(?';')
+    <+
+    scan-char(?'\') ; scan-char(?'&') ; scan-char(?'g') ; scan-char(?'t') ; scan-char(?';')
+    <+
+    scan-char(?'\') ; scan-char(?'&') ; scan-char(?'l') ; scan-char(?'t') ; scan-char(?';')
 
   scan-string-1 =
     scan-char(?'\'') ;
@@ -357,31 +375,17 @@ rules // Name binding
 //    with
 //      definitions := <task-get-results; Hd; index-get-all-values> result
 
+rules // Direct path
 
-//  debug-name-offsets:
-//    t -> <debug> (<origin-offset <+ id> t)
-//    where <has-annos; get-annos; fetch-elem(?Use(<id>))> t
-//  
-//  debug-name-offsets:
-//    f#(t*) -> <map(debug-name-offsets)> t*
-
-
-//  generate-all-markup: (_, _, _, _, project-path) -> None()
-//    with path := "syntax/aliases/Aliases.sdf3"
-//    ; file := $[[project-path]/[path]]
-//    ; ast := <parse-file-with-current-lang> file
-//    ; Result([FileResult(file', _, ast', _, _, _)], _, _, _, _) := <editor-analyze> [File(file, ast, 0)]
-//    ; <generate-markup> ((), (), ast', path, project-path)
-
-//  generate-all-markup: (_, _, _, _, project-path) -> None()
-//    with file* := <current-language-source-files>
-//    ; file := <Hd> file*
-//    ; path := <string-replace(|$[[project-path]/], "")> file
-//    ; ast := <parse-file-with-current-lang> file
-//    ; Result([FileResult(file', _, ast', _, _, _)], _, _, _, _) := <editor-analyze> [File(file, ast, 0)]
-//    ; <generate-markup> ((), (), ast', path, project-path)
-
-//  generate-all-markup: (_, _, _, _, project-path) -> None()
-//    with path-ast* := <get-project-analyzed-asts> // Java arror!
-//    ; (path', ast') := <Hd; debug> path-ast*
-//    ; <generate-markup> ((), (), ast', path', project-path)
+  // direct-path: (s*:string*, t*:string*) -> s:string
+  // - eliminates any common prefix of s* and t*
+  // - for each s in the rest of s*, prefixes ".." to the rest of t*
+  // - separates the resulting t* by "/" and concatenates them
+  
+  direct-path: ([], []) -> ""
+  
+  direct-path: ([x|s*], [x|t*]) -> <direct-path> (s*, t*)
+  
+  direct-path: ([_|s*], t*) -> <direct-path> (s*, [".."|t*])
+  
+  direct-path: ([], t*) -> <separate-by(|"/"); concat-strings> t*

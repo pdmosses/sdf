@@ -13,11 +13,12 @@
   background-color: hsla(0, 0%, 100%, 1);
 }
 
-.TemplateLang pre code {
-  tab-size: 8 !important;
+.TemplateLang code a {
+  color: black;
 }
 
-code a:hover {
+.TemplateLang code a:hover {
+  color: default;
   text-decoration: underline;
 }
 
@@ -55,7 +56,7 @@ code .layout {
   font-style: italic;
 }
 
-// Constructors:
+/* Constructors: */
 
 code .cons_String {
   color: rgb(0 0 255);
@@ -107,7 +108,7 @@ code .cons_Hexadecimal {
   color: rgb(127 0 85);
 }
 
-// Sorts:
+/* Sorts: */
 
 code .sort_Label {
   color: rgb(128 128 128);
@@ -117,7 +118,7 @@ code .sort_Character {
   color: rgb(0 0 255);
 }
 
-// Sorts with constructors:
+/* Sorts with constructors: */
 
 code .sort_Character.cons_Regular {
   color: rgb(0 128 0);
