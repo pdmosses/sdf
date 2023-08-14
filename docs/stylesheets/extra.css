@@ -9,7 +9,7 @@
   --md-code-font: "JetBrains Mono", monospace;
 } */
 
-.TemplateLang code {
+.highlighttable .linenos, .highlighttable code  {
   background-color: hsla(0, 0%, 100%, 1);
 }
 

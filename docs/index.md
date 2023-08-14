@@ -1,19 +1,17 @@
 # Home
 
-> Work in progress!!!
-
-This website is to be a _hyperlinked twin_ of the [SDF repo],
+This website is a _hyperlinked twin_ of part of the [SDF repo],
 which is used by the [Spoofax language workbench][Spoofax].
-It will facilitate online code navigation by enhancing the raw code from the repo with syntax-based highlighting,
+It facilitates online code navigation by enhancing the raw code from the repo with syntax-based highlighting,
 and with hyperlinks between declarations of and references to names.
-Both the highlighting and the hyperlinks will be based on the metadata used by Spoofax .
+Both the highlighting and the hyperlinks are generated from the metadata used by Spoofax .
 
-Spoofax is to generate the sources of the webpages from raw files in the SDF3 metalanguage:
+Spoofax is used to generate the sources of the webpages from raw files in the SDF3 metalanguage:
 
-- `docs/TemplateLang/syntax/DIR/FILE.sdf3.md` is to be generated from `metaborg/sdf/org.metaborg.meta.lang.template/syntax/DIR/FILE.sdf3`
-- `docs/TemplateLang/syntax/DIR/.pages` is to be generated from `metaborg/sdf/org.metaborg.meta.lang.template/syntax/DIR/`
+- `docs/TemplateLang/syntax/DIR/FILE.sdf3.md` is generated from `metaborg/sdf/org.metaborg.meta.lang.template/syntax/DIR/FILE.sdf3`
+- `docs/TemplateLang/syntax/DIR/.pages` is generated from `metaborg/sdf/org.metaborg.meta.lang.template/syntax/DIR/`
 
-The [Material for MkDocs] theme generates the website from the Markdown source files.
+The [Material for MkDocs] theme builds this website from the generated Markdown files.
 
 The [mkdocs-awesome-pages-plugin]
 generates the directory titles in the navigation from the settings in the `.pages` files,
