@@ -9,7 +9,7 @@ theme:
 
   features:
     - content.code.copy
-    # - navigation.expand
+    - navigation.expand
     - navigation.indexes 
     - navigation.tabs
     - navigation.tabs.sticky
@@ -41,7 +41,11 @@ plugins:
       order_by: title
 
 markdown_extensions:
+  - attr_list
   - footnotes
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
 
 extra_css:
   - stylesheets/extra.css

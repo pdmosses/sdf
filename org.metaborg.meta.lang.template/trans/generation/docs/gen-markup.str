@@ -58,8 +58,7 @@ rules // Actions
     ; project-clone := <local-path> project-path
     ; repo-name := <dirname; base-filename> project-clone
     ; repo-clone := <dirname> project-clone
-    ; github-repo := $[https://github.com/metaborg/[repo-name]]
-    ; github-file := $[[github-repo]/blob/master/[project-name]/[path]]
+    ; github-repo := $[metaborg/[repo-name]]
     ; target := $[[repo-clone]/docs/[<language>]/[path].md]
     ; say(!target)
     ; ins := <fopen> (path, "r")
@@ -71,9 +70,9 @@ rules // Actions
           
           # `{filename}`
           
-          Generated from a [GitHub repository file].
+          :simple-github: [{github-repo}/{project-name}/{path}]
           
-          [GitHub repository file]: {github-file} "The source file on GitHub"
+          [{github-repo}/{project-name}/{path}]: https://github.com/{github-repo}/blob/master/{project-name}/{path} "The source file on GitHub"
           
           }, outs)
     ; div-start := ${<div class="{<language>}"><table class="highlighttable"><tbody><tr>}
