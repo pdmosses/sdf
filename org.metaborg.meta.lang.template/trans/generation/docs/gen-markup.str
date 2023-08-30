@@ -113,21 +113,21 @@ rules // Nodes
   // - the result r is the position of the end of the ast text
 
   // gen-node-markup embeds a reference node in an <a> element with a link to the corresponding definition
-  // - assumes that the name of a references is a string
+  // - assumes that the name of a reference is a string
+  // - takes the first definition of the reference in the first file
    
   gen-node-markup(|ins, outs, repo-name):
     (p, node) -> r
-    where definition := <is-string; use-to-def> node
-    ; defs := <is-string; use-to-defs; qsort(def-lt)> node
-    ; line := <Hd; origin-line; int-to-string> defs
-    ; preview := <Hd; origin-text; lines; Hd> defs
+    where [definition|_] := <is-string; use-to-defs; qsort(def-lt)> node
+    ; line := <origin-line; int-to-string> definition
+    ; preview := <origin-text; lines; Hd> definition
     ; title := $[[line]: [preview]]
-    ; (s, t) := <origin-offset> definition
-    ; (q, r) := <origin-offset> node
     ; target-path := <origin-file> definition
     ; source-path := <origin-file> node
     ; direct-path :=
         <direct-path> (<string-tokenize(|['/'])> source-path, <string-tokenize(|['/'])> target-path)
+    ; (s, t) := <origin-offset> definition
+    ; (q, r) := <origin-offset> node
     ; gen-tokens-markup(| ins, outs, <subti> (q, p))
     ; <fputs> ($[<a href="[direct-path]#[node]_[s]_[t]" title="[title]">], outs)
     ; gen-copy(| ins, outs, <subti> (r, q))
