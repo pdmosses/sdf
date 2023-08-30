@@ -118,15 +118,17 @@ rules // Nodes
    
   gen-node-markup(|ins, outs, repo-name):
     (p, node) -> r
-    where [definition|_] := <is-string; use-to-defs; qsort(def-lt)> node
-    ; line := <origin-line; int-to-string> definition
-    ; preview := <origin-text; lines; Hd> definition
+    where [def1|defs] := <is-string; use-to-defs; my-sort-defs> node
+    ; n := <length; inc> defs
+    ; <origin-offset; debug> def1
+    ; line := <origin-line; debug; int-to-string> def1
+    ; preview := <origin-text; lines; Hd; debug> def1
     ; title := $[[line]: [preview]]
-    ; target-path := <origin-file> definition
+    ; target-path := <origin-file> def1
     ; source-path := <origin-file> node
     ; direct-path :=
         <direct-path> (<string-tokenize(|['/'])> source-path, <string-tokenize(|['/'])> target-path)
-    ; (s, t) := <origin-offset> definition
+    ; (s, t) := <origin-offset> def1
     ; (q, r) := <origin-offset> node
     ; gen-tokens-markup(| ins, outs, <subti> (q, p))
     ; <fputs> ($[<a href="[direct-path]#[node]_[s]_[t]" title="[title]">], outs)
@@ -145,6 +147,7 @@ rules // Nodes
     ; <fputs> ($[<span id="[node]_[q]_[r]">], outs)
     ; gen-copy(| ins, outs, <subti> (r, q))
     ; <fputs> ($[</span>], outs)
+//    ; where(<nabl-get-all-uses> node; debug)
   
   // gen-node-markup copies other strings without markup
 
@@ -388,11 +391,11 @@ rules // Tokens
 rules // Name binding
 
   use-to-defs:
-    node -> definitions
+    node -> defs
     where
       result := <has-annos; get-annos; fetch-elem(?Use(<id>))> node
     with
-      definitions := <task-get-results> result
+      defs := <task-get-results> result
 
   use-to-def:
     node -> definition
@@ -400,6 +403,18 @@ rules // Name binding
       result := <has-annos; get-annos; fetch-elem(?Use(<id>))> node
     with
       definition := <task-get-results; Hd> result
+
+  def-to-uses:
+    node -> ref*
+    where
+      result := <has-annos; get-annos; fetch-elem(?Def(<id>))> node
+    with
+      ref* := <nabl-get-all-uses> result
+
+  nabl-get-all-uses:
+    contains-uri* -> <mapconcat(nabl-get-unique-nonunique(!Use(<id>)))> uri*
+    where
+  	uri* := <nabl-uris> contains-uri*
 
   get-def:
     node -> definition
@@ -415,6 +430,8 @@ rules // Name binding
 
 rules // multi-file order of definitions of the same name
 
+  my-sort-defs = qsort(def-lt)
+  
   def-lt: (def1, def2) -> ()
     where (f1, f2) := (<origin-file> def1, <origin-file> def2)
     ; if <eq> (f1, f2)
