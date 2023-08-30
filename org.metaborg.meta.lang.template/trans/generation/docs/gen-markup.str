@@ -114,24 +114,18 @@ rules // Nodes
 
   // gen-node-markup embeds a reference node in an <a> element with a link to the corresponding definition
   // - assumes that the name of a reference is a string
-  // - takes the first definition of the reference in the first file
+  // - links to the first definition of the reference in the first file
    
   gen-node-markup(|ins, outs, repo-name):
     (p, node) -> r
-    where [def1|defs] := <is-string; use-to-defs; my-sort-defs> node
-    ; n := <length; inc> defs
-    ; <origin-offset; debug> def1
-    ; line := <origin-line; debug; int-to-string> def1
-    ; preview := <origin-text; lines; Hd; debug> def1
-    ; title := $[[line]: [preview]]
-    ; target-path := <origin-file> def1
-    ; source-path := <origin-file> node
-    ; direct-path :=
-        <direct-path> (<string-tokenize(|['/'])> source-path, <string-tokenize(|['/'])> target-path)
+    where defs@[def1|_] := <is-string; use-to-defs; defs-sort> node
+    ; direct-path := <direct-path> (<origin-file> node, <origin-file> def1)
     ; (s, t) := <origin-offset> def1
+    ; href := $[[direct-path]#[node]_[s]_[t]]
+    ; title := <gen-title> (<origin-file> node, defs)
     ; (q, r) := <origin-offset> node
     ; gen-tokens-markup(| ins, outs, <subti> (q, p))
-    ; <fputs> ($[<a href="[direct-path]#[node]_[s]_[t]" title="[title]">], outs)
+    ; <fputs> ($[<a href="[href]" title="[title]">], outs)
     ; gen-copy(| ins, outs, <subti> (r, q))
     ; <fputs> ($[</a>], outs)
   
@@ -147,7 +141,6 @@ rules // Nodes
     ; <fputs> ($[<span id="[node]_[q]_[r]">], outs)
     ; gen-copy(| ins, outs, <subti> (r, q))
     ; <fputs> ($[</span>], outs)
-//    ; where(<nabl-get-all-uses> node; debug)
   
   // gen-node-markup copies other strings without markup
 
@@ -428,28 +421,44 @@ rules // Name binding
 //    with
 //      definitions := <task-get-results; Hd; index-get-all-values> result
 
-rules // multi-file order of definitions of the same name
+rules // Multi-file order of definitions of the same name
 
-  my-sort-defs = qsort(def-lt)
+  defs-sort = qsort(def-lt)
   
   def-lt: (def1, def2) -> ()
     where (f1, f2) := (<origin-file> def1, <origin-file> def2)
     ; if <eq> (f1, f2)
       then 
         if <eq> (<origin-line> def1, <origin-line> def2)
-        then <lt> (<origin-line> def1, <origin-line> def2)
-        else <lt> (<origin-column> def1, <origin-column> def2)
+        then <lt> (<origin-column> def1, <origin-column> def2)
+        else <lt> (<origin-line> def1, <origin-line> def2)
         end
       else <string-lt> (f1, f2)
       end
     ; !()
-      
+
+rules // Titles for links
+
+  gen-title: (path, defs) -> string
+    where files := <map(origin-file); make-set> defs
+    ; string := <map(gen-file-info(|path, defs)); lines; trim-chars(?' ' + ?'\n')> files
+  
+  gen-file-info(|path, defs): file -> 
+    <concat-strings>
+      [ <direct-path> (path, file), " line "
+      | <map(origin-file; not(equal(|file)); !"" <+ origin-line; inc; int-to-string);
+         separate-by(|", ")> defs
+      ]
+  
 rules // Direct path
 
-  // direct-path: (s*:string*, t*:string*) -> s:string
-  // - eliminates any common prefix of s* and t*
-  // - for each s in the rest of s*, prefixes ".." to the rest of t*
-  // - separates the resulting t* by "/" and concatenates them
+  // direct-path: (s:string, t:string) -> s:string
+  // - eliminates any common prefix of s and t
+  // - for each dir in the rest of s, prefixes "../" to the rest of t
+  
+  direct-path: (source-path, target-path) -> string
+    where string := 
+      <direct-path> (<string-tokenize(|['/'])> source-path, <string-tokenize(|['/'])> target-path)
   
   direct-path: ([], []) -> ""
   
