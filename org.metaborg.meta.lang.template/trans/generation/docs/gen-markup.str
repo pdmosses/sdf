@@ -61,6 +61,9 @@ rules // Actions
     ; github-repo := $[metaborg/[repo-name]]
     ; target := $[[repo-clone]/docs/[<language>]/[path].md]
     ; say(!target)
+    ; esv-file := $[[project-path]/editor/Colorer.esv]
+    ; esv-ast := <parse-file> esv-file
+    ; cons := <collect-om(?Constructor(_)); debug> esv-ast
     ; ins := <fopen> (path, "r")
     ; outs := <fopen> (target, "w")
     ; <fputs> (
