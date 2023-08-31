@@ -23,13 +23,12 @@ imports
 rules // Actions
 
   // generate-project-markup: (_, _, _, _, project-path) -> None()
-  // - for each source file for the current language in the project syntax directory,
-  //   create or update a Markdown file in the docs directory
-  //   by adding HTML to a copy of the source text
+  // - generates markup for each source file for the current language
+  // - ignores failures
   
   generate-project-markup: (_, _, _, _, project-path) -> None()
-    with file* := <current-language-source-files>
-    ; <map(try(generate-file-markup(|project-path)))> file*
+    with files := <current-language-source-files>
+    ; <map(try(generate-file-markup(|project-path)))> files
 
   // generate-file-markup(|project-path): file -> ()
   // - when file is a source file for the current language in the project syntax directory,
@@ -61,9 +60,7 @@ rules // Actions
     ; github-repo := $[metaborg/[repo-name]]
     ; target := $[[repo-clone]/docs/[<language>]/[path].md]
     ; say(!target)
-    ; esv-file := $[[project-path]/editor/Colorer.esv]
-    ; esv-ast := <parse-file> esv-file
-    ; cons := <collect-om(?Constructor(_))> esv-ast
+    ; cons := <parse-file; collect-om(?Constructor(_))> $[[project-path]/editor/Colorer.esv]
     ; ins := <fopen> (path, "r")
     ; outs := <fopen> (target, "w")
     ; <fputs> (
@@ -160,12 +157,12 @@ rules // Nodes
   // - guarantees to mark up all branches of the node
 
   gen-node-markup(|ins, outs, repo-name, cons):
-    (p, node@f#(node*)) -> r
+    (p, node@f#(nodes)) -> r
     where <elem> (Constructor(f), cons)
     ; (q, r) := <origin-offset> node
     ; gen-tokens-markup(| ins, outs, <subti> (q, p))
     ; <fputs> ($[<span class="cons_[f]">], outs)
-    ; r' := <gen-node-markup-map(|ins, outs, repo-name, cons)> (q, node*)
+    ; r' := <gen-node-markup-map(|ins, outs, repo-name, cons)> (q, nodes)
     ; gen-copy(| ins, outs, <subti> (r, r'))
     ; <fputs> ($[</span>], outs)
 
@@ -173,14 +170,14 @@ rules // Nodes
   // - guarantees to mark up all branches of the node
   
   gen-node-markup(|ins, outs, repo-name, cons):
-    (p, f#(node*)) -> <gen-node-markup-map(|ins, outs, repo-name, cons)> (p, node*)
+    (p, f#(nodes)) -> <gen-node-markup-map(|ins, outs, repo-name, cons)> (p, nodes)
   
   // gen-node-markup-map generates markup for each node in a list of nodes
 
   gen-node-markup-map(|ins, outs, repo-name, cons):
-    (p, [node | node*]) -> r
+    (p, [node | nodes]) -> r
     where q := <gen-node-markup(|ins, outs, repo-name, cons)> (p, node)
-    ; r := <gen-node-markup-map(|ins, outs, repo-name, cons)> (q, node*)
+    ; r := <gen-node-markup-map(|ins, outs, repo-name, cons)> (q, nodes)
 
   gen-node-markup-map(|ins, outs, repo-name, cons):
     (p, []) -> p
@@ -207,18 +204,18 @@ rules // Tokens
     repeat(<fputs> (<fgetc; char-to-html-string> ins, outs) | n)
   
   gen-fgetcs:
-    ins -> [c | c*]
+    ins -> [c | cs]
     where c := <fgetc> ins
-    ; c* :=  <gen-fgetcs> ins
+    ; cs :=  <gen-fgetcs> ins
   
   gen-fgetcs:
     ins -> []
   
   gen-fgetcs(|n):
-    ins -> [c | c*]
+    ins -> [c | cs]
     where <gti> (n, 0)
     ; c := <fgetc> ins
-    ; c* :=  <gen-fgetcs(| <int-dec> n)> ins
+    ; cs :=  <gen-fgetcs(| <int-dec> n)> ins
   
   gen-fgetcs(|0):
     ins -> []
@@ -276,12 +273,12 @@ rules // Tokens
   
   scan-token(scanner, kinder):
     html -> (token, html')
-    where (scanned-char*, unscanned-char*) := <scanner> ([], <explode-string> html)
-    ; token := <reverse; implode-string; kinder> scanned-char*
-    ; html' := <implode-string> unscanned-char*
+    where (scanned-chars, unscanned-chars) := <scanner> ([], <explode-string> html)
+    ; token := <reverse; implode-string; kinder> scanned-chars
+    ; html' := <implode-string> unscanned-chars
   
   scan-char(p):
-    (scanned-char*, [char|unscanned-char*]) -> ([char|scanned-char*], unscanned-char*)
+    (scanned-chars, [char|unscanned-chars]) -> ([char|scanned-chars], unscanned-chars)
     where <p> char
   
   markup-token-kind(|kind): token -> $[<span class="[kind]">[token]</span>]
@@ -376,16 +373,16 @@ rules // Name binding
       definition := <task-get-results; Hd> result
 
   def-to-uses:
-    node -> ref*
+    node -> refs
     where
       result := <has-annos; get-annos; fetch-elem(?Def(<id>))> node
     with
-      ref* := <nabl-get-all-uses> result
+      refs := <nabl-get-all-uses> result
 
   nabl-get-all-uses:
-    contains-uri* -> <mapconcat(nabl-get-unique-nonunique(!Use(<id>)))> uri*
+    contains-uris -> <mapconcat(nabl-get-unique-nonunique(!Use(<id>)))> uris
     where
-  	uri* := <nabl-uris> contains-uri*
+  	uris := <nabl-uris> contains-uris
 
   get-def:
     node -> definition
