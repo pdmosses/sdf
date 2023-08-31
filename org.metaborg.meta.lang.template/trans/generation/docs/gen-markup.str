@@ -63,7 +63,7 @@ rules // Actions
     ; say(!target)
     ; esv-file := $[[project-path]/editor/Colorer.esv]
     ; esv-ast := <parse-file> esv-file
-    ; cons := <collect-om(?Constructor(_)); debug> esv-ast
+    ; cons := <collect-om(?Constructor(_))> esv-ast
     ; ins := <fopen> (path, "r")
     ; outs := <fopen> (target, "w")
     ; <fputs> (
@@ -86,7 +86,7 @@ rules // Actions
     ; <fputs> (
         ${
           <td class="code"><pre><code>}, outs)
-    ; <gen-node-markup(|ins, outs, repo-name)> (0, ast)
+    ; <gen-node-markup(|ins, outs, repo-name, cons)> (0, ast)
     ; gen-tokens-markup(|ins, outs)
     ; <fputs> (
         ${
@@ -108,7 +108,8 @@ rules // Line numbers
 
 rules // Nodes
 
-  // gen-node-markup(|ins:stream, outs:stream, repo-name:string): (p:int, node:ast) -> r:int
+  // gen-node-markup(|ins:stream, outs:stream, repo-name:string, cons:Constructor(string)*):
+  //   (p:int, node:ast) -> r:int
   // - assumes that the text before position p (>= 0) in ins has already been marked up
   // - assumes that the source text of node starts at position q >= p
   // - matches and marks up all tokens between p and q, writing them to outs
@@ -119,7 +120,7 @@ rules // Nodes
   // - assumes that the name of a reference is a string
   // - links to the first definition of the reference in the first file
    
-  gen-node-markup(|ins, outs, repo-name):
+  gen-node-markup(|ins, outs, repo-name, cons):
     (p, node) -> r
     where defs@[def1|_] := <is-string; use-to-defs; defs-sort> node
     ; direct-path := <direct-path> (<origin-file> node, <origin-file> def1)
@@ -136,7 +137,7 @@ rules // Nodes
   // - assumes that the name of a definition is a string
   // - guarantees that the id is unique on each web page by adding the origin-offset to the name
 
-  gen-node-markup(|ins, outs, repo-name):
+  gen-node-markup(|ins, outs, repo-name, cons):
     (p, node) -> r
     where def_ := <is-string; get-def> node
     ; (q, r) := <origin-offset> node
@@ -147,7 +148,7 @@ rules // Nodes
   
   // gen-node-markup copies other strings without markup
 
-  gen-node-markup(|ins, outs, repo-name):
+  gen-node-markup(|ins, outs, repo-name, cons):
     (p, node) -> r
     where <is-string> node
     ; (q, r) := <origin-offset> node
@@ -158,56 +159,30 @@ rules // Nodes
   // - takes the set of constructors for highlighted nodes from editor/Colorer.esv
   // - guarantees to mark up all branches of the node
 
-  gen-node-markup(|ins, outs, repo-name):
+  gen-node-markup(|ins, outs, repo-name, cons):
     (p, node@f#(node*)) -> r
-    where < ?String(_)
-          + ?Constructor(_)
-          + ?Lit(_)
-          + ?CiLit(_)
-          + ?Quoted(_)
-          + ?Unquoted(_)
-          + ?PosRef(_)
-          + ?LiteralRef(_)
-          + ?LabelRef(_)
-          + ?Regular(_)
-          + ?Binary(_)
-          + ?Octal(_)
-          + ?Decimal(_)
-          + ?Hexadecimal(_)> node
+    where <elem> (Constructor(f), cons)
     ; (q, r) := <origin-offset> node
     ; gen-tokens-markup(| ins, outs, <subti> (q, p))
     ; <fputs> ($[<span class="cons_[f]">], outs)
-    ; r' := <gen-node-markup-map(|ins, outs, repo-name)> (q, node*)
+    ; r' := <gen-node-markup-map(|ins, outs, repo-name, cons)> (q, node*)
     ; gen-copy(| ins, outs, <subti> (r, r'))
     ; <fputs> ($[</span>], outs)
 
-//  gen-node-markup(|ins, outs, repo-name):
-//    (p, node@f#(node*)) -> r
-//    where < ?Regular(_)
-//          + ?Binary(_)
-//          + ?Octal(_)
-//          + ?Decimal(_)
-//          + ?Hexadecimal(_)> node
-//    ; (q, r) := <origin-offset> node
-//    ; gen-tokens-markup(| ins, outs, <subti> (q, p))
-//    ; <fputs> ($[<span class="cons_[f]">], outs)
-//    ; gen-copy(| ins, outs, <subti> (r, q))
-//    ; <fputs> ($[</span>], outs)
-  
   // gen-node-markup otherwise generates markup only for the branches of the node
   // - guarantees to mark up all branches of the node
   
-  gen-node-markup(|ins, outs, repo-name):
-    (p, f#(node*)) -> <gen-node-markup-map(|ins, outs, repo-name)> (p, node*)
+  gen-node-markup(|ins, outs, repo-name, cons):
+    (p, f#(node*)) -> <gen-node-markup-map(|ins, outs, repo-name, cons)> (p, node*)
   
   // gen-node-markup-map generates markup for each node in a list of nodes
 
-  gen-node-markup-map(|ins, outs, repo-name):
+  gen-node-markup-map(|ins, outs, repo-name, cons):
     (p, [node | node*]) -> r
-    where q := <gen-node-markup(|ins, outs, repo-name)> (p, node)
-    ; r := <gen-node-markup-map(|ins, outs, repo-name)> (q, node*)
+    where q := <gen-node-markup(|ins, outs, repo-name, cons)> (p, node)
+    ; r := <gen-node-markup-map(|ins, outs, repo-name, cons)> (q, node*)
 
-  gen-node-markup-map(|ins, outs, repo-name):
+  gen-node-markup-map(|ins, outs, repo-name, cons):
     (p, []) -> p
 
 rules // Tokens
