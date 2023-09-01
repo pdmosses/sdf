@@ -41,9 +41,9 @@ rules // Actions
     ; <string-starts-with(|"syntax/")> path
     with ast := <parse-file-with-current-lang> file
     ; Result([FileResult(file', _, ast', _, _, _)], _, _, _, _) := <editor-analyze> [File(file, ast, 0)]
-    ; <generate-ast-markup> ((), (), ast', path, project-path)
+    ; <generate-markup> ((), (), ast', path, project-path)
 
-  // generate-ast-markup: (_, _, ast, path, project-path) -> None()
+  // generate-markup: (_, _, ast, path, project-path) -> None()
   // - assumes that the project-clone is at the top level of repo-clone
   // - assumes that the docs directory is at the same level
   // - reads source text from the project file selected by path
@@ -51,7 +51,7 @@ rules // Actions
   // - embeds the HTML in the source text for a web page
   // - writes the web page source to the docs directory
   
-  generate-ast-markup: (_, _, ast, path, project-path) -> None()
+  generate-markup: (_, _, ast, path, project-path) -> None()
     with filename := <base-filename> path
     ; project-name := <base-filename> project-path
     ; project-clone := <local-path> project-path
