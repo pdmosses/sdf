@@ -28,6 +28,9 @@ rules // Actions
   
   generate-project-markup: (_, _, _, _, project-path) -> None()
     with files := <current-language-source-files>
+    ; refs := <map(collect-om(is-string; use-to-defs)); concat> files
+    ; defs := <map(is-string; use-to-defs)> refs
+    ; ref-defs := <zip(id)> (refs, defs)
     ; <map(try(generate-file-markup(|project-path)))> files
 
   // generate-file-markup(|project-path): file -> ()
@@ -119,7 +122,7 @@ rules // Nodes
    
   gen-node-markup(|ins, outs, repo-name, cons):
     (p, node) -> r
-    where defs@[def1|_] := <is-string; use-to-defs; defs-sort> node
+    where defs@[def1|_] := <is-string; use-to-defs; origin-sort> node
     ; direct-path := <direct-path> (<origin-file> node, <origin-file> def1)
     ; (s, t) := <origin-offset> def1
     ; href := $[[direct-path]#[node]_[s]_[t]]
@@ -372,13 +375,12 @@ rules // Name binding
     with
       definition := <task-get-results; Hd> result
 
-  def-to-uses:
+  def-to-uses(|ref-defs):
     node -> refs
     where
-      result := <has-annos; get-annos; fetch-elem(?Def(<id>))> node
-    with
-      refs := <nabl-get-all-uses> result
-
+      d := <is-string; get-def> node
+    ; refs := <collect(<elem> (node, <Snd>)); map(Fst); make-set> ref-defs
+ 
   nabl-get-all-uses:
     contains-uris -> <mapconcat(nabl-get-unique-nonunique(!Use(<id>)))> uris
     where
@@ -398,15 +400,15 @@ rules // Name binding
 
 rules // Multi-file order of definitions of the same name
 
-  defs-sort = qsort(def-lt)
+  origin-sort = qsort(origin-lt)
   
-  def-lt: (def1, def2) -> ()
-    where (f1, f2) := (<origin-file> def1, <origin-file> def2)
+  origin-lt: (s1, s2) -> ()
+    where (f1, f2) := (<origin-file> s1, <origin-file> s2)
     ; if <eq> (f1, f2)
       then 
-        if <eq> (<origin-line> def1, <origin-line> def2)
-        then <lt> (<origin-column> def1, <origin-column> def2)
-        else <lt> (<origin-line> def1, <origin-line> def2)
+        if <eq> (<origin-line> s1, <origin-line> s2)
+        then <lt> (<origin-column> s1, <origin-column> s2)
+        else <lt> (<origin-line> s1, <origin-line> s2)
         end
       else <string-lt> (f1, f2)
       end
