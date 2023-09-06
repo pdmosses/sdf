@@ -60,7 +60,7 @@ rules // Actions
   // - for use by def-to-refs (not implemented by the NaBL&TS API)
     
   ast-to-ref-to-defs-list = 
-      collect(where(is-string; use-to-defs))
+      collect(where(is-string; get-use))
     ; !(<id>, <map(use-to-defs)>)
     ; zip
 
@@ -422,8 +422,8 @@ rules // Name binding
   def-to-uses(|ref-to-defs-list):
     node -> ref-list
     where
-      d := <is-string; get-def; debug(!node)> node
-    ; ref-list := <debug; filter(where((!d, Snd); debug; elem)); map(Fst); make-set> ref-to-defs-list
+      d := <is-string; get-def; debug(!$[[node]: ])> node
+    ; ref-list := <filter(if (!d, Snd); elem then Fst else fail end); make-set> ref-to-defs-list
 //    ; refs := <collect(<elem> (d, <Snd>)); map(Fst); make-set> ref-to-defs-list
 
 rules // Multi-file order of definitions of the same name
