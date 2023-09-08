@@ -32,19 +32,19 @@ rules // Actions
       ext := <get-extension> path
     ; file-list := <current-language-source-files; filter(where(has-extension(|ext)))>
     ; ast-list := <map(analyzed-ast)> file-list
-    ; ref-to-defs-list := <map(ast-to-ref-to-defs-list); concat> ast-list
+//    ; ref-to-defs-list := <map(ast-to-ref-to-defs-list); concat> ast-list
     ; cons := <parse-file; collect(?Constructor(_))> $[[project-path]/editor/Colorer.esv]
-    ; <zip; map(generate-markup(|project-path, ref-to-defs-list, cons))> (file-list, ast-list)
+    ; <zip; map(generate-markup(|project-path, ast-list, cons))> (file-list, ast-list)
 
   test-generate-docs-page: (_, _, _, path, project-path) -> None()
     with
       ext := <get-extension> path
     ; file-list := [$[[project-path]/[path]]]
     ; ast-list := <map(analyzed-ast)> file-list
-    ; ref-to-defs-list := <map(ast-to-ref-to-defs-list); concat> ast-list
-    ; <WriteToTextFile> ($[[project-path]/ref-to-defs-list.txt], ref-to-defs-list)
+//    ; ref-to-defs-list := <map(ast-to-ref-to-defs-list); concat> ast-list
+//    ; <WriteToTextFile> ($[[project-path]/ref-to-defs-list.txt], ref-to-defs-list)
     ; cons := <parse-file; collect(?Constructor(_))> $[[project-path]/editor/Colorer.esv]
-    ; <zip; map(generate-markup(|project-path, ref-to-defs-list, cons))> (file-list, ast-list)
+    ; <zip; map(generate-markup(|project-path, ast-list, cons))> (file-list, ast-list)
 
   // analyzed-ast: File -> AST
   // - for use with languages where name binding is specified in NaBL&TS
@@ -56,33 +56,6 @@ rules // Actions
       ast := <parse-file-with-current-lang> file
     ; Result([FileResult(_, _, ast', _, _, _)], _, _, _, _) := <editor-analyze> [File(file, ast, 0)]
   
-  // collect-ref-to-defs-list: AST -> List(Ref, List(Def))
-  // - for use by def-to-refs (not implemented by the NaBL&TS API)
-    
-  ast-to-ref-to-defs-list = 
-      collect(where(is-string; use-to-defs))
-    ; !(<id>, <map(use-to-defs)>)
-    ; zip
-
-  // generate-file-markup(|project-path): file -> ()
-  // - when file is a source file for the current language in the project syntax directory,
-  //   parse and analyse the file to obtain an ast, then
-  //   create or update a Markdown file in the docs directory
-  //   by adding HTML to a copy of the source text
-
-//  generate-file-markup(|project-path, ref-to-defs-list): file -> ()
-//    where path := <string-replace(|$[[project-path]/], "")> file 
-//    ; <string-starts-with(|"syntax/")> path
-//    with ast := <parse-file-with-current-lang> file
-//    ; Result([FileResult(file', _, ast', _, _, _)], _, _, _, _) := <editor-analyze> [File(file, ast, 0)]
-//    ; <generate-markup(|ref-to-defs-list)> ((), (), ast', path, project-path)
-//
-//  // generate-markup: (_, _, ast, path, project-path) -> (filename, term)
-//  
-//  generate-markup: (_, _, ast, path, project-path) -> ($[[project-path]/ref-to-defs-list.aterm], ref-to-defs-list)
-//    with ref-to-defs-list := <map(collect-ref-to-defs-list); concat> <current-language-source-files>
-////    ; <generate-markup(|ref-to-defs-list)> ((), (), ast, path, project-path)
-
   // generate-markup(|project-path, ref-to-defs-list): AST -> None()
   // - assumes that the project-clone is at the top level of repo-clone
   // - assumes that the docs directory is at the same level
@@ -91,7 +64,7 @@ rules // Actions
   // - embeds the HTML in the source text for a web page
   // - writes the web page source to the docs directory
     
-  generate-markup(|project-path, ref-to-defs-list, cons): (file, ast) -> None()
+  generate-markup(|project-path, ast-list, cons): (file, ast) -> None()
     with
       path := <string-replace(|$[[project-path]/], "")> file
     ; filename := <base-filename> path
@@ -124,7 +97,7 @@ rules // Actions
     ; <fputs> (
         ${
           <td class="code"><pre><code>}, outs)
-    ; <gen-node-markup(|ins, outs, repo-name, cons, ref-to-defs-list)> (0, ast)
+    ; <gen-node-markup(|ins, outs, repo-name, cons, ast-list)> (0, ast)
     ; gen-tokens-markup(|ins, outs)
     ; <fputs> (
         ${
@@ -158,17 +131,19 @@ rules // Nodes
   // - assumes that the name of a reference is a string
   // - links to the first definition of the reference in the first file
    
-  gen-node-markup(|ins, outs, repo-name, cons, ref-to-defs-list):
+  gen-node-markup(|ins, outs, repo-name, cons, ast-list):
     (p, node) -> r
-    where defs@[def1|_] := <is-string; use-to-defs; sort-by-origin> node
+    where
+      defs@[def1|_] := <is-string; use-to-defs; sort-by-origin> node
+    ; (q, r) := <origin-offset> node
+    ; id-attr := $[[node]_[q]_[r]]
+    ; gen-tokens-markup(| ins, outs, <subti> (q, p))
     ; direct-path := <direct-path> (<origin-file> node, <origin-file> def1)
     ; (s, t) := <origin-offset> def1
     ; href := $[[direct-path]#[node]_[s]_[t]]
     ; origin-info := <gen-origin-info> (<origin-file> node, defs)
     ; title := $[Defined at [origin-info]]
-    ; (q, r) := <origin-offset> node
-    ; gen-tokens-markup(| ins, outs, <subti> (q, p))
-    ; <fputs> ($[<a href="[href]" title="[title]">], outs)
+    ; <fputs> ($[<a href="[href]" id="[id-attr]" title="[title]">], outs)
     ; gen-copy(| ins, outs, <subti> (r, q))
     ; <fputs> ($[</a>], outs)
   
@@ -176,22 +151,37 @@ rules // Nodes
   // - assumes that the name of a definition is a string
   // - guarantees that the id is unique on each web page by adding the origin-offset to the name
 
-  gen-node-markup(|ins, outs, repo-name, cons, ref-to-defs-list):
+  gen-node-markup(|ins, outs, repo-name, cons, ast-list):
     (p, node) -> r
-    where refs := <is-string; def-to-uses(|ref-to-defs-list); sort-by-origin> node
-    ; origin-info := <gen-origin-info> (<origin-file> node, refs)
-    ; if <eq> (refs, []) then title := "Not referenced" else title := $[Referenced at [origin-info]] end
+    where 
+      refs := <is-string; def-to-uses(|ast-list); sort-by-origin> node
     ; (q, r) := <origin-offset> node
+    ; id-attr := $[[node]_[q]_[r]]
     ; gen-tokens-markup(| ins, outs, <subti> (q, p))
-    ; <fputs> ($[<span id="[node]_[q]_[r]" title="[title]">], outs)
-    ; gen-copy(| ins, outs, <subti> (r, q))
-    ; <fputs> ($[</span>], outs)
+    ; if <eq> (refs, []) 
+      then 
+        title := "Not referenced locally or via imports"
+      ; <fputs> ($[<span id="[id-attr]" title="[title]">], outs)
+      ; gen-copy(| ins, outs, <subti> (r, q))
+      ; <fputs> ($[</span>], outs)
+      else
+        [ref1 | _] := refs
+      ; direct-path := <direct-path> (<origin-file> node, <origin-file> ref1)
+      ; (s, t) := <origin-offset> ref1
+      ; href := $[[direct-path]#[node]_[s]_[t]]
+      ; origin-info := <gen-origin-info> (<origin-file> node, refs)
+      ; title := $[Referenced at [origin-info]]
+      ; <fputs> ($[<a href="[href]" id="[id-attr]" title="[title]">], outs)
+      ; gen-copy(| ins, outs, <subti> (r, q))
+      ; <fputs> ($[</a>], outs)
+      end
   
   // gen-node-markup copies other strings without markup
 
-  gen-node-markup(|ins, outs, repo-name, cons, ref-to-defs-list):
+  gen-node-markup(|ins, outs, repo-name, cons, ast-list):
     (p, node) -> r
-    where <is-string> node
+    where
+      <is-string> node
     ; (q, r) := <origin-offset> node
     ; gen-tokens-markup(| ins, outs, <subti> (q, p))
     ; gen-copy(| ins, outs, <subti> (r, q))
@@ -200,30 +190,32 @@ rules // Nodes
   // - takes the set of constructors for highlighted nodes from editor/Colorer.esv
   // - guarantees to mark up all branches of the node
 
-  gen-node-markup(|ins, outs, repo-name, cons, ref-to-defs-list):
+  gen-node-markup(|ins, outs, repo-name, cons, ast-list):
     (p, node@f#(nodes)) -> r
-    where <elem> (Constructor(f), cons)
+    where 
+      <elem> (Constructor(f), cons)
     ; (q, r) := <origin-offset> node
     ; gen-tokens-markup(| ins, outs, <subti> (q, p))
     ; <fputs> ($[<span class="cons_[f]">], outs)
-    ; r' := <gen-node-markup-map(|ins, outs, repo-name, cons, ref-to-defs-list)> (q, nodes)
+    ; r' := <gen-node-markup-map(|ins, outs, repo-name, cons, ast-list)> (q, nodes)
     ; gen-copy(| ins, outs, <subti> (r, r'))
     ; <fputs> ($[</span>], outs)
 
   // gen-node-markup otherwise generates markup only for the branches of the node
   // - guarantees to mark up all branches of the node
   
-  gen-node-markup(|ins, outs, repo-name, cons, ref-to-defs-list):
-    (p, f#(nodes)) -> <gen-node-markup-map(|ins, outs, repo-name, cons, ref-to-defs-list)> (p, nodes)
+  gen-node-markup(|ins, outs, repo-name, cons, ast-list):
+    (p, f#(nodes)) -> <gen-node-markup-map(|ins, outs, repo-name, cons, ast-list)> (p, nodes)
   
   // gen-node-markup-map generates markup for each node in a list of nodes
 
-  gen-node-markup-map(|ins, outs, repo-name, cons, ref-to-defs-list):
+  gen-node-markup-map(|ins, outs, repo-name, cons, ast-list):
     (p, [node | nodes]) -> r
-    where q := <gen-node-markup(|ins, outs, repo-name, cons, ref-to-defs-list)> (p, node)
-    ; r := <gen-node-markup-map(|ins, outs, repo-name, cons, ref-to-defs-list)> (q, nodes)
+    where 
+      q := <gen-node-markup(|ins, outs, repo-name, cons, ast-list)> (p, node)
+    ; r := <gen-node-markup-map(|ins, outs, repo-name, cons, ast-list)> (q, nodes)
 
-  gen-node-markup-map(|ins, outs, repo-name, cons, ref-to-defs-list):
+  gen-node-markup-map(|ins, outs, repo-name, cons, ast-list):
     (p, []) -> p
 
 rules // Tokens
@@ -249,7 +241,8 @@ rules // Tokens
   
   gen-fgetcs:
     ins -> [c | cs]
-    where c := <fgetc> ins
+    where
+      c := <fgetc> ins
     ; cs :=  <gen-fgetcs> ins
   
   gen-fgetcs:
@@ -257,7 +250,8 @@ rules // Tokens
   
   gen-fgetcs(|n):
     ins -> [c | cs]
-    where <gti> (n, 0)
+    where
+      <gti> (n, 0)
     ; c := <fgetc> ins
     ; cs :=  <gen-fgetcs(| <int-dec> n)> ins
   
@@ -277,7 +271,8 @@ rules // Tokens
   
   markup-tokens:
     html -> <conc-strings> (token, tokens)
-    where (token, html') := <markup-token> html
+    where
+      (token, html') := <markup-token> html
     ; tokens := <markup-tokens> html'
 
   // markup-token: html:string -> (token:string, html':string)
@@ -419,19 +414,30 @@ rules // Name binding
     where
       definition := <has-annos; get-annos; fetch-elem(?Def(_))> node
 
-  def-to-uses(|ref-to-defs-list):
-    node -> ref-list
+  def-to-uses(|ast-list):
+    node -> <filter(where(is-ref-to(|d)))> ref-list
     where
-      d := <is-string; get-def; debug(!node)> node
-    ; ref-list := <debug; filter(where((!d, Snd); debug; elem)); map(Fst); make-set> ref-to-defs-list
-//    ; refs := <collect(<elem> (d, <Snd>)); map(Fst); make-set> ref-to-defs-list
+      d := <is-string; get-def> node
+    ; s := <strip-annos> node
+    ; ref-list := <collect(where(is-string; where(get-use); strip-annos; equal(|s)))> ast-list
 
+  is-ref-to(|d): ref -> ref
+    where
+      <elem> (d, <use-to-defs> ref)
+ 
+//  is-ref-to(|d): ref -> ref
+//    where
+//      defs := <use-to-defs> ref
+//    ; strings := <map(write-to-string)> defs
+//    ; <elem> (<write-to-string> d, strings)
+  
 rules // Multi-file order of definitions of the same name
 
   sort-by-origin = qsort(origin-lt)
   
   origin-lt: (s1, s2) -> ()
-    where (f1, f2) := (<origin-file> s1, <origin-file> s2)
+    where
+      (f1, f2) := (<origin-file> s1, <origin-file> s2)
     ; if <eq> (f1, f2)
       then 
         if <eq> (<origin-line> s1, <origin-line> s2)
@@ -444,15 +450,19 @@ rules // Multi-file order of definitions of the same name
 
 rules // A line for each origin file of the nodes, listing the line numbers of the origins
 
-  gen-origin-info: (path, nodes) -> string
-    where files := <map(origin-file); make-set> nodes
-    ; string := <map(gen-file-info(|path, nodes)); lines; trim-chars(?' ' + ?'\n')> files
+  gen-origin-info: (path, nodes) -> <string-replace(|"  ", " ")> string
+    where 
+      files := <map(origin-file); make-set> nodes
+    ; string := <map(gen-file-info(|path, nodes)); separate-by(|"; "); concat-strings> files
   
   gen-file-info(|path, nodes): file -> 
     <concat-strings>
-      [ <direct-path> (path, file), " line "
-      | <map(origin-file; not(equal(|file)); !"" <+ origin-line; inc; int-to-string);
-         separate-by(|", ")> nodes
+      [ <direct-path> (path, file)
+      , " line "
+      | < filter(where(origin-file; equal(|file)))
+        ; map(origin-line; inc; int-to-string)
+        ; separate-by(|", ")
+        > nodes
       ]
   
 rules // Direct path
@@ -462,8 +472,9 @@ rules // Direct path
   // - for each dir in the rest of s, prefixes "../" to the rest of t
   
   direct-path: (source-path, target-path) -> string
-    where string := 
-      <direct-path> (<string-tokenize(|['/'])> source-path, <string-tokenize(|['/'])> target-path)
+    where
+      string := 
+        <direct-path> (<string-tokenize(|['/'])> source-path, <string-tokenize(|['/'])> target-path)
   
   direct-path: ([], []) -> ""
   

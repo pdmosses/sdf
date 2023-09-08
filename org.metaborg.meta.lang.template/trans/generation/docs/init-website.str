@@ -3,26 +3,30 @@ module generation/docs/init-website
 imports
     libspoofax/core/-
     libspoofax/resource/-
-    generation/docs/traverse
 
 rules // initialise-website
 
-//  For each directory PROJECT/syntax/DIR, generate the configuration file 
-//  REPO/docs/LANG/syntax/DIR/.pages for use by the plugin mkdocs-awesome-pages
-//  (to avoid MkDocs transforming DIR names such as `aliases` to `Aliases`).
-//  If the plugin had an option to suppress transformation, these configuration
-//  files would not need to be generated.
+//  For each directory PROJECT/DIR, generate the configuration file 
+//  REPO/docs/LANG/DIR/.pages for use by mkdocs-awesome-pages-plugin.
+//  This stops MkDocs transforming DIR names such as `aliases` to `Aliases`.
+//  (If the plugin had an option to suppress the MkDocs transformation,
+//  these files would not be needed.)
 
-  initialise-website: (_, _, ast, path, project-path) -> ()
-    with <gen-syntax-docs-dirs> project-path
+//  initialise-website: _ -> None()
 
-  gen-syntax-docs-dirs: project-path -> ()
-    with <traverse-dirs(gen-docs-dir(|project-path))> $[[project-path]/syntax]
+  initialise-website =
+      current-language-source-files
+    ; map(dirname; string-replace(|$[[<project-path>]/], ""); gen-docs-dir)
+    ; !None()
 
-  gen-docs-dir(|project-path): dir -> ()
-    with repo-clone := <local-path; dirname> project-path
-    ; pages-file := $[[repo-clone]/docs/[<language>]/syntax/[dir]/.pages]
-    ; pages-contents := $[title: [dir]]
+  gen-docs-dir: dir -> ()
+    with
+      repo-clone := <project-path; local-path; dirname>
+    ; pages-file := $[[repo-clone]/docs/[<language>]/[dir]/.pages]
+    ; pages-contents := $[title: [<base-filename> dir]]
     ; outs := <fopen> (pages-file, "w")
     ; <fputs> (pages-contents, outs)
     ; <fclose> outs
+    ; if <is-substring(!"/")> dir
+      then <dirname; gen-docs-dir> dir
+      end

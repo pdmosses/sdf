@@ -5,6 +5,7 @@ menus
    menu: "Docs"
     
     action: "Initialise docs website" = initialise-website
-    action: "Generate all docs pages" = generate-project-markup
-    action: "Generate one docs page"  = generate-markup
+    action: "Generate docs pages"     = generate-docs-pages
+    action: "Test generate docs page" = test-generate-docs-page
     action: "Generate docs CSS"       = generate-css
+   
