@@ -1,5 +1,27 @@
 module generation/docs/invert-lightness
 
+imports
+    libstratego-lib
+
+rules
+
+  test-abs: (_, _, ast, path, project-path) -> ()
+    with <debug> "start"
+    ; <debug(!"args: ");subt;debug(!"res: ")> (0, -1)
+    ; <debug(!"args: ");subt;debug(!"res: ")> (0.0, -0.2)
+    ; <debug(!"args: ");subt;debug(!"res: ")> (0, -0.3)
+    ; <debug> "finish"
+
+  test-invert-lightness: (_, _, ast, path, project-path) -> ()
+    with <map(debug;invert-lightness;debug)>
+      [ (63, 127, 95)
+      , (127, 0, 85)
+      , (0, 0, 255)
+      , (0, 128, 0)
+      , (0, 0, 128)
+      , (128, 128, 128)
+      ]
+    
 /*
     // Invert lightness of color (note: lightness != brightness/value! L=0 is black, L=1 is white, L=0.5 is color).
     private static java.awt.Color invertLightness(java.awt.Color color) {
@@ -36,32 +58,40 @@ rules
 
 //  invert-lightness: (r:int, g:int, b:int) -> (r':int, g':int, b':int)
 
-  invert-lightness: (r, g, b) -> (r', g', b')
-    where (h, s, l) := <rgb-to-hsl> (<div> (r, 255), <div> (g, 255), <div> (b, 255))
+  invert-lightness: 
+    (r, g, b) -> (<mul; real-to-string(|0)> (r', 255.0), <mul; real-to-string(|0)> (g', 255.0), <mul; real-to-string(|0)> (b', 255.0))
+    where (h, s, l) := <rgb-to-hsl> (<div> (r, 255.0), <div> (g, 255.0), <div> (b, 255.0))
     ; t := <mul> (l, l)
-    ; l' := <add> (0.5, <div> (<subt> (1, <mul> (t, t)), 4))
+    ; l' := <add> (0.5, <div> (<subt> (1.0, <mul> (t, t)), 4.0))
     ; (r', g', b') := <hsl-to-rgb> (h, s, l')
 
   rgb-to-hsl: (r, g, b) -> (h', s', l')
     where a := <max> (r, <max> (g, b))
     ; n := <subt> (a, <min> (r, <min> (g, b)))
-    ; f := <subt> (1, <abs> (<add> (a, <subt> (<subt> (a, n), 1))))
+    ; f := <subt> (1.0, <absr> (<add> (a, <subt> (<subt> (a, n), 1.0))))
     ; if <eq> (n, 0.0) then h:= 0.0 else
       if <eq> (a, r) then h:= <div> (<subt> (g, b), n) else
-      if <eq> (a, g) then h:= <add> (2, <div> (<subt> (b, r), n))
-      else h:= <add> (4, <div> (<subt> (r, g), n))
+      if <eq> (a, g) then h:= <add> (2.0, <div> (<subt> (b, r), n))
+      else h:= <add> (4.0, <div> (<subt> (r, g), n))
       end end end
-    ; if <lt> (h, 0) then h' := <mul> (60, <add> (h, 6)) else h' := <mul> (60, h) end
+    ; if <lt> (h, 0.0) then h' := <mul> (60.0, <add> (h, 6.0)) else h' := <mul> (60.0, h) end
     ; if <eq> (f, 0.0) then s' := 0.0 else s' := <div> (n, f) end
-    ; l' := <div> (<subt> (<add> (a, a), n), 2)
+    ; l' := <div> (<subt> (<add> (a, a), n), 2.0)
   
   hsl-to-rgb: (h, s, l) -> (r', g', b')
-    where a := <mul> (s, <min> ( l, <subt> (1, l)))
+    where a := <mul> (s, <min> ( l, <subt> (1.0, l)))
     ; r' := <i-to-ci> (0, h, a, l)
     ; g' := <i-to-ci> (1, h, a, l)
     ; b' := <i-to-ci> (2, h, a, l)
   
   i-to-ci: (i, h, a, l) -> ci
-    where n := <div> (<subt> (12, <mul> (i, 4)))
-    ; k := <div> (<add> (n, <div> (h, 30)), 12)
-    ; ci := <subt> (l, <mul> (a, <max> (<min> (<subt> (k, 3), <min> (<subt> (9, k), 1)), -1)))
+    where n := <divr> (<subt> (12, <mul> (i, 4)), 12)
+    ; k := <divr> (<add> (n, <divr> (h, 30.0)), 12.0)
+    ; ci := <subt> (l, <mul> (a, <max> (<min> (<subt> (k, 3.0), <min> (<subt> (9.0, k), 1.0)), -1.0)))
+
+  absr = 
+    is-real
+    ; if neg then
+        <subt> (0.0, <id>)
+      end
+  
