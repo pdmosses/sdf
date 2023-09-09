@@ -1,35 +1,17 @@
 site_name: SDF
 site_url: https://pdmosses.github.io/sdf/
-repo_name: metaborg/sdf
+repo_name: pdmosses/sdf
 repo_url: https://github.com/pdmosses/sdf/
-
 
 theme:
   name: material
 
   features:
     - content.code.copy
-    - navigation.expand
+    # - navigation.expand
     - navigation.indexes 
     - navigation.tabs
     - navigation.tabs.sticky
-
-  # font:
-  #   code: JetBrains Mono
-
-  # palette: 
-  # 
-  #   # Palette toggle for light mode
-  #   - scheme: default
-  #     toggle:
-  #       icon: material/brightness-7 
-  #       name: Switch to dark mode
-  # 
-  #   # Palette toggle for dark mode
-  #   - scheme: slate
-  #     toggle:
-  #       icon: material/brightness-4
-  #       name: Switch to light mode
 
 plugins:
   - search
@@ -41,11 +23,16 @@ plugins:
       order_by: title
 
 markdown_extensions:
+  - admonition
   - attr_list
   - footnotes
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.details
+  - pymdownx.superfences
 
 extra_css:
-  - stylesheets/extra.css
+  - stylesheets/MetaBorg.css
+  - stylesheets/TemplateLang-sorts.css
+  - stylesheets/TemplateLang.css
