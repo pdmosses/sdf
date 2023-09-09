@@ -4,9 +4,9 @@ title: Comments.sdf3
 
 # `Comments.sdf3`
 
-:simple-github: [metaborg/sdf/org.metaborg.meta.lang.template/syntax/layout/Comments.sdf3]
+:simple-github: [pdmosses/sdf/org.metaborg.meta.lang.template/syntax/layout/Comments.sdf3]
 
-[metaborg/sdf/org.metaborg.meta.lang.template/syntax/layout/Comments.sdf3]: https://github.com/metaborg/sdf/blob/master/org.metaborg.meta.lang.template/syntax/layout/Comments.sdf3 "The source file on GitHub"
+[pdmosses/sdf/org.metaborg.meta.lang.template/syntax/layout/Comments.sdf3]: https://github.com/pdmosses/sdf/blob/master/org.metaborg.meta.lang.template/syntax/layout/Comments.sdf3 "The source file on GitHub"
 
 <div class="TemplateLang"><table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
@@ -46,24 +46,24 @@ title: Comments.sdf3
   <a href="../Whitespace.sdf3#layout/Whitespace_7_24" id="layout/Whitespace_34_51" title="Defined at ../Whitespace.sdf3 line 1">layout/Whitespace</a>
  
 <span class="keyword">lexical syntax</span>
-        <span class="keyword">LAYOUT</span> = <span class="cons_Lit">"%%"</span> <span id="line_84_88" title="Not referenced locally or via imports">line</span>:~[\n\r]* <a href="#LayoutNewlineAlt_138_154" id="LayoutNewlineAlt_98_114" title="Defined at  line 8, 9">LayoutNewlineAlt</a>        {category("Comment")}
-        <a href="#LayoutNewlineAlt_406_422" id="LayoutNewlineAlt_138_154" title="Referenced at  line 15">LayoutNewlineAlt</a> = [\n\r]
-        <a href="#LayoutNewlineAlt_406_422" id="LayoutNewlineAlt_165_181" title="Referenced at  line 15">LayoutNewlineAlt</a> = <a href="#EOF_427_430" id="EOF_184_187" title="Defined at  line 16">EOF</a>
-    <span class="keyword">LAYOUT</span> = <span class="cons_Lit">"%"</span> <span id="content_205_212" title="Not referenced locally or via imports">content</span>:~[\%\n\r]+ <span class="cons_Lit">"%"</span>        {category("Comment")}
-    <span class="keyword">LAYOUT</span> = <span class="cons_Lit">"/*"</span> <a href="#LayoutCommentAlt_296_312" id="LayoutCommentAlt_268_284" title="Defined at  line 12, 13">LayoutCommentAlt</a>* <span class="cons_Lit">"*/"</span> 
-    <a href="#LayoutCommentAlt_268_284" id="LayoutCommentAlt_296_312" title="Referenced at  line 11">LayoutCommentAlt</a> = ~[\*]
-    <a href="#LayoutCommentAlt_268_284" id="LayoutCommentAlt_325_341" title="Referenced at  line 11">LayoutCommentAlt</a> = <a href="#CommentChar_360_371" id="CommentChar_344_355" title="Defined at  line 14">CommentChar</a>
-    <a href="#CommentChar_465_476" id="CommentChar_360_371" title="Referenced at  line 20">CommentChar</a> = [\*]
-    <span class="keyword">LAYOUT</span> = <span class="cons_Lit">"//"</span> ~[\n\r]* <a href="#LayoutNewlineAlt_138_154" id="LayoutNewlineAlt_406_422" title="Defined at  line 8, 9">LayoutNewlineAlt</a>
-    <a href="#EOF_537_540" id="EOF_427_430" title="Referenced at  line 24">EOF</a> = 
+        <span class="keyword">LAYOUT</span> = <span class="cons_Lit">"%%"</span> <span id="line_84_88" title="Not referenced locally, nor via imports">line</span>:~[\n\r]* <a href="#LayoutNewlineAlt_138_154" id="LayoutNewlineAlt_98_114" title="Defined at line 8, 9">LayoutNewlineAlt</a>        {category("Comment")}
+        <a href="#LayoutNewlineAlt_406_422" id="LayoutNewlineAlt_138_154" title="Referenced at line 15">LayoutNewlineAlt</a> = [\n\r]
+        <a href="#LayoutNewlineAlt_406_422" id="LayoutNewlineAlt_165_181" title="Referenced at line 15">LayoutNewlineAlt</a> = <a href="#EOF_427_430" id="EOF_184_187" title="Defined at line 16">EOF</a>
+    <span class="keyword">LAYOUT</span> = <span class="cons_Lit">"%"</span> <span id="content_205_212" title="Not referenced locally, nor via imports">content</span>:~[\%\n\r]+ <span class="cons_Lit">"%"</span>        {category("Comment")}
+    <span class="keyword">LAYOUT</span> = <span class="cons_Lit">"/*"</span> <a href="#LayoutCommentAlt_296_312" id="LayoutCommentAlt_268_284" title="Defined at line 12, 13">LayoutCommentAlt</a>* <span class="cons_Lit">"*/"</span> 
+    <a href="#LayoutCommentAlt_268_284" id="LayoutCommentAlt_296_312" title="Referenced at line 11">LayoutCommentAlt</a> = ~[\*]
+    <a href="#LayoutCommentAlt_268_284" id="LayoutCommentAlt_325_341" title="Referenced at line 11">LayoutCommentAlt</a> = <a href="#CommentChar_360_371" id="CommentChar_344_355" title="Defined at line 14">CommentChar</a>
+    <a href="#CommentChar_465_476" id="CommentChar_360_371" title="Referenced at line 20">CommentChar</a> = [\*]
+    <span class="keyword">LAYOUT</span> = <span class="cons_Lit">"//"</span> ~[\n\r]* <a href="#LayoutNewlineAlt_138_154" id="LayoutNewlineAlt_406_422" title="Defined at line 8, 9">LayoutNewlineAlt</a>
+    <a href="#EOF_537_540" id="EOF_427_430" title="Referenced at line 24">EOF</a> = 
     
 <span class="keyword">lexical restrictions</span>
 
-    <a href="#CommentChar_360_371" id="CommentChar_465_476" title="Defined at  line 14">CommentChar</a>   -/- [\/]
+    <a href="#CommentChar_360_371" id="CommentChar_465_476" title="Defined at line 14">CommentChar</a>   -/- [\/]
 
     <span class="layout">%% EOF may not be followed by any char</span>
 
-    <a href="#EOF_427_430" id="EOF_537_540" title="Defined at  line 16">EOF</a>           -/- ~[]          
+    <a href="#EOF_427_430" id="EOF_537_540" title="Defined at line 16">EOF</a>           -/- ~[]          
        
 
 <span class="keyword">context-free restrictions</span> 

@@ -4,9 +4,9 @@ title: Whitespace.sdf3
 
 # `Whitespace.sdf3`
 
-:simple-github: [metaborg/sdf/org.metaborg.meta.lang.template/syntax/layout/Whitespace.sdf3]
+:simple-github: [pdmosses/sdf/org.metaborg.meta.lang.template/syntax/layout/Whitespace.sdf3]
 
-[metaborg/sdf/org.metaborg.meta.lang.template/syntax/layout/Whitespace.sdf3]: https://github.com/metaborg/sdf/blob/master/org.metaborg.meta.lang.template/syntax/layout/Whitespace.sdf3 "The source file on GitHub"
+[pdmosses/sdf/org.metaborg.meta.lang.template/syntax/layout/Whitespace.sdf3]: https://github.com/pdmosses/sdf/blob/master/org.metaborg.meta.lang.template/syntax/layout/Whitespace.sdf3 "The source file on GitHub"
 
 <div class="TemplateLang"><table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2

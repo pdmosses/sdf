@@ -4,9 +4,9 @@ title: Sdf2-Syntax.sdf3
 
 # `Sdf2-Syntax.sdf3`
 
-:simple-github: [metaborg/sdf/org.metaborg.meta.lang.template/syntax/sdf2-core/Sdf2-Syntax.sdf3]
+:simple-github: [pdmosses/sdf/org.metaborg.meta.lang.template/syntax/sdf2-core/Sdf2-Syntax.sdf3]
 
-[metaborg/sdf/org.metaborg.meta.lang.template/syntax/sdf2-core/Sdf2-Syntax.sdf3]: https://github.com/metaborg/sdf/blob/master/org.metaborg.meta.lang.template/syntax/sdf2-core/Sdf2-Syntax.sdf3 "The source file on GitHub"
+[pdmosses/sdf/org.metaborg.meta.lang.template/syntax/sdf2-core/Sdf2-Syntax.sdf3]: https://github.com/pdmosses/sdf/blob/master/org.metaborg.meta.lang.template/syntax/sdf2-core/Sdf2-Syntax.sdf3 "The source file on GitHub"
 
 <div class="TemplateLang"><table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
@@ -78,32 +78,32 @@ title: Sdf2-Syntax.sdf3
 
 <span class="keyword">context-free syntax</span>
 
-<a href="../Sdf2.sdf3#Symbol_1680_1686" id="Symbol_374_380" title="Referenced at ../Sdf2.sdf3 line 59">Symbol</a>.<span class="cons_Constructor"><span id="Start_381_386" title="Not referenced locally or via imports">Start</span></span> = &lt;\&lt;<span class="cons_String">START</span>\&gt;&gt;
-<a href="../Sdf2.sdf3#Symbol_1680_1686" id="Symbol_401_407" title="Referenced at ../Sdf2.sdf3 line 59">Symbol</a>.<span class="cons_Constructor"><span id="FileStart_408_417" title="Not referenced locally or via imports">FileStart</span></span> = &lt;\&lt;<span class="cons_String">Start</span>\&gt;&gt;
-<a href="../Sdf2.sdf3#Symbol_1680_1686" id="Symbol_432_438" title="Referenced at ../Sdf2.sdf3 line 59">Symbol</a>.<span class="cons_Constructor"><span id="EOF_439_442" title="Not referenced locally or via imports">EOF</span></span> = &lt;\&lt;<span class="cons_String">EOF</span>\&gt;&gt;
+<a href="../Sdf2.sdf3#Symbol_1680_1686" id="Symbol_374_380" title="Referenced at ../Sdf2.sdf3 line 59">Symbol</a>.<span class="cons_Constructor"><span id="Start_381_386" title="Not referenced locally, nor via imports">Start</span></span> = &lt;\&lt;<span class="cons_String">START</span>\&gt;&gt;
+<a href="../Sdf2.sdf3#Symbol_1680_1686" id="Symbol_401_407" title="Referenced at ../Sdf2.sdf3 line 59">Symbol</a>.<span class="cons_Constructor"><span id="FileStart_408_417" title="Not referenced locally, nor via imports">FileStart</span></span> = &lt;\&lt;<span class="cons_String">Start</span>\&gt;&gt;
+<a href="../Sdf2.sdf3#Symbol_1680_1686" id="Symbol_432_438" title="Referenced at ../Sdf2.sdf3 line 59">Symbol</a>.<span class="cons_Constructor"><span id="EOF_439_442" title="Not referenced locally, nor via imports">EOF</span></span> = &lt;\&lt;<span class="cons_String">EOF</span>\&gt;&gt;
 
-<span id="Grammar_456_463" title="Not referenced locally or via imports">Grammar</span>.<span class="cons_Constructor"><span id="LexicalPriorities_464_481" title="Not referenced locally or via imports">LexicalPriorities</span></span> = &lt;
+<span id="Grammar_456_463" title="Not referenced locally, nor via imports">Grammar</span>.<span class="cons_Constructor"><span id="LexicalPriorities_464_481" title="Not referenced locally, nor via imports">LexicalPriorities</span></span> = &lt;
         <span class="cons_String">lexical</span> <span class="cons_String">priorities</span> 
 
                 &lt;<a href="../../priority/Priority.sdf3#Priorities_908_918" id="Priorities_511_521" title="Defined at ../../priority/Priority.sdf3 line 35">Priorities</a>&gt;
                 
         &gt;
 
-<span id="Grammar_530_537" title="Not referenced locally or via imports">Grammar</span>.<span class="cons_Constructor"><span id="ContextFreePriorities_538_559" title="Not referenced locally or via imports">ContextFreePriorities</span></span> = &lt;
+<span id="Grammar_530_537" title="Not referenced locally, nor via imports">Grammar</span>.<span class="cons_Constructor"><span id="ContextFreePriorities_538_559" title="Not referenced locally, nor via imports">ContextFreePriorities</span></span> = &lt;
         <span class="cons_String">context-free</span> <span class="cons_String">priorities</span>
         
                 &lt;<a href="../../priority/Priority.sdf3#Priorities_908_918" id="Priorities_594_604" title="Defined at ../../priority/Priority.sdf3 line 35">Priorities</a>&gt;
         
         &gt;
         
-<span id="Grammar_613_620" title="Not referenced locally or via imports">Grammar</span>.<span class="cons_Constructor"><span id="LexicalRestrictions_621_640" title="Not referenced locally or via imports">LexicalRestrictions</span></span> = &lt;
+<span id="Grammar_613_620" title="Not referenced locally, nor via imports">Grammar</span>.<span class="cons_Constructor"><span id="LexicalRestrictions_621_640" title="Not referenced locally, nor via imports">LexicalRestrictions</span></span> = &lt;
         <span class="cons_String">lexical</span> <span class="cons_String">restrictions</span>
         
                 &lt;<a href="../../restrictions/Restrictions.sdf3#Restrictions_605_617" id="Restrictions_672_684" title="Defined at ../../restrictions/Restrictions.sdf3 line 22">Restrictions</a>&gt;
         
         &gt;
 
-<span id="Grammar_692_699" title="Not referenced locally or via imports">Grammar</span>.<span class="cons_Constructor"><span id="ContextFreeRestrictions_700_723" title="Not referenced locally or via imports">ContextFreeRestrictions</span></span> = &lt;
+<span id="Grammar_692_699" title="Not referenced locally, nor via imports">Grammar</span>.<span class="cons_Constructor"><span id="ContextFreeRestrictions_700_723" title="Not referenced locally, nor via imports">ContextFreeRestrictions</span></span> = &lt;
         <span class="cons_String">context-free</span> <span class="cons_String">restrictions</span>
         
                 &lt;<a href="../../restrictions/Restrictions.sdf3#Restrictions_605_617" id="Restrictions_760_772" title="Defined at ../../restrictions/Restrictions.sdf3 line 22">Restrictions</a>&gt;

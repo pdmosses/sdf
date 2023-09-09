@@ -4,9 +4,9 @@ title: Aliases.sdf3
 
 # `Aliases.sdf3`
 
-:simple-github: [metaborg/sdf/org.metaborg.meta.lang.template/syntax/aliases/Aliases.sdf3]
+:simple-github: [pdmosses/sdf/org.metaborg.meta.lang.template/syntax/aliases/Aliases.sdf3]
 
-[metaborg/sdf/org.metaborg.meta.lang.template/syntax/aliases/Aliases.sdf3]: https://github.com/metaborg/sdf/blob/master/org.metaborg.meta.lang.template/syntax/aliases/Aliases.sdf3 "The source file on GitHub"
+[pdmosses/sdf/org.metaborg.meta.lang.template/syntax/aliases/Aliases.sdf3]: https://github.com/pdmosses/sdf/blob/master/org.metaborg.meta.lang.template/syntax/aliases/Aliases.sdf3 "The source file on GitHub"
 
 <div class="TemplateLang"><table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
@@ -46,13 +46,13 @@ title: Aliases.sdf3
          
 <span class="keyword">context-free syntax</span>  
 
-<span id="Grammar_322_329" title="Not referenced locally or via imports">Grammar</span>.<span class="cons_Constructor"><span id="Aliases_330_337" title="Not referenced locally or via imports">Aliases</span></span> = &lt;
+<span id="Grammar_322_329" title="Not referenced locally, nor via imports">Grammar</span>.<span class="cons_Constructor"><span id="Aliases_330_337" title="Not referenced locally, nor via imports">Aliases</span></span> = &lt;
         <span class="cons_String">aliases</span> 
         
-                &lt;<a href="#Aliases_478_485" id="Aliases_357_364" title="Defined at  line 23">Aliases</a>&gt;
+                &lt;<a href="#Aliases_478_485" id="Aliases_357_364" title="Defined at line 23">Aliases</a>&gt;
                 
         &gt;
         <span class="layout">//Symbol arrow:"-&gt;" alias:Symbol -&gt; Alias    {cons("alias")}</span>
-<a href="#Alias_499_504" id="Alias_434_439" title="Referenced at  line 23">Alias</a>.<span class="cons_Constructor"><span id="Alias_440_445" title="Not referenced locally or via imports">Alias</span></span> = &lt;&lt;<a href="../../symbols/Symbols.sdf3#Symbol_71_77" id="Symbol_450_456" title="Defined at ../../symbols/Symbols.sdf3 line 7">Symbol</a>&gt; <span class="cons_String">-</span>\&gt; &lt;<span id="alias_463_468" title="Not referenced locally or via imports">alias</span>:<a href="../../symbols/Symbols.sdf3#Symbol_71_77" id="Symbol_469_475" title="Defined at ../../symbols/Symbols.sdf3 line 7">Symbol</a>&gt;&gt;
-<a href="#Aliases_357_364" id="Aliases_478_485" title="Referenced at  line 18">Aliases</a>     = &lt;&lt;<span id="list_494_498" title="Not referenced locally or via imports">list</span>:<a href="#Alias_434_439" id="Alias_499_504" title="Defined at  line 22">Alias</a>*&gt;&gt; 
+<a href="#Alias_499_504" id="Alias_434_439" title="Referenced at line 23">Alias</a>.<span class="cons_Constructor"><span id="Alias_440_445" title="Not referenced locally, nor via imports">Alias</span></span> = &lt;&lt;<a href="../../symbols/Symbols.sdf3#Symbol_71_77" id="Symbol_450_456" title="Defined at ../../symbols/Symbols.sdf3 line 7">Symbol</a>&gt; <span class="cons_String">-</span>\&gt; &lt;<span id="alias_463_468" title="Not referenced locally, nor via imports">alias</span>:<a href="../../symbols/Symbols.sdf3#Symbol_71_77" id="Symbol_469_475" title="Defined at ../../symbols/Symbols.sdf3 line 7">Symbol</a>&gt;&gt;
+<a href="#Aliases_357_364" id="Aliases_478_485" title="Referenced at line 18">Aliases</a>     = &lt;&lt;<span id="list_494_498" title="Not referenced locally, nor via imports">list</span>:<a href="#Alias_434_439" id="Alias_499_504" title="Defined at line 22">Alias</a>*&gt;&gt; 
 </code></pre></td></tr></tbody></table></div>
