@@ -25,6 +25,3 @@ hs_err_pid*
 # Spoofax
 **/src-gen
 **/target
-
-**/.pages
-**/*.sdf3.md
