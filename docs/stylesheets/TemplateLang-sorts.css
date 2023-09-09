@@ -1,7 +1,7 @@
 /* .TemplateLang code .sort_Label {
   color: rgb(128 128 128);
 }
-The sort Label has these constructors, but so does Aterms:AFun and Literals:FunctionName :-(
+The sort Label has these constructors, but so do Aterms:AFun and Literals:FunctionName :-(
 */
 .TemplateLang code .cons_Quoted {
   color: rgb(128 128 128);
@@ -10,10 +10,10 @@ The sort Label has these constructors, but so does Aterms:AFun and Literals:Func
   color: rgb(128 128 128);
 }
 
-/* .TemplateLang code  {
+/* .TemplateLang code .sort_Character {
   color: rgb(0 0 255);
 }
-The sort Character has theses constructors, which are not overloaded:
+The sort Character has these constructors, which are not overloaded:
  */
 .TemplateLang code .cons_Regular {
   color: rgb(0 128 0);
