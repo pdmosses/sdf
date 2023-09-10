@@ -1,17 +1,17 @@
 # Home
 
-This website is a _hyperlinked twin_ of part of the [SDF repo],
-which is used by the [Spoofax language workbench][Spoofax].
+This website is a _hyperlinked twin_ of (part of) a [Spoofax] language project repo.
 
-It supports online code navigation by enhancing the raw code from the repo with syntax-based highlighting,
+It supports online navigation in the language project
+by enhancing the raw code from the repo with syntax-based highlighting,
 and with hyperlinks between declarations of and references to names.
 
 Both the highlighting and the hyperlinks are generated from the metadata used by Spoofax.
 
-Spoofax is used to generate the sources of the webpages from raw files in the SDF3 metalanguage:
+Spoofax is used to generate the sources of the webpages from raw files in Spoofax metalanguagea:
 
-- `docs/TemplateLang/DIR/FILE.sdf3.md` is generated from `metaborg/sdf/org.metaborg.meta.lang.template/DIR/FILE.sdf3`
-- `docs/TemplateLang/DIR/.pages` is generated from `metaborg/sdf/org.metaborg.meta.lang.template/DIR/`
+- `docs/PROJECT/DIR/FILE.META-LANG.md` is generated from `metaborg/REPO/PROJECT/DIR/FILE.META-LANG`
+- `docs/PROJECT/DIR/.pages` is generated from `metaborg/REPO/PROJECT/DIR/`
 
 !!! warning
 

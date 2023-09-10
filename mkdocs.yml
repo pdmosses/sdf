@@ -33,6 +33,6 @@ markdown_extensions:
   - pymdownx.superfences
 
 extra_css:
-  - stylesheets/MetaBorg.css
-  - stylesheets/TemplateLang-sorts.css
-  - stylesheets/TemplateLang.css
+  - stylesheets/metaborg.css
+  - stylesheets/sdf3-sorts.css
+  - stylesheets/sdf3.css
