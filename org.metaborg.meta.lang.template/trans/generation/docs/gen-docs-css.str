@@ -1,30 +1,36 @@
-module generation/docs/gen-css
+module generation/docs/gen-docs-css
 
 imports
-    libspoofax/core/-
-    libspoofax/resource/-
-    EditorService
+  libspoofax/core/-
+  libspoofax/resource/-
+  EditorService
 
-rules // generate-css
+rules // generate docs highlighting CSS for meta-language from its editor/Colorer.esv file
 
-  generate-css: (_, _, ast, path, project-path) -> ()
-    with colorer-file := $[[project-path]/editor/Colorer.esv]
+  generate-docs-css: (_, _, ast, path, project-path) -> ()
+    with
+      meta-language := <get-extension> path
     ; repo-clone := <local-path; dirname> project-path
-    ; css-file := $[[repo-clone]/docs/stylesheets/[<language>].css]
+    ; repo-path := <local-path; dirname; dirname> project-path
+    ; colorer-file := $[[repo-path]/[<meta-project-path> meta-language]/editor/Colorer.esv]
+    ; css-file := $[[repo-clone]/docs/stylesheets/[meta-language].css]
     ; say(!css-file)
-    ; css := <parse-file; colorer-to-css> colorer-file
+    ; css := <parse-file; colorer-to-css(|meta-language)> colorer-file
     ; outs := <fopen> (css-file, "w")
     ; <fputs> (css, outs)
     ; <fclose> outs
- 
-  colorer-to-css = collect-om(?ColorRule(_, _))
-    ; map(color-rule-to-css-rule)
+
+  meta-project-path: "sdf3" -> "sdf/org.metaborg.meta.lang.template"
+  
+  colorer-to-css(|meta-language) =
+      collect-om(?ColorRule(_, _))
+    ; map(color-rule-to-css-rule(|meta-language))
     ; concat-strings
     ; repeat(string-replace(|"\n  \n", "\n") | 3)
   
-  color-rule-to-css-rule:
+  color-rule-to-css-rule(|meta-language):
     ColorRule(kind, Attribute(color, bg-color, font)) ->
-    $[.TemplateLang code [<gen-class> kind] {
+    $[.[meta-language] code [<gen-class> kind] {
         [<gen-color> color]
         [<gen-bg-color> bg-color]
         [<gen-font> font]

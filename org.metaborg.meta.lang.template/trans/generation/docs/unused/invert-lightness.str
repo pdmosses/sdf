@@ -1,4 +1,4 @@
-module generation/docs/invert-lightness
+module generation/docs/unused/invert-lightness
 
 imports
     libstratego-lib
