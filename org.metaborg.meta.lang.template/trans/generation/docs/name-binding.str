@@ -33,7 +33,7 @@ rules // Name binding
     ; Result([FileResult(_, _, ast', _, _, _)], _, _, _, _) := <editor-analyze> [File(file, ast, 0)]
 
   use-to-defs:
-    node -> defs
+    node -> <sort-by-origin(|node)> defs
     where
       result := <has-annos; get-annos; fetch-elem(?Use(<id>))> node
     with
@@ -50,7 +50,7 @@ rules // Name binding
       definition := <has-annos; get-annos; fetch-elem(?Def(_))> node
 
   def-to-uses(|ast-list):
-    node -> <filter(where(is-ref-to(|d)))> ref-list
+    node -> <filter(where(is-ref-to(|d))); sort-by-origin(|node)> ref-list
     where
       d := <is-string; get-def> node
     ; s := <strip-annos> node
@@ -60,35 +60,36 @@ rules // Name binding
     where
       <elem> (d, <use-to-defs> ref)
  
-//  is-ref-to(|d): ref -> ref
-//    where
-//      defs := <use-to-defs> ref
-//    ; strings := <map(write-to-string)> defs
-//    ; <elem> (<write-to-string> d, strings)
-  
-rules // Multi-file order of definitions of the same name
+rules // Multi-file order of origins of definitions or references
 
-  sort-by-origin = qsort(origin-lt)
+  sort-by-origin(|node) = qsort(origin-lt(|node))
   
-  origin-lt: (s1, s2) -> ()
+  origin-lt(|node): (s1, s2) -> ()
     where
-      (f1, f2) := (<origin-file> s1, <origin-file> s2)
-    ; if <eq> (f1, f2)
+      path1 := <direct-path> (<origin-file> node, <origin-file> s1)
+    ; path2 := <direct-path> (<origin-file> node, <origin-file> s2)
+    ; if <eq> (path1, path2)
       then 
         if <eq> (<origin-line> s1, <origin-line> s2)
         then <lt> (<origin-column> s1, <origin-column> s2)
         else <lt> (<origin-line> s1, <origin-line> s2)
         end
-      else <string-lt> (f1, f2)
+      else
+        if <eq> (<dirs-length> path1, <dirs-length> path2)
+        then <string-lt> (path1, path2)
+        else <lt> (<dirs-length> path1, <dirs-length> path2)
+        end
       end
     ; !()
 
+  dirs-length = string-tokenize(|['/']) ; length
+
 rules // A line for each origin file of the nodes, listing the line numbers of the origins
 
-  gen-origin-info: (path, nodes) -> <string-replace(|"  ", " ")> string
+  gen-origin-info: (node, nodes) -> <string-replace(|"  ", " ")> string
     where 
       files := <map(origin-file); make-set> nodes
-    ; string := <map(gen-file-info(|path, nodes)); separate-by(|"; "); concat-strings> files
+    ; string := <map(gen-file-info(|<origin-file> node, nodes)); separate-by(|"; "); concat-strings> files
   
   gen-file-info(|path, nodes): file -> 
     <concat-strings>
