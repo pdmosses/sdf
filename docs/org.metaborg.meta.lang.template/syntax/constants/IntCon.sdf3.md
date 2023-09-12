@@ -30,12 +30,12 @@ title: IntCon.sdf3
 
 <span class="keyword">context-free syntax</span>
  
-        <a href="../../aterms/Aterms.sdf3#IntCon_230_236" id="IntCon_93_99" title="Referenced at ../../aterms/Aterms.sdf3 line 14; ../RealCon.sdf3 line 10">IntCon</a>.<span class="cons_Constructor"><span id="Natural_100_107" title="Not referenced locally, nor via imports">Natural</span></span> = &lt;&lt;<a href="../NatCon.sdf3#NatCon_44_50" id="NatCon_112_118" title="Defined at ../NatCon.sdf3 line 5">NatCon</a>&gt;&gt;
+        <a href="../RealCon.sdf3#IntCon_270_276" id="IntCon_93_99" title="Referenced at ../RealCon.sdf3 line 10; ../../aterms/Aterms.sdf3 line 14">IntCon</a>.<span class="cons_Constructor"><span id="Natural_100_107" title="Not referenced locally, nor via imports">Natural</span></span> = &lt;&lt;<a href="../NatCon.sdf3#NatCon_44_50" id="NatCon_112_118" title="Defined at ../NatCon.sdf3 line 5">NatCon</a>&gt;&gt;
         
         <span class="layout">//pos:"+" NatCon -&gt; IntCon {cons("positive")}</span>
-        <a href="../../aterms/Aterms.sdf3#IntCon_230_236" id="IntCon_171_177" title="Referenced at ../../aterms/Aterms.sdf3 line 14; ../RealCon.sdf3 line 10">IntCon</a>.<span class="cons_Constructor"><span id="Positive_178_186" title="Not referenced locally, nor via imports">Positive</span></span> = &lt;<span class="cons_String">+</span>&lt;<a href="../NatCon.sdf3#NatCon_44_50" id="NatCon_192_198" title="Defined at ../NatCon.sdf3 line 5">NatCon</a>&gt;&gt;
+        <a href="../RealCon.sdf3#IntCon_270_276" id="IntCon_171_177" title="Referenced at ../RealCon.sdf3 line 10; ../../aterms/Aterms.sdf3 line 14">IntCon</a>.<span class="cons_Constructor"><span id="Positive_178_186" title="Not referenced locally, nor via imports">Positive</span></span> = &lt;<span class="cons_String">+</span>&lt;<a href="../NatCon.sdf3#NatCon_44_50" id="NatCon_192_198" title="Defined at ../NatCon.sdf3 line 5">NatCon</a>&gt;&gt;
         <span class="layout">//neg:"-" NatCon -&gt; IntCon {cons("negative")}</span>
-        <a href="../../aterms/Aterms.sdf3#IntCon_230_236" id="IntCon_249_255" title="Referenced at ../../aterms/Aterms.sdf3 line 14; ../RealCon.sdf3 line 10">IntCon</a>.<span class="cons_Constructor"><span id="Negative_256_264" title="Not referenced locally, nor via imports">Negative</span></span> = &lt;<span class="cons_String">-</span>&lt;<a href="../NatCon.sdf3#NatCon_44_50" id="NatCon_270_276" title="Defined at ../NatCon.sdf3 line 5">NatCon</a>&gt;&gt;
+        <a href="../RealCon.sdf3#IntCon_270_276" id="IntCon_249_255" title="Referenced at ../RealCon.sdf3 line 10; ../../aterms/Aterms.sdf3 line 14">IntCon</a>.<span class="cons_Constructor"><span id="Negative_256_264" title="Not referenced locally, nor via imports">Negative</span></span> = &lt;<span class="cons_String">-</span>&lt;<a href="../NatCon.sdf3#NatCon_44_50" id="NatCon_270_276" title="Defined at ../NatCon.sdf3 line 5">NatCon</a>&gt;&gt;
     
 
 </code></pre></td></tr></tbody></table></div>

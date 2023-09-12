@@ -83,7 +83,7 @@ title: Modules.sdf3
 <span class="keyword">context-free syntax</span>
         <span class="layout">//Definition = &lt;&lt;list:Module*&gt;&gt;</span>
         
-        <a href="../../sdf2-core/Sdf2.sdf3#Module_252_258" id="Module_534_540" title="Referenced at ../../sdf2-core/Sdf2.sdf3 line 14; ../../TemplateLang.sdf3 line 17">Module</a>.<span class="cons_Constructor"><span id="Module_541_547" title="Not referenced locally, nor via imports">Module</span></span> = &lt;
+        <a href="../../TemplateLang.sdf3#Module_307_313" id="Module_534_540" title="Referenced at ../../TemplateLang.sdf3 line 17; ../../sdf2-core/Sdf2.sdf3 line 14">Module</a>.<span class="cons_Constructor"><span id="Module_541_547" title="Not referenced locally, nor via imports">Module</span></span> = &lt;
         <span class="cons_String">module</span> &lt;<a href="#ModuleName_776_786" id="ModuleName_561_571" title="Defined at line 35, 36">ModuleName</a>&gt;
         
         &lt;<span id="list_577_581" title="Not referenced locally, nor via imports">list</span>:<a href="#ImpSection_923_933" id="ImpSection_582_592" title="Defined at line 40">ImpSection</a>*&gt;
