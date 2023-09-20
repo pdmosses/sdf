@@ -1,6 +1,9 @@
 module generation/docs/gen-docs-css
 
 imports
+  
+  libstratego-lib
+  
   libspoofax/core/-
   libspoofax/resource/-
   EditorService
@@ -19,6 +22,9 @@ rules // generate docs highlighting CSS for meta-language from its editor/Colore
     ; outs := <fopen> (css-file, "w")
     ; <fputs> (css, outs)
     ; <fclose> outs
+    ; metaborg-css-dir := $[[repo-clone]/docs/stylesheets]
+    ; say(!metaborg-css-dir)
+    ; say(!$[[<project-path>]/trans/generation/docs/metaborg.css])
 
   meta-project-path: "sdf3" -> "sdf/org.metaborg.meta.lang.template"
   

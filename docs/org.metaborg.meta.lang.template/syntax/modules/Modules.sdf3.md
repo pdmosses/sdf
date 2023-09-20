@@ -86,7 +86,7 @@ title: Modules.sdf3
         <a href="../../TemplateLang.sdf3#Module_307_313" id="Module_534_540" title="Referenced at ../../TemplateLang.sdf3 line 17; ../../sdf2-core/Sdf2.sdf3 line 14">Module</a>.<span class="cons_Constructor"><span id="Module_541_547" title="Not referenced locally, nor via imports">Module</span></span> = &lt;
         <span class="cons_String">module</span> &lt;<a href="#ModuleName_776_786" id="ModuleName_561_571" title="Defined at line 35, 36">ModuleName</a>&gt;
         
-        &lt;<span id="list_577_581" title="Not referenced locally, nor via imports">list</span>:<a href="#ImpSection_923_933" id="ImpSection_582_592" title="Defined at line 40">ImpSection</a>*&gt;
+        &lt;<span class="cons_Unquoted"><span id="list_577_581" title="Not referenced locally, nor via imports">list</span></span>:<a href="#ImpSection_923_933" id="ImpSection_582_592" title="Defined at line 40">ImpSection</a>*&gt;
         
         &lt;<a href="#Sections_700_708" id="Sections_599_607" title="Defined at line 31">Sections</a>&gt;&gt;
         
@@ -98,17 +98,17 @@ title: Modules.sdf3
     <a href="#Section_714_721" id="Section_740_747" title="Referenced at line 31">Section</a>.<span class="cons_Constructor"><span id="SDFSection_748_758" title="Not referenced locally, nor via imports">SDFSection</span></span> = &lt;&lt;<a href="../../kernel/Kernel.sdf3#Grammar_1684_1691" id="Grammar_763_770" title="Defined at ../../kernel/Kernel.sdf3 line 54">Grammar</a>&gt;&gt;
         
         <a href="#ModuleName_1095_1105" id="ModuleName_776_786" title="Referenced at line 48">ModuleName</a>.<span class="cons_Constructor"><span id="Unparameterized_787_802" title="Not referenced locally, nor via imports">Unparameterized</span></span> = &lt;&lt;<a href="#ModuleId_217_225" id="ModuleId_807_815" title="Defined at line 11, 13, 15">ModuleId</a>&gt;&gt;
-        <a href="#ModuleName_1095_1105" id="ModuleName_819_829" title="Referenced at line 48">ModuleName</a>.<span class="cons_Constructor"><span id="Parameterized_830_843" title="Not referenced locally, nor via imports">Parameterized</span></span> = &lt;&lt;<a href="#ModuleId_217_225" id="ModuleId_848_856" title="Defined at line 11, 13, 15">ModuleId</a>&gt; <span class="cons_String">[</span>&lt;<span id="params_860_866" title="Not referenced locally, nor via imports">params</span>:<a href="../../symbols/Symbols.sdf3#Symbols_103_110" id="Symbols_867_874" title="Defined at ../../symbols/Symbols.sdf3 line 8">Symbols</a>&gt;<span class="cons_String">]</span>&gt;
+        <a href="#ModuleName_1095_1105" id="ModuleName_819_829" title="Referenced at line 48">ModuleName</a>.<span class="cons_Constructor"><span id="Parameterized_830_843" title="Not referenced locally, nor via imports">Parameterized</span></span> = &lt;&lt;<a href="#ModuleId_217_225" id="ModuleId_848_856" title="Defined at line 11, 13, 15">ModuleId</a>&gt; <span class="cons_String">[</span>&lt;<span class="cons_Unquoted"><span id="params_860_866" title="Not referenced locally, nor via imports">params</span></span>:<a href="../../symbols/Symbols.sdf3#Symbols_103_110" id="Symbols_867_874" title="Defined at ../../symbols/Symbols.sdf3 line 8">Symbols</a>&gt;<span class="cons_String">]</span>&gt;
         
 <span class="layout">//        Attribute.Id = &lt;id (&lt;ModuleName&gt;) &gt; </span>
         
         <a href="#ImpSection_582_592" id="ImpSection_923_933" title="Referenced at line 24">ImpSection</a>.<span class="cons_Constructor"><span id="Imports_934_941" title="Not referenced locally, nor via imports">Imports</span></span> = &lt;
         <span class="cons_String">imports</span> 
-                &lt;<span id="list_959_963" title="Not referenced locally, nor via imports">list</span>:<a href="#Imports_1038_1045" id="Imports_964_971" title="Defined at line 46">Imports</a>&gt;&gt;
+                &lt;<span class="cons_Unquoted"><span id="list_959_963" title="Not referenced locally, nor via imports">list</span></span>:<a href="#Imports_1038_1045" id="Imports_964_971" title="Defined at line 46">Imports</a>&gt;&gt;
         
         <span class="layout">//Grammar.ImpSection = &lt;&lt;ImpSection&gt;&gt; IGNORED PRODUCTION</span>
          
-        <a href="#Imports_964_971" id="Imports_1038_1045" title="Referenced at line 42">Imports</a> = &lt;&lt;<span id="list_1050_1054" title="Not referenced locally, nor via imports">list</span>:{<a href="#Import_1077_1083" id="Import_1056_1062" title="Defined at line 48">Import</a> <span class="cons_Lit">"\n\t"</span>}*&gt;&gt;
+        <a href="#Imports_964_971" id="Imports_1038_1045" title="Referenced at line 42">Imports</a> = &lt;&lt;<span class="cons_Unquoted"><span id="list_1050_1054" title="Not referenced locally, nor via imports">list</span></span>:{<a href="#Import_1077_1083" id="Import_1056_1062" title="Defined at line 48">Import</a> <span class="cons_Lit">"\n\t"</span>}*&gt;&gt;
         
         <a href="#Import_1056_1062" id="Import_1077_1083" title="Referenced at line 46">Import</a>.<span class="cons_Constructor"><span id="Module_1084_1090" title="Not referenced locally, nor via imports">Module</span></span> = &lt;&lt;<a href="#ModuleName_776_786" id="ModuleName_1095_1105" title="Defined at line 35, 36">ModuleName</a>&gt;&gt;
         <span class="layout">//Import.RenamedModule = &lt;&lt;ModuleName&gt; &lt;Renamings&gt;&gt; IGNORED PRODUCTION</span>

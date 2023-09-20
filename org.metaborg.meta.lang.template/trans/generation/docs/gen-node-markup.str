@@ -6,6 +6,8 @@ imports
   generation/docs/name-binding
   
   libstratego-lib
+  
+  libspoofax/term/origin
         
   signatures/TemplateLang-sig
   generation/signatures/-
