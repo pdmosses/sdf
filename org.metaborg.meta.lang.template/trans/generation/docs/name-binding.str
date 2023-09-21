@@ -119,3 +119,10 @@ rules // Direct path
   direct-path: ([_|s*], t*) -> <direct-path> (s*, [".."|t*])
   
   direct-path: ([], t*) -> <separate-by(|"/"); concat-strings> t*
+  
+  // is-in-project: s:string -> s:string
+  // - checks that s is not a relative path to a plugin file
+
+  // TODO: check more rigorously
+  
+  is-external-path = is-substring(!"/file:/")
