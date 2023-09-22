@@ -23,8 +23,9 @@ rules // generate docs highlighting CSS for meta-language from its editor/Colore
     ; <fputs> (css, outs)
     ; <fclose> outs
     ; metaborg-css-dir := $[[repo-clone]/docs/stylesheets]
-    ; say(!metaborg-css-dir)
-    ; say(!$[[<project-path>]/trans/generation/docs/metaborg.css])
+    ; metaborg-css-file :=  "eclipse:///org.metaborg.meta.lang.template/trans/generation/docs/metaborg.css"
+    ; say(!$[[metaborg-css-dir]/metaborg.css])
+    ; <copy-file> (metaborg-css-file, metaborg-css-dir)
 
   meta-project-path: "sdf3" -> "sdf/org.metaborg.meta.lang.template"
   
