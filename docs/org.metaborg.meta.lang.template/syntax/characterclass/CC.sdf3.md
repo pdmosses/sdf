@@ -22,5 +22,5 @@ title: CC.sdf3
         <a href="../../kernel/Kernel.sdf3#kernel/Kernel_7_20" id="kernel/Kernel_74_87" title="Defined at ../../kernel/Kernel.sdf3 line 1">kernel/Kernel</a>
  
 <span class="keyword">context-free syntax</span>
-    <a href="../../restrictions/Restrictions.sdf3#Symbol_587_593" id="Symbol_114_120" title="Referenced at ../../restrictions/Restrictions.sdf3 line 20">Symbol</a>.<span class="cons_Constructor"><span id="CharClass_121_130" title="Not referenced locally, nor via imports">CharClass</span></span> = &lt;&lt;<a href="../Character-Class.sdf3#CharClass_456_465" id="CharClass_135_144" title="Defined at ../Character-Class.sdf3 line 17, 18, 20, 22, 24, 25">CharClass</a>&gt;&gt;
+    <span id="Symbol_114_120" title="Not referenced locally, nor via imports">Symbol</span>.<span class="cons_Constructor"><span id="CharClass_121_130" title="Not referenced locally, nor via imports">CharClass</span></span> = &lt;&lt;<a href="../Character-Class.sdf3#CharClass_456_465" id="CharClass_135_144" title="Defined at ../Character-Class.sdf3 line 17, 18, 20, 22, 24, 25">CharClass</a>&gt;&gt;
 </code></pre></td></tr></tbody></table></div>

@@ -24,7 +24,7 @@ title: Symbols.sdf3
  
 <span class="keyword">context-free syntax</span>
 
-<a href="#Symbol_144_150" id="Symbol_71_77" title="Referenced at line 9; ../../aliases/Aliases.sdf3 line 22; ../../kernel/Kernel.sdf3 line 50; ../../renaming/Renaming.sdf3 line 8">Symbol</a> = &lt;<span class="cons_String">(</span>&lt;<a href="#Symbol_71_77" id="Symbol_83_89" title="Defined at line 7">Symbol</a>&gt;<span class="cons_String">)</span>&gt; {<span class="keyword">bracket</span>}
+<a href="#Symbol_144_150" id="Symbol_71_77" title="Referenced at line 9; ../../aliases/Aliases.sdf3 line 22; ../../kernel/Kernel.sdf3 line 50; ../../renaming/Renaming.sdf3 line 8; ../../restrictions/Restrictions.sdf3 line 20">Symbol</a> = &lt;<span class="cons_String">(</span>&lt;<a href="#Symbol_71_77" id="Symbol_83_89" title="Defined at line 7">Symbol</a>&gt;<span class="cons_String">)</span>&gt; {<span class="keyword">bracket</span>}
 <a href="../Start-Symbols.sdf3#Symbols_290_297" id="Symbols_103_110" title="Referenced at ../Start-Symbols.sdf3 line 18; ../../kernel/Kernel.sdf3 line 50; ../../modules/Modules.sdf3 line 36">Symbols</a> = &lt;&lt;<span class="cons_Unquoted"><span id="list_115_119" title="Not referenced locally, nor via imports">list</span></span>:<a href="#Symbol_71_77" id="Symbol_120_126" title="Defined at line 7">Symbol</a>*&gt;&gt;
 <span id="SymbolDef_130_139" title="Not referenced locally, nor via imports">SymbolDef</span> = &lt;&lt;<a href="#Symbol_71_77" id="Symbol_144_150" title="Defined at line 7">Symbol</a>&gt;&gt;
 </code></pre></td></tr></tbody></table></div>
