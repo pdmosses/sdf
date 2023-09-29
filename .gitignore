@@ -23,5 +23,5 @@ hs_err_pid*
 **/bin
 
 # Spoofax
-**/src-gen
+/*/src-gen
 **/target
