@@ -79,6 +79,8 @@ rules // Actions
     ; <fputs> (
         ${---
           title: {filename}
+          hide:
+            - toc
           ---
           
           # `{filename}`
