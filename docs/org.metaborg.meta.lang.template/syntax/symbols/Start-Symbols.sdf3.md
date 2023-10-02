@@ -1,5 +1,7 @@
 ---
 title: Start-Symbols.sdf3
+hide:
+  - toc
 ---
 
 # `Start-Symbols.sdf3`
@@ -36,17 +38,17 @@ title: Start-Symbols.sdf3
 
 <span class="keyword">context-free syntax</span>
 <span id="Grammar_89_96" title="Not referenced locally, nor via imports">Grammar</span>.<span class="cons_Constructor"><span id="KernelStartSymbols_97_115" title="Not referenced locally, nor via imports">KernelStartSymbols</span></span> = &lt;
-  <span class="cons_String">start-symbols</span> &lt;<a href="../Symbols.sdf3#Symbols_103_110" id="Symbols_137_144" title="Defined at ../Symbols.sdf3 line 8">Symbols</a>&gt;
+  <span class="cons_String">start-symbols</span> &lt;Symbols&gt;
 
   &gt;
 
 <span id="Grammar_152_159" title="Not referenced locally, nor via imports">Grammar</span>.<span class="cons_Constructor"><span id="LexicalStartSymbols_160_179" title="Not referenced locally, nor via imports">LexicalStartSymbols</span></span> = &lt;
-  <span class="cons_String">lexical</span> <span class="cons_String">start-symbols</span> &lt;<a href="../Symbols.sdf3#Symbols_103_110" id="Symbols_209_216" title="Defined at ../Symbols.sdf3 line 8">Symbols</a>&gt;
+  <span class="cons_String">lexical</span> <span class="cons_String">start-symbols</span> &lt;Symbols&gt;
 
   &gt;
 
 <span id="Grammar_224_231" title="Not referenced locally, nor via imports">Grammar</span>.<span class="cons_Constructor"><span id="ContextFreeStartSymbols_232_255" title="Not referenced locally, nor via imports">ContextFreeStartSymbols</span></span> = &lt;
-  <span class="cons_String">context-free</span> <span class="cons_String">start-symbols</span> &lt;<a href="../Symbols.sdf3#Symbols_103_110" id="Symbols_290_297" title="Defined at ../Symbols.sdf3 line 8">Symbols</a>&gt;
+  <span class="cons_String">context-free</span> <span class="cons_String">start-symbols</span> &lt;Symbols&gt;
 
   &gt;
 

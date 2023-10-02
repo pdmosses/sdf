@@ -1,5 +1,7 @@
 ---
 title: Grammars.sdf3
+hide:
+  - toc
 ---
 
 # `Grammars.sdf3`

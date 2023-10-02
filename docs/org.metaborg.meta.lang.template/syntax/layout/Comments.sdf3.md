@@ -1,5 +1,7 @@
 ---
 title: Comments.sdf3
+hide:
+  - toc
 ---
 
 # `Comments.sdf3`

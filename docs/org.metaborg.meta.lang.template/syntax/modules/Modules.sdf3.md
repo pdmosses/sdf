@@ -1,5 +1,7 @@
 ---
 title: Modules.sdf3
+hide:
+  - toc
 ---
 
 # `Modules.sdf3`
@@ -98,7 +100,7 @@ title: Modules.sdf3
     <a href="#Section_714_721" id="Section_740_747" title="Referenced at line 31">Section</a>.<span class="cons_Constructor"><span id="SDFSection_748_758" title="Not referenced locally, nor via imports">SDFSection</span></span> = &lt;&lt;<a href="../../kernel/Kernel.sdf3#Grammar_1684_1691" id="Grammar_763_770" title="Defined at ../../kernel/Kernel.sdf3 line 54">Grammar</a>&gt;&gt;
         
         <a href="#ModuleName_1095_1105" id="ModuleName_776_786" title="Referenced at line 48">ModuleName</a>.<span class="cons_Constructor"><span id="Unparameterized_787_802" title="Not referenced locally, nor via imports">Unparameterized</span></span> = &lt;&lt;<a href="#ModuleId_217_225" id="ModuleId_807_815" title="Defined at line 11, 13, 15">ModuleId</a>&gt;&gt;
-        <a href="#ModuleName_1095_1105" id="ModuleName_819_829" title="Referenced at line 48">ModuleName</a>.<span class="cons_Constructor"><span id="Parameterized_830_843" title="Not referenced locally, nor via imports">Parameterized</span></span> = &lt;&lt;<a href="#ModuleId_217_225" id="ModuleId_848_856" title="Defined at line 11, 13, 15">ModuleId</a>&gt; <span class="cons_String">[</span>&lt;<span class="cons_Unquoted"><span id="params_860_866" title="Not referenced locally, nor via imports">params</span></span>:<a href="../../symbols/Symbols.sdf3#Symbols_103_110" id="Symbols_867_874" title="Defined at ../../symbols/Symbols.sdf3 line 8">Symbols</a>&gt;<span class="cons_String">]</span>&gt;
+        <a href="#ModuleName_1095_1105" id="ModuleName_819_829" title="Referenced at line 48">ModuleName</a>.<span class="cons_Constructor"><span id="Parameterized_830_843" title="Not referenced locally, nor via imports">Parameterized</span></span> = &lt;&lt;<a href="#ModuleId_217_225" id="ModuleId_848_856" title="Defined at line 11, 13, 15">ModuleId</a>&gt; <span class="cons_String">[</span>&lt;<span class="cons_Unquoted"><span id="params_860_866" title="Not referenced locally, nor via imports">params</span></span>:Symbols&gt;<span class="cons_String">]</span>&gt;
         
 <span class="layout">//        Attribute.Id = &lt;id (&lt;ModuleName&gt;) &gt; </span>
         

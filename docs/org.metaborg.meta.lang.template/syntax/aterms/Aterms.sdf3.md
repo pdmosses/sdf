@@ -1,5 +1,7 @@
 ---
 title: Aterms.sdf3
+hide:
+  - toc
 ---
 
 # `Aterms.sdf3`
@@ -40,13 +42,13 @@ title: Aterms.sdf3
         <a href="../../constants/IdentifierCon.sdf3#constants/IdentifierCon_7_30" id="constants/IdentifierCon_95_118" title="Defined at ../../constants/IdentifierCon.sdf3 line 1">constants/IdentifierCon</a>
 
 <span class="keyword">context-free syntax</span>
-        <a href="#AFun_303_307" id="AFun_141_145" title="Referenced at line 17">AFun</a>.<span class="cons_Constructor"><span id="Quoted_146_152" title="Not referenced locally, nor via imports">Quoted</span></span> = &lt;&lt;<a href="../../constants/StrCon.sdf3#StrCon_323_329" id="StrCon_157_163" title="Defined at ../../constants/StrCon.sdf3 line 12">StrCon</a>&gt;&gt;
-        <a href="#AFun_303_307" id="AFun_167_171" title="Referenced at line 17">AFun</a>.<span class="cons_Constructor"><span id="Unquoted_172_180" title="Not referenced locally, nor via imports">Unquoted</span></span> = &lt;&lt;<a href="../../constants/IdentifierCon.sdf3#IdCon_114_119" id="IdCon_185_190" title="Defined at ../../constants/IdentifierCon.sdf3 line 6">IdCon</a>&gt;&gt;
+        <a href="#AFun_303_307" id="AFun_141_145" title="Referenced at line 17">AFun</a>.<span class="cons_Constructor"><span id="Quoted_146_152" title="Not referenced locally, nor via imports">Quoted</span></span> = &lt;&lt;StrCon&gt;&gt;
+        <a href="#AFun_303_307" id="AFun_167_171" title="Referenced at line 17">AFun</a>.<span class="cons_Constructor"><span id="Unquoted_172_180" title="Not referenced locally, nor via imports">Unquoted</span></span> = &lt;&lt;IdCon&gt;&gt;
 
 
 <span class="keyword">context-free syntax</span>
-        <a href="#ATerm_482_487" id="ATerm_216_221" title="Referenced at line 23; ../../kernel/Kernel.sdf3 line 12; ../../sdf2-core/Sdf2.sdf3 line 76">ATerm</a>.<span class="cons_Constructor"><span id="Int_222_225" title="Not referenced locally, nor via imports">Int</span></span> = &lt;&lt;<a href="../../constants/IntCon.sdf3#IntCon_93_99" id="IntCon_230_236" title="Defined at ../../constants/IntCon.sdf3 line 8, 11, 13">IntCon</a>&gt;&gt;
-        <a href="#ATerm_482_487" id="ATerm_240_245" title="Referenced at line 23; ../../kernel/Kernel.sdf3 line 12; ../../sdf2-core/Sdf2.sdf3 line 76">ATerm</a>.<span class="cons_Constructor"><span id="Real_246_250" title="Not referenced locally, nor via imports">Real</span></span> = &lt;&lt;<a href="../../constants/RealCon.sdf3#RealCon_245_252" id="RealCon_255_262" title="Defined at ../../constants/RealCon.sdf3 line 10">RealCon</a>&gt;&gt;
+        <a href="#ATerm_482_487" id="ATerm_216_221" title="Referenced at line 23; ../../kernel/Kernel.sdf3 line 12; ../../sdf2-core/Sdf2.sdf3 line 76">ATerm</a>.<span class="cons_Constructor"><span id="Int_222_225" title="Not referenced locally, nor via imports">Int</span></span> = &lt;&lt;IntCon&gt;&gt;
+        <a href="#ATerm_482_487" id="ATerm_240_245" title="Referenced at line 23; ../../kernel/Kernel.sdf3 line 12; ../../sdf2-core/Sdf2.sdf3 line 76">ATerm</a>.<span class="cons_Constructor"><span id="Real_246_250" title="Not referenced locally, nor via imports">Real</span></span> = &lt;&lt;RealCon&gt;&gt;
         <a href="#ATerm_482_487" id="ATerm_266_271" title="Referenced at line 23; ../../kernel/Kernel.sdf3 line 12; ../../sdf2-core/Sdf2.sdf3 line 76">ATerm</a>.<span class="cons_Constructor"><span id="Fun_272_275" title="Not referenced locally, nor via imports">Fun</span></span> = &lt;&lt;<a href="#AFun_141_145" id="AFun_280_284" title="Defined at line 9, 10">AFun</a>&gt;&gt;
         <a href="#ATerm_482_487" id="ATerm_288_293" title="Referenced at line 23; ../../kernel/Kernel.sdf3 line 12; ../../sdf2-core/Sdf2.sdf3 line 76">ATerm</a>.<span class="cons_Constructor"><span id="Appl_294_298" title="Not referenced locally, nor via imports">Appl</span></span> = &lt;&lt;<a href="#AFun_141_145" id="AFun_303_307" title="Defined at line 9, 10">AFun</a>&gt;<span class="cons_String">(</span>&lt;{<a href="#ATerm_216_221" id="ATerm_311_316" title="Defined at line 14, 15, 16, 17, 18, 19, 20">ATerm</a> <span class="cons_Lit">","</span>}+&gt;<span class="cons_String">)</span>&gt;
         <a href="#ATerm_482_487" id="ATerm_327_332" title="Referenced at line 23; ../../kernel/Kernel.sdf3 line 12; ../../sdf2-core/Sdf2.sdf3 line 76">ATerm</a>.<span class="cons_Constructor"><span id="Placeholder_333_344" title="Not referenced locally, nor via imports">Placeholder</span></span> = &lt;\&lt;&lt;<a href="#ATerm_216_221" id="ATerm_351_356" title="Defined at line 14, 15, 16, 17, 18, 19, 20">ATerm</a>&gt;\&gt;&gt;

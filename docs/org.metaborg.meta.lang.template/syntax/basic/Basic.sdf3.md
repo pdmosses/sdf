@@ -1,5 +1,7 @@
 ---
 title: Basic.sdf3
+hide:
+  - toc
 ---
 
 # `Basic.sdf3`
@@ -80,19 +82,19 @@ title: Basic.sdf3
 <span id="Grammar_94_101" title="Not referenced locally, nor via imports">Grammar</span>.<span class="cons_Constructor"><span id="Lexical_102_109" title="Not referenced locally, nor via imports">Lexical</span></span> = &lt;
         <span class="cons_String">lexical</span> <span class="cons_String">syntax</span>
         
-                &lt;<a href="../../kernel/Kernel.sdf3#Productions_1641_1652" id="Productions_135_146" title="Defined at ../../kernel/Kernel.sdf3 line 52">Productions</a>&gt;
+                &lt;Productions&gt;
         
         &gt;
 <span id="Grammar_153_160" title="Not referenced locally, nor via imports">Grammar</span>.<span class="cons_Constructor"><span id="Contextfree_161_172" title="Not referenced locally, nor via imports">Contextfree</span></span> = &lt;
         <span class="cons_String">context-free</span> <span class="cons_String">syntax</span>
         
-                &lt;<a href="../../kernel/Kernel.sdf3#Productions_1641_1652" id="Productions_203_214" title="Defined at ../../kernel/Kernel.sdf3 line 52">Productions</a>&gt;
+                &lt;Productions&gt;
         
         &gt;
 <span id="Grammar_221_228" title="Not referenced locally, nor via imports">Grammar</span>.<span class="cons_Constructor"><span id="Variables_229_238" title="Not referenced locally, nor via imports">Variables</span></span> = &lt;
         <span class="cons_String">variables</span>
         
-                &lt;<a href="../../kernel/Kernel.sdf3#Productions_1641_1652" id="Productions_259_270" title="Defined at ../../kernel/Kernel.sdf3 line 52">Productions</a>&gt;
+                &lt;Productions&gt;
         
         &gt;
 <span id="Grammar_277_284" title="Not referenced locally, nor via imports">Grammar</span>.<span class="cons_Constructor"><span id="VariablesProductive_285_304" title="Not referenced locally, nor via imports">VariablesProductive</span></span> = &lt;
@@ -105,7 +107,7 @@ title: Basic.sdf3
 <span id="Grammar_380_387" title="Not referenced locally, nor via imports">Grammar</span>.<span class="cons_Constructor"><span id="LexVariables_388_400" title="Not referenced locally, nor via imports">LexVariables</span></span> = &lt;
         <span class="cons_String">lexical</span> <span class="cons_String">variables</span>
         
-                &lt;<a href="../../kernel/Kernel.sdf3#Productions_1641_1652" id="Productions_429_440" title="Defined at ../../kernel/Kernel.sdf3 line 52">Productions</a>&gt;
+                &lt;Productions&gt;
         
         &gt;
         

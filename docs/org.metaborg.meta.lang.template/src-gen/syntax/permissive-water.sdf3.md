@@ -1,5 +1,7 @@
 ---
 title: permissive-water.sdf3
+hide:
+  - toc
 ---
 
 # `permissive-water.sdf3`

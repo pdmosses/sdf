@@ -1,5 +1,7 @@
 ---
 title: Sdf2-Syntax.sdf3
+hide:
+  - toc
 ---
 
 # `Sdf2-Syntax.sdf3`

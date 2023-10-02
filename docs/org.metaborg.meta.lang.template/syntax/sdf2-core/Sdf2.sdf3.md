@@ -1,5 +1,7 @@
 ---
 title: Sdf2.sdf3
+hide:
+  - toc
 ---
 
 # `Sdf2.sdf3`

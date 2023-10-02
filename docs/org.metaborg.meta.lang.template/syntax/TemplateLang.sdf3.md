@@ -1,5 +1,7 @@
 ---
 title: TemplateLang.sdf3
+hide:
+  - toc
 ---
 
 # `TemplateLang.sdf3`

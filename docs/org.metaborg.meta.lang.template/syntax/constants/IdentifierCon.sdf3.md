@@ -1,5 +1,7 @@
 ---
 title: IdentifierCon.sdf3
+hide:
+  - toc
 ---
 
 # `IdentifierCon.sdf3`
@@ -24,7 +26,7 @@ title: IdentifierCon.sdf3
 <span class="keyword">lexical syntax</span>
  
 <span class="layout">//head:[A-Za-z] tail:[A-Za-z\_\-0-9]* -&gt; IdCon {cons("default")}</span>
-<a href="#IdCon_178_183" id="IdCon_114_119" title="Referenced at line 10; ../../TemplateLang.sdf3 line 95; ../../aterms/Aterms.sdf3 line 10; ../../labels/Labels.sdf3 line 10; ../../layout-constraints/Layout-Constraints.sdf3 line 24; ../../literals/Literals.sdf3 line 19">IdCon</a>.<span class="cons_Constructor"><span id="Default_120_127" title="Not referenced locally, nor via imports">Default</span></span> = [<span class="cons_Regular">A</span>-<span class="cons_Regular">Z</span><span class="cons_Regular">a</span>-<span class="cons_Regular">z</span>][<span class="cons_Regular">A</span>-<span class="cons_Regular">Z</span><span class="cons_Regular">a</span>-<span class="cons_Regular">z</span>\_\-<span class="cons_Regular">0</span>-<span class="cons_Regular">9</span>]*
+<a href="#IdCon_178_183" id="IdCon_114_119" title="Referenced at line 10; ../../TemplateLang.sdf3 line 95; ../../labels/Labels.sdf3 line 10; ../../layout-constraints/Layout-Constraints.sdf3 line 24; ../../literals/Literals.sdf3 line 19">IdCon</a>.<span class="cons_Constructor"><span id="Default_120_127" title="Not referenced locally, nor via imports">Default</span></span> = [<span class="cons_Regular">A</span>-<span class="cons_Regular">Z</span><span class="cons_Regular">a</span>-<span class="cons_Regular">z</span>][<span class="cons_Regular">A</span>-<span class="cons_Regular">Z</span><span class="cons_Regular">a</span>-<span class="cons_Regular">z</span>\_\-<span class="cons_Regular">0</span>-<span class="cons_Regular">9</span>]*
 
 <span class="keyword">lexical restrictions</span>
 

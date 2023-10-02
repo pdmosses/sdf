@@ -1,5 +1,7 @@
 ---
 title: Whitespace.sdf3
+hide:
+  - toc
 ---
 
 # `Whitespace.sdf3`

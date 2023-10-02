@@ -1,5 +1,7 @@
 ---
 title: Kernel.sdf3
+hide:
+  - toc
 ---
 
 # `Kernel.sdf3`
@@ -99,9 +101,9 @@ title: Kernel.sdf3
 <a href="#Attribute_321_330" id="Attribute_862_871" title="Referenced at line 15">Attribute</a>.<span class="cons_Constructor"><span id="Avoid_872_877" title="Not referenced locally, nor via imports">Avoid</span></span> = &lt;<span class="cons_String">avoid</span>&gt; {<span class="keyword">deprecated</span>("Prefer and avoid are deprecated and will be removed in a future version of SDF3")}
 
 <a href="#Attribute_321_330" id="Attribute_985_994" title="Referenced at line 15">Attribute</a>.<span class="cons_Constructor"><span id="Bracket_995_1002" title="Not referenced locally, nor via imports">Bracket</span></span> = &lt;<span class="cons_String">bracket</span>&gt;
-<a href="#Attribute_321_330" id="Attribute_1015_1024" title="Referenced at line 15">Attribute</a>.<span class="cons_Constructor"><span id="Assoc_1025_1030" title="Not referenced locally, nor via imports">Assoc</span></span> = &lt;&lt;<a href="../../priority/Priority.sdf3#Associativity_101_114" id="Associativity_1035_1048" title="Defined at ../../priority/Priority.sdf3 line 7, 8, 9, 10, 11">Associativity</a>&gt;&gt;
+<a href="#Attribute_321_330" id="Attribute_1015_1024" title="Referenced at line 15">Attribute</a>.<span class="cons_Constructor"><span id="Assoc_1025_1030" title="Not referenced locally, nor via imports">Assoc</span></span> = &lt;&lt;Associativity&gt;&gt;
 
-<a href="#Attribute_321_330" id="Attribute_1052_1061" title="Referenced at line 15">Attribute</a>.<span class="cons_Constructor"><span id="LayoutConstraint_1062_1078" title="Not referenced locally, nor via imports">LayoutConstraint</span></span> = &lt;<span class="cons_String">layout(</span>&lt;<a href="../../layout-constraints/Layout-Constraints.sdf3#Constraint_187_197" id="Constraint_1090_1100" title="Defined at ../../layout-constraints/Layout-Constraints.sdf3 line 15, 40, 41, 42, 43, 44, 45, 46, 47, 48, 50, 51, 52, 53, 54, 55, 57, 58, 59, 60, 61, 62, 63, 64">Constraint</a>&gt;<span class="cons_String">)</span>&gt;
+<a href="#Attribute_321_330" id="Attribute_1052_1061" title="Referenced at line 15">Attribute</a>.<span class="cons_Constructor"><span id="LayoutConstraint_1062_1078" title="Not referenced locally, nor via imports">LayoutConstraint</span></span> = &lt;<span class="cons_String">layout(</span>&lt;Constraint&gt;<span class="cons_String">)</span>&gt;
 
 <a href="#Attribute_321_330" id="Attribute_1105_1114" title="Referenced at line 15">Attribute</a>.<span class="cons_Constructor"><span id="IgnoreLayout_1115_1127" title="Not referenced locally, nor via imports">IgnoreLayout</span></span> = &lt;<span class="cons_String">ignore-layout</span>&gt;
 <a href="#Attribute_321_330" id="Attribute_1146_1155" title="Referenced at line 15">Attribute</a>.<span class="cons_Constructor"><span id="EnforceNewLine_1156_1170" title="Not referenced locally, nor via imports">EnforceNewLine</span></span> = &lt;<span class="cons_String">enforce-newline</span>&gt;
@@ -117,9 +119,9 @@ title: Kernel.sdf3
 <a href="#Attribute_321_330" id="Attribute_1479_1488" title="Referenced at line 15">Attribute</a>.<span class="cons_Constructor"><span id="LiteralCompletion_1489_1506" title="Not referenced locally, nor via imports">LiteralCompletion</span></span> = &lt;<span class="cons_String">literal-completion</span>&gt; 
 
 
-<a href="#Production_1663_1673" id="Production_1533_1543" title="Referenced at line 52; ../../priority/Priority.sdf3 line 27; ../../renaming/Renaming.sdf3 line 9">Production</a>.<span class="cons_Constructor"><span id="Prod_1544_1548" title="Not referenced locally, nor via imports">Prod</span></span> = &lt;&lt;<a href="../../symbols/Symbols.sdf3#Symbols_103_110" id="Symbols_1553_1560" title="Defined at ../../symbols/Symbols.sdf3 line 8">Symbols</a>&gt; <span class="cons_String">-</span>\&gt; &lt;<span class="cons_Unquoted"><span id="result_1567_1573" title="Not referenced locally, nor via imports">result</span></span>:<a href="../../symbols/Symbols.sdf3#Symbol_71_77" id="Symbol_1574_1580" title="Defined at ../../symbols/Symbols.sdf3 line 7">Symbol</a>&gt; &lt;<a href="#Attributes_293_303" id="Attributes_1583_1593" title="Defined at line 15, 16">Attributes</a>&gt;&gt; {<span class="keyword">deprecated</span>("Use productive form instead")}
+<a href="#Production_1663_1673" id="Production_1533_1543" title="Referenced at line 52; ../../priority/Priority.sdf3 line 27; ../../renaming/Renaming.sdf3 line 9">Production</a>.<span class="cons_Constructor"><span id="Prod_1544_1548" title="Not referenced locally, nor via imports">Prod</span></span> = &lt;&lt;Symbols&gt; <span class="cons_String">-</span>\&gt; &lt;<span class="cons_Unquoted"><span id="result_1567_1573" title="Not referenced locally, nor via imports">result</span></span>:Symbol&gt; &lt;<a href="#Attributes_293_303" id="Attributes_1583_1593" title="Defined at line 15, 16">Attributes</a>&gt;&gt; {<span class="keyword">deprecated</span>("Use productive form instead")}
 
-<a href="#Productions_1716_1727" id="Productions_1641_1652" title="Referenced at line 57; ../../basic/Basic.sdf3 line 37">Productions</a> = &lt;&lt;<span class="cons_Unquoted"><span id="list_1657_1661" title="Not referenced locally, nor via imports">list</span></span>:{<a href="#Production_1533_1543" id="Production_1663_1673" title="Defined at line 50">Production</a> <span class="cons_Lit">"\n"</span>}*&gt;&gt;
+<a href="#Productions_1716_1727" id="Productions_1641_1652" title="Referenced at line 57">Productions</a> = &lt;&lt;<span class="cons_Unquoted"><span id="list_1657_1661" title="Not referenced locally, nor via imports">list</span></span>:{<a href="#Production_1533_1543" id="Production_1663_1673" title="Defined at line 50">Production</a> <span class="cons_Lit">"\n"</span>}*&gt;&gt;
 
 <a href="../../modules/Modules.sdf3#Grammar_763_770" id="Grammar_1684_1691" title="Referenced at ../../modules/Modules.sdf3 line 33">Grammar</a>.<span class="cons_Constructor"><span id="Syntax_1692_1698" title="Not referenced locally, nor via imports">Syntax</span></span> = &lt;
         <span class="cons_String">syntax</span> 

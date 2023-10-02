@@ -1,5 +1,7 @@
 ---
 title: Restrictions.sdf3
+hide:
+  - toc
 ---
 
 # `Restrictions.sdf3`
@@ -62,7 +64,7 @@ title: Restrictions.sdf3
 <a href="#Lookaheads_769_779" id="Lookaheads_447_457" title="Referenced at line 34; ../../TemplateLang.sdf3 line 37">Lookaheads</a>.<span class="cons_Constructor"><span id="List_458_462" title="Not referenced locally, nor via imports">List</span></span> = &lt;<span class="cons_String">[[</span>&lt;<span class="cons_Unquoted"><span id="list_469_473" title="Not referenced locally, nor via imports">list</span></span>:{<a href="#Lookahead_158_167" id="Lookahead_475_484" title="Defined at line 10, 11">Lookahead</a> <span class="cons_Lit">", "</span>}*&gt;<span class="cons_String">]]</span>&gt;
 
 <a href="#Restriction_628_639" id="Restriction_497_508" title="Referenced at line 22">Restriction</a>.<span class="cons_Constructor"><span id="Follow_509_515" title="Not referenced locally, nor via imports">Follow</span></span> = &lt;&lt;<a href="#RestrictionSymbols_558_576" id="RestrictionSymbols_520_538" title="Defined at line 20">RestrictionSymbols</a>&gt; <span class="cons_String">-/-</span> &lt;<a href="#Lookaheads_240_250" id="Lookaheads_545_555" title="Defined at line 13, 15, 16, 17">Lookaheads</a>&gt;&gt;
-<a href="#RestrictionSymbols_520_538" id="RestrictionSymbols_558_576" title="Referenced at line 19">RestrictionSymbols</a> = &lt;&lt;<span class="cons_Unquoted"><span id="list_581_585" title="Not referenced locally, nor via imports">list</span></span>:{<a href="../../symbols/Symbols.sdf3#Symbol_71_77" id="Symbol_587_593" title="Defined at ../../symbols/Symbols.sdf3 line 7">Symbol</a> <span class="cons_Lit">"\n"</span>}*&gt;&gt;
+<a href="#RestrictionSymbols_520_538" id="RestrictionSymbols_558_576" title="Referenced at line 19">RestrictionSymbols</a> = &lt;&lt;<span class="cons_Unquoted"><span id="list_581_585" title="Not referenced locally, nor via imports">list</span></span>:{<a href="../../characterclass/CC.sdf3#Symbol_114_120" id="Symbol_587_593" title="Defined at ../../characterclass/CC.sdf3 line 7">Symbol</a> <span class="cons_Lit">"\n"</span>}*&gt;&gt;
  
 <a href="#Restrictions_695_707" id="Restrictions_605_617" title="Referenced at line 27; ../../sdf2-core/Sdf2-Syntax.sdf3 line 47">Restrictions</a> = &lt;&lt;<span class="cons_Unquoted"><span id="list_622_626" title="Not referenced locally, nor via imports">list</span></span>:{<a href="#Restriction_497_508" id="Restriction_628_639" title="Defined at line 19">Restriction</a> <span class="cons_Lit">"\n"</span>}*&gt;&gt;
  

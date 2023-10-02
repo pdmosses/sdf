@@ -1,5 +1,7 @@
 ---
 title: Literals.sdf3
+hide:
+  - toc
 ---
 
 # `Literals.sdf3`

@@ -1,5 +1,7 @@
 ---
 title: Aliases.sdf3
+hide:
+  - toc
 ---
 
 # `Aliases.sdf3`
@@ -53,6 +55,6 @@ title: Aliases.sdf3
                 
         &gt;
         <span class="layout">//Symbol arrow:"-&gt;" alias:Symbol -&gt; Alias    {cons("alias")}</span>
-<a href="#Alias_499_504" id="Alias_434_439" title="Referenced at line 23">Alias</a>.<span class="cons_Constructor"><span id="Alias_440_445" title="Not referenced locally, nor via imports">Alias</span></span> = &lt;&lt;<a href="../../symbols/Symbols.sdf3#Symbol_71_77" id="Symbol_450_456" title="Defined at ../../symbols/Symbols.sdf3 line 7">Symbol</a>&gt; <span class="cons_String">-</span>\&gt; &lt;<span class="cons_Unquoted"><span id="alias_463_468" title="Not referenced locally, nor via imports">alias</span></span>:<a href="../../symbols/Symbols.sdf3#Symbol_71_77" id="Symbol_469_475" title="Defined at ../../symbols/Symbols.sdf3 line 7">Symbol</a>&gt;&gt;
+<a href="#Alias_499_504" id="Alias_434_439" title="Referenced at line 23">Alias</a>.<span class="cons_Constructor"><span id="Alias_440_445" title="Not referenced locally, nor via imports">Alias</span></span> = &lt;&lt;Symbol&gt; <span class="cons_String">-</span>\&gt; &lt;<span class="cons_Unquoted"><span id="alias_463_468" title="Not referenced locally, nor via imports">alias</span></span>:Symbol&gt;&gt;
 <a href="#Aliases_357_364" id="Aliases_478_485" title="Referenced at line 18">Aliases</a>     = &lt;&lt;<span class="cons_Unquoted"><span id="list_494_498" title="Not referenced locally, nor via imports">list</span></span>:<a href="#Alias_434_439" id="Alias_499_504" title="Defined at line 22">Alias</a>*&gt;&gt; 
 </code></pre></td></tr></tbody></table></div>

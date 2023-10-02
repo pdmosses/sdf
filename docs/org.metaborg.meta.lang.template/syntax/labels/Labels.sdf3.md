@@ -1,5 +1,7 @@
 ---
 title: Labels.sdf3
+hide:
+  - toc
 ---
 
 # `Labels.sdf3`

@@ -1,5 +1,7 @@
 ---
 title: Regular.sdf3
+hide:
+  - toc
 ---
 
 # `Regular.sdf3`
@@ -75,11 +77,11 @@ title: Regular.sdf3
 
 
 
-<a href="#SortSymbol_858_868" id="SortSymbol_474_484" title="Referenced at line 32">SortSymbol</a>.<span class="cons_Constructor"><span id="Opt_485_488" title="Not referenced locally, nor via imports">Opt</span></span> = &lt;&lt;<a href="../../sorts/Sorts.sdf3#Sort_146_150" id="Sort_493_497" title="Defined at ../../sorts/Sorts.sdf3 line 10, 12">Sort</a>&gt;<span class="cons_String">?</span>&gt;
-<a href="#SortSymbol_858_868" id="SortSymbol_501_511" title="Referenced at line 32">SortSymbol</a>.<span class="cons_Constructor"><span id="Iter_512_516" title="Not referenced locally, nor via imports">Iter</span></span> = &lt;&lt;<a href="../../sorts/Sorts.sdf3#Sort_146_150" id="Sort_521_525" title="Defined at ../../sorts/Sorts.sdf3 line 10, 12">Sort</a>&gt;<span class="cons_String">+</span>&gt;
-<a href="#SortSymbol_858_868" id="SortSymbol_529_539" title="Referenced at line 32">SortSymbol</a>.<span class="cons_Constructor"><span id="IterStar_540_548" title="Not referenced locally, nor via imports">IterStar</span></span> = &lt;&lt;<a href="../../sorts/Sorts.sdf3#Sort_146_150" id="Sort_553_557" title="Defined at ../../sorts/Sorts.sdf3 line 10, 12">Sort</a>&gt;<span class="cons_String">*</span>&gt;
-<a href="#SortSymbol_858_868" id="SortSymbol_561_571" title="Referenced at line 32">SortSymbol</a>.<span class="cons_Constructor"><span id="IterSep_572_579" title="Not referenced locally, nor via imports">IterSep</span></span> = &lt;<span class="cons_String">{</span>&lt;<a href="../../sorts/Sorts.sdf3#Sort_146_150" id="Sort_585_589" title="Defined at ../../sorts/Sorts.sdf3 line 10, 12">Sort</a>&gt; &lt;<span class="cons_Unquoted"><span id="sep_592_595" title="Not referenced locally, nor via imports">sep</span></span>:<a href="#Separator_663_672" id="Separator_596_605" title="Defined at line 25">Separator</a>&gt;<span class="cons_String">}+</span>&gt;
-<a href="#SortSymbol_858_868" id="SortSymbol_610_620" title="Referenced at line 32">SortSymbol</a>.<span class="cons_Constructor"><span id="IterStarSep_621_632" title="Not referenced locally, nor via imports">IterStarSep</span></span> = &lt;<span class="cons_String">{</span>&lt;<a href="../../sorts/Sorts.sdf3#Sort_146_150" id="Sort_638_642" title="Defined at ../../sorts/Sorts.sdf3 line 10, 12">Sort</a>&gt; &lt;<span class="cons_Unquoted"><span id="sep_645_648" title="Not referenced locally, nor via imports">sep</span></span>:<a href="#Separator_663_672" id="Separator_649_658" title="Defined at line 25">Separator</a>&gt;<span class="cons_String">}*</span>&gt;
+<a href="#SortSymbol_858_868" id="SortSymbol_474_484" title="Referenced at line 32">SortSymbol</a>.<span class="cons_Constructor"><span id="Opt_485_488" title="Not referenced locally, nor via imports">Opt</span></span> = &lt;&lt;Sort&gt;<span class="cons_String">?</span>&gt;
+<a href="#SortSymbol_858_868" id="SortSymbol_501_511" title="Referenced at line 32">SortSymbol</a>.<span class="cons_Constructor"><span id="Iter_512_516" title="Not referenced locally, nor via imports">Iter</span></span> = &lt;&lt;Sort&gt;<span class="cons_String">+</span>&gt;
+<a href="#SortSymbol_858_868" id="SortSymbol_529_539" title="Referenced at line 32">SortSymbol</a>.<span class="cons_Constructor"><span id="IterStar_540_548" title="Not referenced locally, nor via imports">IterStar</span></span> = &lt;&lt;Sort&gt;<span class="cons_String">*</span>&gt;
+<a href="#SortSymbol_858_868" id="SortSymbol_561_571" title="Referenced at line 32">SortSymbol</a>.<span class="cons_Constructor"><span id="IterSep_572_579" title="Not referenced locally, nor via imports">IterSep</span></span> = &lt;<span class="cons_String">{</span>&lt;Sort&gt; &lt;<span class="cons_Unquoted"><span id="sep_592_595" title="Not referenced locally, nor via imports">sep</span></span>:<a href="#Separator_663_672" id="Separator_596_605" title="Defined at line 25">Separator</a>&gt;<span class="cons_String">}+</span>&gt;
+<a href="#SortSymbol_858_868" id="SortSymbol_610_620" title="Referenced at line 32">SortSymbol</a>.<span class="cons_Constructor"><span id="IterStarSep_621_632" title="Not referenced locally, nor via imports">IterStarSep</span></span> = &lt;<span class="cons_String">{</span>&lt;Sort&gt; &lt;<span class="cons_Unquoted"><span id="sep_645_648" title="Not referenced locally, nor via imports">sep</span></span>:<a href="#Separator_663_672" id="Separator_649_658" title="Defined at line 25">Separator</a>&gt;<span class="cons_String">}*</span>&gt;
 <a href="#Separator_875_884" id="Separator_663_672" title="Referenced at line 32">Separator</a>.<span class="cons_Constructor"><span id="Lit_673_676" title="Not referenced locally, nor via imports">Lit</span></span> = &lt;&lt;<a href="../../constants/StrCon.sdf3#StrCon_323_329" id="StrCon_681_687" title="Defined at ../../constants/StrCon.sdf3 line 12">StrCon</a>&gt;&gt;
 
 

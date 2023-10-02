@@ -1,5 +1,7 @@
 ---
 title: Lifting.sdf3
+hide:
+  - toc
 ---
 
 # `Lifting.sdf3`
