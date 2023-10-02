@@ -28,7 +28,10 @@ rules // generate docs highlighting CSS for meta-language from its editor/Colore
     ; <copy-file> (metaborg-css-file, metaborg-css-dir)
 
   meta-project-path: "sdf3" -> "sdf/org.metaborg.meta.lang.template"
-  
+  meta-project-path: "nab"  -> "nabl/org.metaborg.meta.lang.nabl"
+  meta-project-path: "stx"  -> "nabl/statix.lang"
+  meta-project-path: "str"  -> "stratego/stratego.lang"
+
   colorer-to-css(|meta-language) =
       collect-om(?ColorRule(_, _))
     ; map(color-rule-to-css-rule(|meta-language))
@@ -54,7 +57,7 @@ rules // generate docs highlighting CSS for meta-language from its editor/Colore
   
   gen-class: ConstructorOnly(Constructor(c))             -> $[.cons_[c]]
   gen-class: Sort(s)                                     -> $[.sort_[s]]
-  gen-class: SortAndConstructor(Sort(s), Constructor(c)) -> $[.sort_[s].cons_[c]]
+  gen-class: SortAndConstructor(Sort(s), Constructor(c)) -> $[.cons_[c]] // $[.sort_[s].cons_[c]]
   
   gen-color: ColorRGB(r, g, b) -> $[color: rgb([r] [g] [b]);]
   gen-color: ColorDefault()    -> ""
@@ -64,6 +67,7 @@ rules // generate docs highlighting CSS for meta-language from its editor/Colore
   gen-bg-color: ColorDefault()    -> ""
   gen-bg-color: NoColor()         -> ""
 
-  gen-font: BOLD()   -> "font-weight: bold;"
-  gen-font: ITALIC() -> "font-style: italic;"
-  gen-font: NORMAL() -> ""
+  gen-font: BOLD()        -> "font-weight: bold;"
+  gen-font: BOLD_ITALIC() -> "font-weight: bold; font-style: italic;"
+  gen-font: ITALIC()      -> "font-style: italic;"
+  gen-font: NORMAL()      -> ""
