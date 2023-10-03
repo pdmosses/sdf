@@ -37,6 +37,6 @@ rules // initialise the repo docs directory for the current project
       then <fputs> (pages-src-gen, outs)
       end
     ; <fclose> outs
-    ; if <is-substring(!"/")> dir
+    ; if <dirname; is-substring(!"/")> dir
       then <dirname; gen-docs-dir> dir
       end
