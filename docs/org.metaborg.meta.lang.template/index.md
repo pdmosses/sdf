@@ -15,12 +15,13 @@ SDF3 can also be used to define a pretty-printer.
 
 SDF3 was originally called "The Template Language".
 
-This example demonstrates generation of a hyperlinked twin from a _bootstrapped_ meta-language definition:
-the syntax of SDF3 is defined in SDF3 itself.
-
 ## Syntax
 
 [TemplateLang.sdf3](syntax/TemplateLang.sdf3.md)
+
+The syntax of SDF3 is defined in SDF3 itself.
+
+This example demonstrates generation of a hyperlinked twin from a _bootstrapped_ meta-language definition.
 
 [Spoofax]: https://spoofax.dev
 [SDF3]: https://spoofax.dev/references/sdf3
