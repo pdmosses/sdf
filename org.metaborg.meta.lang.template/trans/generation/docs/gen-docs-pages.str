@@ -64,6 +64,9 @@ rules // Actions
     
   generate-markup(|project-path, ast-list, cons): (file, ast) -> ()
     with
+    if <eq>(file, ".")
+    then !()
+    else
       path := <string-replace(|$[[project-path]/], "")> file
     ; meta-language := <get-extension> path
     ; filename := <base-filename> path
@@ -72,6 +75,10 @@ rules // Actions
     ; repo-name := <dirname; base-filename> project-clone
     ; repo-clone := <dirname> project-clone
     ; github-repo := $[pdmosses/[repo-name]]
+    ; github-link := <
+        if is-substring(!"src-gen/") then !"" else
+        !${:simple-github: [{github-repo}/{project-name}/{path}]}
+        end > path
     ; target := $[[repo-clone]/docs/[project-name]/[path].md]
     ; say(!target)
     ; ins := <fopen> (path, "r")
@@ -85,7 +92,7 @@ rules // Actions
           
           # `{filename}`
           
-          :simple-github: [{github-repo}/{project-name}/{path}]
+          {github-link}
           
           [{github-repo}/{project-name}/{path}]: https://github.com/{github-repo}/blob/master/{project-name}/{path} "The source file on GitHub"
           
@@ -106,6 +113,7 @@ rules // Actions
     ; <fclose> ins
     ; <fclose> outs
     ; !()
+    end
 
 rules // Line numbers
 

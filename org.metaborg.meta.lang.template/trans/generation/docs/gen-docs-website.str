@@ -30,7 +30,7 @@ rules // initialise the repo docs directory for the current project
     ; project-name := <project-path; base-filename>
     ; pages-file := $[[repo-clone]/docs/[dir]/.pages]
     ; pages-contents := $[title: [<base-filename> dir]]
-    ; pages-src-gen := <conc-strings> ("\n", $[hide: true])
+    ; pages-src-gen := "\nhide: true"
     ; outs := <fopen> (pages-file, "w")
     ; <fputs> (pages-contents, outs)
     ; if <eq> (<base-filename> dir, "src-gen")
