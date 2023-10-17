@@ -23,5 +23,12 @@ The syntax of SDF3 is defined in SDF3 itself.
 
 This example demonstrates generation of a hyperlinked twin from a _bootstrapped_ meta-language definition.
 
+## Name binding
+
+[`main.stx`](trans/statix/main.stx.md)
+
+The name binding of SDF3 is specified in [Statix] (for use in Spoofax 3).
+
 [Spoofax]: https://spoofax.dev
 [SDF3]: https://spoofax.dev/references/sdf3
+[Statix]: https://spoofax.dev/references/statix/
