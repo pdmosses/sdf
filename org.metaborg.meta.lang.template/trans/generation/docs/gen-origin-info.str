@@ -1,65 +1,12 @@
-module generation/docs/name-binding
+module generation/docs/gen-origin-info
 
 imports
 
   libstratego-lib
   
-  libspoofax/analysis/-
-  libspoofax/core/-
-  libspoofax/resource/-
   libspoofax/term/origin
+  
     
-  runtime/analysis/-
-  runtime/nabl/-
-  runtime/task/-
-  runtime/index/-
-  runtime/properties/-
-  runtime/types/-
-  analysis/-
-  
-  signatures/TemplateLang-sig
-  generation/signatures/-
-
-rules // Name binding
-
-  // analyzed-ast: file:File -> ast':AST
-  // - for use with languages where name binding is specified in NaBL
-  
-  // TODO: simplify the definition
-  
-  analyzed-ast: file -> ast'
-    with
-      ast := <parse-file-with-current-lang> file
-    ; Result([FileResult(_, _, ast', _, _, _)], _, _, _, _) := <editor-analyze> [File(file, ast, 0)]
-
-  use-to-defs:
-    node -> defs
-    where
-      result := <has-annos; get-annos; fetch-elem(?Use(<id>))> node
-    with
-      defs := <task-get-results> result
-
-  get-use:
-    node -> reference
-    where
-      reference := <has-annos; get-annos; fetch-elem(?Use(_))> node
-
-  get-def:
-    node -> definition
-    where
-      definition := <has-annos; get-annos; fetch-elem(?Def(_))> node
-
-  def-to-uses(|ast-list):
-    node -> <filter(where(is-ref-to(|d)))> ref-list
-    where
-      d := <is-string; get-def> node
-    ; s := <strip-annos> node
-    ; ref-list := <collect(where(is-string; where(get-use); strip-annos; equal(|s)))> ast-list
-
-  is-ref-to(|d): ref -> ref
-    where
-      <elem> (d, <use-to-defs> ref)
- 
 rules // Multi-file order of origins of definitions or references
 
   sort-by-origin(|node) = qsort(origin-lt(|node))
@@ -96,7 +43,9 @@ rules // A line for each origin file of the nodes, listing the line numbers of t
       [ <direct-path> (path, file)
       , " line "
       | < filter(where(origin-file; equal(|file)))
-        ; map(origin-line; inc; int-to-string)
+        ; map(origin-line)
+        ; make-set
+        ; map(inc; int-to-string)
         ; separate-by(|", ")
         > nodes
       ]
@@ -119,10 +68,18 @@ rules // Direct path
   direct-path: ([_|s*], t*) -> <direct-path> (s*, [".."|t*])
   
   direct-path: ([], t*) -> <separate-by(|"/"); concat-strings> t*
-  
+
+  // file-url: string -> string
+  // - avoids status 301 redirects reported by the W3C link checker
+
+  file-url: "" -> ""
+  file-url: s -> $[[s]/]
+
   // is-in-project: s:string -> s:string
   // - checks that s is not a relative path to a plugin file
 
   // TODO: check more rigorously
   
   is-external-path = is-substring(!"/file:/")
+//  is-external-path = is-substring(!"src-gen/")
+  

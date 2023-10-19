@@ -12,23 +12,27 @@ rules // initialise the repo docs directory for the current project
 //  (If the plugin had an option to suppress the MkDocs transformation,
 //  these files would not be needed.)
 
-//  generate-docs-website: (_, _, _, path, project-path) -> None()
+//  generate-config: (_, _, _, path, project-path) -> None()
 
-  generate-docs-website: (_, _, _, path, project-path) -> None()
+  generate-config: (_, _, _, path, project-path) -> None()
     with
-      meta-language := <get-extension> path
-    ; repo-clone := <project-path; local-path; dirname>
-    ; project-name := <project-path; base-filename>
-    ; file-list := <current-language-source-files; filter(where(has-extension(|meta-language)))>
-    ; dir-list := <map(dirname; string-replace(|<project-path>, $[[<project-path; base-filename>]]))> file-list
-    ; say(!$[[repo-clone]/docs/[project-name]/**])
-    ; <map(gen-docs-dir)> dir-list
+      meta-language := <get-extension; try(?"stxtest"; !"stx")> path
+    ; repo-clone := <local-path; dirname> project-path
+    ; repo-name := <base-filename> repo-clone
+    ; <gen-docs> (meta-language, repo-clone, repo-name, project-path)
+    ; <gen-mkdocs> (repo-clone, repo-name)
 
-  gen-docs-dir: dir -> ()
+  gen-docs: (meta-language, repo-clone, repo-name, project-path) -> None()
     with
-      repo-clone := <project-path; local-path; dirname>
-    ; project-name := <project-path; base-filename>
-    ; pages-file := $[[repo-clone]/docs/[dir]/.pages]
+      file-list := <current-language-source-files; filter(where(has-extension(|meta-language)))>
+    ; project-name := <base-filename> project-path
+    ; dir-list := <map(dirname; string-replace(|project-path, project-name))> file-list
+    ; say(!$[[repo-name]/docs/[project-name]])
+    ; <map(gen-docs-dir(|repo-clone))> dir-list
+
+  gen-docs-dir(|repo-clone): dir -> ()
+    with
+      pages-file := $[[repo-clone]/docs/[dir]/.pages]
     ; pages-contents := $[title: [<base-filename> dir]]
     ; pages-src-gen := "\nhide: true"
     ; outs := <fopen> (pages-file, "w")
@@ -38,5 +42,67 @@ rules // initialise the repo docs directory for the current project
       end
     ; <fclose> outs
     ; if <dirname; is-substring(!"/")> dir
-      then <dirname; gen-docs-dir> dir
+      then <dirname; gen-docs-dir(|repo-clone)> dir
       end
+
+  gen-mkdocs: (repo-clone, repo-name) -> ()
+    with
+      mkdocs-file := $[[repo-clone]/mkdocs.yml]
+    ; outs := <fopen> (mkdocs-file, "w")
+    ; <fputs> (<mkdocs> repo-name, outs)
+    ; <fclose> outs
+
+  mkdocs: repo-name ->
+${site_name: {repo-name}
+site_url: https://pdmosses.github.io/{repo-name}/
+repo_name: pdmosses/{repo-name}
+repo_url: https://github.com/pdmosses/{repo-name}/
+
+theme:
+  name: material
+  palette: 
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/lightbulb 
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to light mode
+
+  features:
+    - content.code.copy
+    # - navigation.expand
+    - navigation.indexes 
+    - navigation.tabs
+    - navigation.tabs.sticky
+
+plugins:
+  - search
+  - awesome-pages:
+      collapse_single_pages: false
+      strict: false
+      order: asc
+      sort_type: natural
+      order_by: title
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+extra_css:
+  - stylesheets/metaborg.css
+  - stylesheets/sdf3.css
+  - stylesheets/stx.css
+}

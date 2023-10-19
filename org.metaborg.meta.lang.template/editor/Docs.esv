@@ -1,0 +1,12 @@
+module Docs
+
+menus
+
+  menu: "Docs"
+    
+    action: "Generate website"  = generate-website
+   
+    submenu: "Develop"
+      action: "Generate config" = generate-config
+      action: "Generate css"    = generate-css
+    end
