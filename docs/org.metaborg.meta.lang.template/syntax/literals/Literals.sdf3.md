@@ -36,11 +36,11 @@ hide:
 24
 25
 </pre></div></td>
-<td class="code"><pre><code><span class="keyword">module</span> <a href="../../sdf2-core/Sdf2-Syntax.sdf3#literals/Literals_254_271" id="literals/Literals_7_24" title="Referenced at ../../sdf2-core/Sdf2-Syntax.sdf3 line 12">literals/Literals</a>
+<td class="code"><pre><code><span class="keyword">module</span> <a href="../../sdf2-core/Sdf2-Syntax.sdf3/#literals/Literals_254_271" id="literals/Literals_7_24" title="Referenced at ../../sdf2-core/Sdf2-Syntax.sdf3 line 12">literals/Literals</a>
  
-<span class="keyword">imports</span> <a href="../../kernel/Kernel.sdf3#kernel/Kernel_7_20" id="kernel/Kernel_35_48" title="Defined at ../../kernel/Kernel.sdf3 line 1">kernel/Kernel</a> 
- <a href="../../constants/StrCon.sdf3#constants/StrCon_7_23" id="constants/StrCon_51_67" title="Defined at ../../constants/StrCon.sdf3 line 1">constants/StrCon</a>
- <a href="../../constants/IdentifierCon.sdf3#constants/IdentifierCon_7_30" id="constants/IdentifierCon_69_92" title="Defined at ../../constants/IdentifierCon.sdf3 line 1">constants/IdentifierCon</a>
+<span class="keyword">imports</span> <a href="../../kernel/Kernel.sdf3/#kernel/Kernel_7_20" id="kernel/Kernel_35_48" title="Defined at ../../kernel/Kernel.sdf3 line 1">kernel/Kernel</a> 
+ <a href="../../constants/StrCon.sdf3/#constants/StrCon_7_23" id="constants/StrCon_51_67" title="Defined at ../../constants/StrCon.sdf3 line 1">constants/StrCon</a>
+ <a href="../../constants/IdentifierCon.sdf3/#constants/IdentifierCon_7_30" id="constants/IdentifierCon_69_92" title="Defined at ../../constants/IdentifierCon.sdf3 line 1">constants/IdentifierCon</a>
 
 <span class="keyword">lexical syntax</span>
 
@@ -54,11 +54,11 @@ hide:
     <a href="#SingleQuotedStrCon_710_728" id="SingleQuotedStrCon_460_478" title="Referenced at line 24">SingleQuotedStrCon</a>.<span class="cons_Constructor"><span id="Default_479_486" title="Not referenced locally, nor via imports">Default</span></span> =  [\'] <span class="cons_Unquoted"><span id="chars_495_500" title="Not referenced locally, nor via imports">chars</span></span>:<a href="#SingleQuotedStrChar_114_133" id="SingleQuotedStrChar_501_520" title="Defined at line 9, 10, 11, 12, 13, 14">SingleQuotedStrChar</a>* [\'] 
     
 <span class="keyword">context-free syntax</span>
-        <span id="FunctionName_554_566" title="Not referenced locally, nor via imports">FunctionName</span>.<span class="cons_Constructor"><span id="UnquotedFun_567_578" title="Not referenced locally, nor via imports">UnquotedFun</span></span> = &lt;&lt;<a href="../../constants/IdentifierCon.sdf3#IdCon_114_119" id="IdCon_583_588" title="Defined at ../../constants/IdentifierCon.sdf3 line 6">IdCon</a>&gt;&gt;
-        <span id="FunctionName_592_604" title="Not referenced locally, nor via imports">FunctionName</span>.<span class="cons_Constructor"><span id="QuotedFun_605_614" title="Not referenced locally, nor via imports">QuotedFun</span></span> = &lt;&lt;<a href="../../constants/StrCon.sdf3#StrCon_323_329" id="StrCon_619_625" title="Defined at ../../constants/StrCon.sdf3 line 12">StrCon</a>&gt;&gt;
+        <span id="FunctionName_554_566" title="Not referenced locally, nor via imports">FunctionName</span>.<span class="cons_Constructor"><span id="UnquotedFun_567_578" title="Not referenced locally, nor via imports">UnquotedFun</span></span> = &lt;&lt;<a href="../../constants/IdentifierCon.sdf3/#IdCon_114_119" id="IdCon_583_588" title="Defined at ../../constants/IdentifierCon.sdf3 line 6">IdCon</a>&gt;&gt;
+        <span id="FunctionName_592_604" title="Not referenced locally, nor via imports">FunctionName</span>.<span class="cons_Constructor"><span id="QuotedFun_605_614" title="Not referenced locally, nor via imports">QuotedFun</span></span> = &lt;&lt;<a href="../../constants/StrCon.sdf3/#StrCon_323_329" id="StrCon_619_625" title="Defined at ../../constants/StrCon.sdf3 line 12">StrCon</a>&gt;&gt;
         
 <span class="keyword">context-free syntax</span>
-        <span id="Symbol_651_657" title="Not referenced locally, nor via imports">Symbol</span>.<span class="cons_Constructor"><span id="Lit_658_661" title="Not referenced locally, nor via imports">Lit</span></span> = &lt;&lt;<span class="cons_Unquoted"><span id="string_666_672" title="Not referenced locally, nor via imports">string</span></span>:<a href="../../constants/StrCon.sdf3#StrCon_323_329" id="StrCon_673_679" title="Defined at ../../constants/StrCon.sdf3 line 12">StrCon</a>&gt;&gt;
+        <span id="Symbol_651_657" title="Not referenced locally, nor via imports">Symbol</span>.<span class="cons_Constructor"><span id="Lit_658_661" title="Not referenced locally, nor via imports">Lit</span></span> = &lt;&lt;<span class="cons_Unquoted"><span id="string_666_672" title="Not referenced locally, nor via imports">string</span></span>:<a href="../../constants/StrCon.sdf3/#StrCon_323_329" id="StrCon_673_679" title="Defined at ../../constants/StrCon.sdf3 line 12">StrCon</a>&gt;&gt;
         <span id="Symbol_683_689" title="Not referenced locally, nor via imports">Symbol</span>.<span class="cons_Constructor"><span id="CiLit_690_695" title="Not referenced locally, nor via imports">CiLit</span></span> = &lt;&lt;<span class="cons_Unquoted"><span id="ci-string_700_709" title="Not referenced locally, nor via imports">ci-string</span></span>:<a href="#SingleQuotedStrCon_460_478" id="SingleQuotedStrCon_710_728" title="Defined at line 16">SingleQuotedStrCon</a>&gt;&gt;
         <span class="layout">//Production.PrefixFun = &lt;&lt;fun:FunctionName&gt;(&lt;arguments:{Symbol ", "}*&gt;) -\&gt; &lt;result:Symbol&gt; &lt;Attributes&gt;&gt;</span>
 

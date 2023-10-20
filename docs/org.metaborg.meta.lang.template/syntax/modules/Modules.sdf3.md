@@ -65,27 +65,27 @@ hide:
 53
 54
 </pre></div></td>
-<td class="code"><pre><code><span class="keyword">module</span> <a href="../../sdf2-core/Sdf2.sdf3#modules/Modules_164_179" id="modules/Modules_7_22" title="Referenced at ../../sdf2-core/Sdf2.sdf3 line 10">modules/Modules</a>
+<td class="code"><pre><code><span class="keyword">module</span> <a href="../../TemplateLang.sdf3/#modules/Modules_219_234" id="modules/Modules_7_22" title="Referenced at ../../TemplateLang.sdf3 line 13; ../../sdf2-core/SDF.sdf3 line 2; ../../sdf2-core/Sdf2-Syntax.sdf3 line 5; ../../sdf2-core/Sdf2.sdf3 line 10">modules/Modules</a>
 
-<span class="keyword">imports</span> <a href="../../kernel/Kernel.sdf3#kernel/Kernel_7_20" id="kernel/Kernel_32_45" title="Defined at ../../kernel/Kernel.sdf3 line 1">kernel/Kernel</a> 
-        <a href="../../renaming/Renaming.sdf3#renaming/Renaming_7_24" id="renaming/Renaming_55_72" title="Defined at ../../renaming/Renaming.sdf3 line 1">renaming/Renaming</a>
-        <a href="../../symbols/Symbols.sdf3#symbols/Symbols_7_22" id="symbols/Symbols_81_96" title="Defined at ../../symbols/Symbols.sdf3 line 1">symbols/Symbols</a>
+<span class="keyword">imports</span> <a href="../../kernel/Kernel.sdf3/#kernel/Kernel_7_20" id="kernel/Kernel_32_45" title="Defined at ../../kernel/Kernel.sdf3 line 1">kernel/Kernel</a> 
+        <a href="../../renaming/Renaming.sdf3/#renaming/Renaming_7_24" id="renaming/Renaming_55_72" title="Defined at ../../renaming/Renaming.sdf3 line 1">renaming/Renaming</a>
+        <a href="../../symbols/Symbols.sdf3/#symbols/Symbols_7_22" id="symbols/Symbols_81_96" title="Defined at ../../symbols/Symbols.sdf3 line 1">symbols/Symbols</a>
  
 <span class="keyword">lexical syntax</span>
     <span class="layout">//letters:[A-Za-z0-9\_\-]+ -&gt; ModuleWord  {cons("word")}</span>
-        <a href="#ModuleWord_1243_1253" id="ModuleWord_176_186" title="Referenced at line 53">ModuleWord</a>.<span class="cons_Constructor"><span id="Word_187_191" title="Not referenced locally, nor via imports">Word</span></span> = [<span class="cons_Regular">A</span>-<span class="cons_Regular">Z</span><span class="cons_Regular">a</span>-<span class="cons_Regular">z</span><span class="cons_Regular">0</span>-<span class="cons_Regular">9</span>\_\-]+
+        <a href="#ModuleWord_234_244" id="ModuleWord_176_186" title="Referenced at line 11, 15, 53">ModuleWord</a>.<span class="cons_Constructor"><span id="Word_187_191" title="Not referenced locally, nor via imports">Word</span></span> = [<span class="cons_Regular">A</span>-<span class="cons_Regular">Z</span><span class="cons_Regular">a</span>-<span class="cons_Regular">z</span><span class="cons_Regular">0</span>-<span class="cons_Regular">9</span>\_\-]+
         
-    <a href="#ModuleId_1278_1286" id="ModuleId_217_225" title="Referenced at line 54">ModuleId</a>.<span class="cons_Constructor"><span id="Leaf_226_230" title="Not referenced locally, nor via imports">Leaf</span></span> =  <a href="#ModuleWord_176_186" id="ModuleWord_234_244" title="Defined at line 9">ModuleWord</a>
+    <a href="#ModuleId_340_348" id="ModuleId_217_225" title="Referenced at line 13, 15, 35, 36, 54">ModuleId</a>.<span class="cons_Constructor"><span id="Leaf_226_230" title="Not referenced locally, nor via imports">Leaf</span></span> =  <a href="#ModuleWord_176_186" id="ModuleWord_234_244" title="Defined at line 9">ModuleWord</a>
     <span class="layout">//sep:"/" basename:ModuleId            -&gt; ModuleId  {cons("root")}</span>
-    <a href="#ModuleId_1278_1286" id="ModuleId_320_328" title="Referenced at line 54">ModuleId</a>.<span class="cons_Constructor"><span id="Root_329_333" title="Not referenced locally, nor via imports">Root</span></span> = <span class="cons_Lit">"/"</span> <a href="#ModuleId_217_225" id="ModuleId_340_348" title="Defined at line 11, 13, 15">ModuleId</a>
+    <a href="#ModuleId_340_348" id="ModuleId_320_328" title="Referenced at line 13, 15, 35, 36, 54">ModuleId</a>.<span class="cons_Constructor"><span id="Root_329_333" title="Not referenced locally, nor via imports">Root</span></span> = <span class="cons_Lit">"/"</span> <a href="#ModuleId_217_225" id="ModuleId_340_348" title="Defined at line 11, 13, 15">ModuleId</a>
     <span class="layout">//dirname:ModuleWord sep:"/" basename:ModuleId -&gt; ModuleId  {cons("path")}</span>
-    <a href="#ModuleId_1278_1286" id="ModuleId_432_440" title="Referenced at line 54">ModuleId</a>.<span class="cons_Constructor"><span id="Path_441_445" title="Not referenced locally, nor via imports">Path</span></span> = <a href="#ModuleWord_176_186" id="ModuleWord_448_458" title="Defined at line 9">ModuleWord</a> <span class="cons_Lit">"/"</span> <a href="#ModuleId_217_225" id="ModuleId_463_471" title="Defined at line 11, 13, 15">ModuleId</a>
+    <a href="#ModuleId_340_348" id="ModuleId_432_440" title="Referenced at line 13, 15, 35, 36, 54">ModuleId</a>.<span class="cons_Constructor"><span id="Path_441_445" title="Not referenced locally, nor via imports">Path</span></span> = <a href="#ModuleWord_176_186" id="ModuleWord_448_458" title="Defined at line 9">ModuleWord</a> <span class="cons_Lit">"/"</span> <a href="#ModuleId_217_225" id="ModuleId_463_471" title="Defined at line 11, 13, 15">ModuleId</a>
     
 
 <span class="keyword">context-free syntax</span>
         <span class="layout">//Definition = &lt;&lt;list:Module*&gt;&gt;</span>
         
-        <a href="../../TemplateLang.sdf3#Module_307_313" id="Module_534_540" title="Referenced at ../../TemplateLang.sdf3 line 17; ../../sdf2-core/Sdf2.sdf3 line 14">Module</a>.<span class="cons_Constructor"><span id="Module_541_547" title="Not referenced locally, nor via imports">Module</span></span> = &lt;
+        <a href="../../TemplateLang.sdf3/#Module_307_313" id="Module_534_540" title="Referenced at ../../TemplateLang.sdf3 line 17; ../../sdf2-core/Sdf2.sdf3 line 14">Module</a>.<span class="cons_Constructor"><span id="Module_541_547" title="Not referenced locally, nor via imports">Module</span></span> = &lt;
         <span class="cons_String">module</span> &lt;<a href="#ModuleName_776_786" id="ModuleName_561_571" title="Defined at line 35, 36">ModuleName</a>&gt;
         
         &lt;<span class="cons_Unquoted"><span id="list_577_581" title="Not referenced locally, nor via imports">list</span></span>:<a href="#ImpSection_923_933" id="ImpSection_582_592" title="Defined at line 40">ImpSection</a>*&gt;
@@ -97,10 +97,10 @@ hide:
         
     <a href="#Sections_599_607" id="Sections_700_708" title="Referenced at line 26">Sections</a> = &lt;&lt;{<a href="#Section_740_747" id="Section_714_721" title="Defined at line 33">Section</a> <span class="cons_Lit">"\n"</span>}*&gt;&gt;
     
-    <a href="#Section_714_721" id="Section_740_747" title="Referenced at line 31">Section</a>.<span class="cons_Constructor"><span id="SDFSection_748_758" title="Not referenced locally, nor via imports">SDFSection</span></span> = &lt;&lt;<a href="../../kernel/Kernel.sdf3#Grammar_1684_1691" id="Grammar_763_770" title="Defined at ../../kernel/Kernel.sdf3 line 54">Grammar</a>&gt;&gt;
+    <a href="#Section_714_721" id="Section_740_747" title="Referenced at line 31">Section</a>.<span class="cons_Constructor"><span id="SDFSection_748_758" title="Not referenced locally, nor via imports">SDFSection</span></span> = &lt;&lt;<a href="../../kernel/Kernel.sdf3/#Grammar_1684_1691" id="Grammar_763_770" title="Defined at ../../kernel/Kernel.sdf3 line 54">Grammar</a>&gt;&gt;
         
-        <a href="#ModuleName_1095_1105" id="ModuleName_776_786" title="Referenced at line 48">ModuleName</a>.<span class="cons_Constructor"><span id="Unparameterized_787_802" title="Not referenced locally, nor via imports">Unparameterized</span></span> = &lt;&lt;<a href="#ModuleId_217_225" id="ModuleId_807_815" title="Defined at line 11, 13, 15">ModuleId</a>&gt;&gt;
-        <a href="#ModuleName_1095_1105" id="ModuleName_819_829" title="Referenced at line 48">ModuleName</a>.<span class="cons_Constructor"><span id="Parameterized_830_843" title="Not referenced locally, nor via imports">Parameterized</span></span> = &lt;&lt;<a href="#ModuleId_217_225" id="ModuleId_848_856" title="Defined at line 11, 13, 15">ModuleId</a>&gt; <span class="cons_String">[</span>&lt;<span class="cons_Unquoted"><span id="params_860_866" title="Not referenced locally, nor via imports">params</span></span>:Symbols&gt;<span class="cons_String">]</span>&gt;
+        <a href="#ModuleName_561_571" id="ModuleName_776_786" title="Referenced at line 22, 48">ModuleName</a>.<span class="cons_Constructor"><span id="Unparameterized_787_802" title="Not referenced locally, nor via imports">Unparameterized</span></span> = &lt;&lt;<a href="#ModuleId_217_225" id="ModuleId_807_815" title="Defined at line 11, 13, 15">ModuleId</a>&gt;&gt;
+        <a href="#ModuleName_561_571" id="ModuleName_819_829" title="Referenced at line 22, 48">ModuleName</a>.<span class="cons_Constructor"><span id="Parameterized_830_843" title="Not referenced locally, nor via imports">Parameterized</span></span> = &lt;&lt;<a href="#ModuleId_217_225" id="ModuleId_848_856" title="Defined at line 11, 13, 15">ModuleId</a>&gt; <span class="cons_String">[</span>&lt;<span class="cons_Unquoted"><span id="params_860_866" title="Not referenced locally, nor via imports">params</span></span>:<a href="../../symbols/Symbols.sdf3/#Symbols_103_110" id="Symbols_867_874" title="Defined at ../../symbols/Symbols.sdf3 line 8">Symbols</a>&gt;<span class="cons_String">]</span>&gt;
         
 <span class="layout">//        Attribute.Id = &lt;id (&lt;ModuleName&gt;) &gt; </span>
         

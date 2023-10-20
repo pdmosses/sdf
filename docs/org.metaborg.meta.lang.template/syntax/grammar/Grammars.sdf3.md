@@ -21,9 +21,9 @@ hide:
 9
 10
 </pre></div></td>
-<td class="code"><pre><code><span class="keyword">module</span> <a href="../../kernel/Kernel.sdf3#grammar/Grammars_78_94" id="grammar/Grammars_7_23" title="Referenced at ../../kernel/Kernel.sdf3 line 5">grammar/Grammars</a>
+<td class="code"><pre><code><span class="keyword">module</span> <a href="../../kernel/Kernel.sdf3/#grammar/Grammars_78_94" id="grammar/Grammars_7_23" title="Referenced at ../../kernel/Kernel.sdf3 line 5">grammar/Grammars</a>
 
-<span class="keyword">imports</span> <a href="../../layout/Comments.sdf3#layout/Comments_7_22" id="layout/Comments_33_48" title="Defined at ../../layout/Comments.sdf3 line 1">layout/Comments</a>
+<span class="keyword">imports</span> <a href="../../layout/Comments.sdf3/#layout/Comments_7_22" id="layout/Comments_33_48" title="Defined at ../../layout/Comments.sdf3 line 1">layout/Comments</a>
  
 <span class="keyword">context-free syntax</span>
 

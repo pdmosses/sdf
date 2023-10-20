@@ -34,10 +34,10 @@ hide:
 22
 23
 </pre></div></td>
-<td class="code"><pre><code><span class="keyword">module</span> <a href="../../sdf2-core/Sdf2-Syntax.sdf3#aliases/Aliases_336_351" id="aliases/Aliases_7_22" title="Referenced at ../../sdf2-core/Sdf2-Syntax.sdf3 line 15">aliases/Aliases</a>
+<td class="code"><pre><code><span class="keyword">module</span> <a href="../../sdf2-core/Sdf2-Syntax.sdf3/#aliases/Aliases_336_351" id="aliases/Aliases_7_22" title="Referenced at ../../sdf2-core/Sdf2-Syntax.sdf3 line 15">aliases/Aliases</a>
 
-<span class="keyword">imports</span> <a href="../../kernel/Kernel.sdf3#kernel/Kernel_7_20" id="kernel/Kernel_32_45" title="Defined at ../../kernel/Kernel.sdf3 line 1">kernel/Kernel</a>
-                <a href="../../symbols/Symbols.sdf3#symbols/Symbols_7_22" id="symbols/Symbols_48_63" title="Defined at ../../symbols/Symbols.sdf3 line 1">symbols/Symbols</a>
+<span class="keyword">imports</span> <a href="../../kernel/Kernel.sdf3/#kernel/Kernel_7_20" id="kernel/Kernel_32_45" title="Defined at ../../kernel/Kernel.sdf3 line 1">kernel/Kernel</a>
+                <a href="../../symbols/Symbols.sdf3/#symbols/Symbols_7_22" id="symbols/Symbols_48_63" title="Defined at ../../symbols/Symbols.sdf3 line 1">symbols/Symbols</a>
   
 <span class="layout">//context-free syntax </span>
 
@@ -55,6 +55,6 @@ hide:
                 
         &gt;
         <span class="layout">//Symbol arrow:"-&gt;" alias:Symbol -&gt; Alias    {cons("alias")}</span>
-<a href="#Alias_499_504" id="Alias_434_439" title="Referenced at line 23">Alias</a>.<span class="cons_Constructor"><span id="Alias_440_445" title="Not referenced locally, nor via imports">Alias</span></span> = &lt;&lt;Symbol&gt; <span class="cons_String">-</span>\&gt; &lt;<span class="cons_Unquoted"><span id="alias_463_468" title="Not referenced locally, nor via imports">alias</span></span>:Symbol&gt;&gt;
+<a href="#Alias_499_504" id="Alias_434_439" title="Referenced at line 23">Alias</a>.<span class="cons_Constructor"><span id="Alias_440_445" title="Not referenced locally, nor via imports">Alias</span></span> = &lt;&lt;<a href="../../symbols/Symbols.sdf3/#Symbol_71_77" id="Symbol_450_456" title="Defined at ../../symbols/Symbols.sdf3 line 7">Symbol</a>&gt; <span class="cons_String">-</span>\&gt; &lt;<span class="cons_Unquoted"><span id="alias_463_468" title="Not referenced locally, nor via imports">alias</span></span>:<a href="../../symbols/Symbols.sdf3/#Symbol_71_77" id="Symbol_469_475" title="Defined at ../../symbols/Symbols.sdf3 line 7">Symbol</a>&gt;&gt;
 <a href="#Aliases_357_364" id="Aliases_478_485" title="Referenced at line 18">Aliases</a>     = &lt;&lt;<span class="cons_Unquoted"><span id="list_494_498" title="Not referenced locally, nor via imports">list</span></span>:<a href="#Alias_434_439" id="Alias_499_504" title="Defined at line 22">Alias</a>*&gt;&gt; 
 </code></pre></td></tr></tbody></table></div>
