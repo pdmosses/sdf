@@ -50,15 +50,11 @@ rules // Name binding
       definition := <has-annos; get-annos; fetch-elem(?Def(_))> node
 
   def-to-uses(|ast-list):
-    node -> <filter(where(is-ref-to(|d)))> ref-list
+    node -> ref-list
     where
       d := <is-string; get-def> node
-    ; s := <strip-annos> node
-    ; ref-list := <collect(where(is-string; where(get-use); strip-annos; equal(|s)))> ast-list
-
-  is-ref-to(|d): ref -> ref
-    where
-      <elem> (d, <use-to-defs> ref)
+    ; ref-list :=
+        <collect-om(where(is-string; where(get-use); use-to-defs; fetch(?d)), conc)> ast-list
  
 rules // Multi-file order of origins of definitions or references
 
