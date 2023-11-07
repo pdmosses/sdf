@@ -41,19 +41,16 @@ rules // Actions
     ; <gen-ci> (meta-language-project-path, repo-clone, repo-name)
     ; say(!"CSS ...")
     ; <gen-metaborg-css> (meta-language, meta-language-project-path, repo-clone, repo-name)
+    ; <gen-modal-css> (meta-language, meta-language-project-path, repo-clone, repo-name)
+    ; <gen-modal-js> (meta-language, meta-language-project-path, repo-clone, repo-name)
     ; <gen-metalanguage-css> (meta-language, colorer-file, repo-clone, repo-name)
     ; say(!"Web pages ...")
-    ; <gen-docs-pages> (meta-language, colorer-file, meta-language-project-path, repo-clone, repo-name, project-path)
-    ; say(!"... done")
-
-  gen-docs-pages:
-    (meta-language, colorer-file, meta-language-project-path, repo-clone, repo-name, project-path) -> ()
-    with
-      file-list := <current-language-source-files; filter(where(has-extension(|meta-language)))>
+    ; file-list := <current-language-source-files; filter(where(has-extension(|meta-language)))>
     ; ast-list := <map(analyzed-ast)> file-list
     ; file-ast-list := <zip> (file-list, ast-list)
     ; cons := <parse-file; collect(?Constructor(_))> colorer-file
     ; <map(gen-docs-page(|meta-language, repo-clone, repo-name, project-path, file-ast-list, cons))> file-ast-list
+    ; say(!"... done")
 
   test-gen-docs-page: (_, _, _, path, project-path) -> None()
     with
@@ -65,20 +62,14 @@ rules // Actions
     ; colorer-file :=
         <!$[[meta-language-project-path]/editor/Colorer-CF.esv]; file-exists 
          <+ !$[[meta-language-project-path]/editor/Colorer.esv]>
-    ; say(!"Web pages ...")
-    ; <gen-docs-page> (meta-language, colorer-file, meta-language-project-path, repo-clone, repo-name, path, project-path)
-    ; say(!"... done")
-
-  gen-docs-page:
-    (meta-language, colorer-file, meta-language-project-path, repo-clone, repo-name, path, project-path) -> ()
-    with
-      file-list := <current-language-source-files; filter(where(has-extension(|meta-language)))>
-    ; file := $[[project-path]/[path]]
+    ; say(!"Web page ...")
+    ; file-list := <current-language-source-files; filter(where(has-extension(|meta-language)))>
     ; ast-list := <map(analyzed-ast)> file-list
     ; file-ast-list := <zip> (file-list, ast-list)
     ; cons := <parse-file; collect(?Constructor(_))> colorer-file
     ; <gen-docs-page(|meta-language, repo-clone, repo-name, project-path, file-ast-list, cons)>
-        (file, <lookup> (file, file-ast-list))
+        (path, <lookup> (path, file-ast-list))
+    ; say(!"... done")
 
   // meta-project-path: ext:String -> path:String
   // - path is REPO/META-LANGUAGE for META-LANGUAGE used in files with extension ext
@@ -141,7 +132,17 @@ rules // Actions
     ; gen-tokens-markup(|ins, outs)
     ; <fputs> (
         ${
-          </code></pre></td>{div-end}}, outs)
+          </code></pre></td>{div-end}
+          
+          <div id="modal">
+            <div id="modal-content">
+              <span id="modal-close">&times;</span>
+              <h2 id="modal-h2"></h2>
+              <p  id="modal-p"></p>
+              <ul id="modal-ul"></ul>
+            </div>
+          </div>
+          }, outs)
     ; <fclose> ins
     ; <fclose> outs
     ; !()
