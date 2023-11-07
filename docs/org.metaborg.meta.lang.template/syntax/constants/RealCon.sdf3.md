@@ -21,14 +21,23 @@ hide:
 9
 10
 </pre></div></td>
-<td class="code"><pre><code><span class="keyword">module</span> <a href="../../aterms/Aterms.sdf3/#constants/RealCon_50_67" id="constants/RealCon_7_24" title="Referenced at ../../aterms/Aterms.sdf3 line 4">constants/RealCon</a>
+<td class="code"><pre><code><span class="keyword">module</span> <a href="../../aterms/Aterms.sdf3/#constants/RealCon_3_2" id="constants/RealCon_1_8" title="Referenced at ../../aterms/Aterms.sdf3 line 4">constants/RealCon</a>
 
-<span class="keyword">imports</span> <a href="../IntCon.sdf3/#constants/IntCon_7_23" id="constants/IntCon_34_50" title="Defined at ../IntCon.sdf3 line 1">constants/IntCon</a>
-                <a href="../NatCon.sdf3/#constants/NatCon_7_23" id="constants/NatCon_53_69" title="Defined at ../NatCon.sdf3 line 1">constants/NatCon</a>
+<span class="keyword">imports</span> <a href="../IntCon.sdf3/#constants/IntCon_0_7" id="constants/IntCon_3_9" title="Defined at ../IntCon.sdf3 line 1">constants/IntCon</a>
+                <a href="../NatCon.sdf3/#constants/NatCon_0_7" id="constants/NatCon_4_3" title="Defined at ../NatCon.sdf3 line 1">constants/NatCon</a>
 
 <span class="keyword">context-free syntax</span>
-        <a href="#OptExp_299_305" id="OptExp_92_98" title="Referenced at line 10">OptExp</a>.<span class="cons_Constructor"><span id="Present_99_106" title="Not referenced locally, nor via imports">Present</span></span> = &lt;<span class="cons_String">e</span>&lt;<a href="../IntCon.sdf3/#IntCon_93_99" id="IntCon_112_118" title="Defined at ../IntCon.sdf3 line 8, 11, 13">IntCon</a>&gt;&gt; <span class="layout">//Change constructor name?</span>
-        <a href="#OptExp_299_305" id="OptExp_149_155" title="Referenced at line 10">OptExp</a>.<span class="cons_Constructor"><span id="Absent_156_162" title="Not referenced locally, nor via imports">Absent</span></span> = &lt;&gt;
+        <a href="#OptExp_9_55" id="OptExp_7_2" title="Referenced at line 10">OptExp</a>.<span class="cons_Constructor"><span id="Present_7_9" title="Not referenced locally, nor via imports">Present</span></span> = &lt;<span class="cons_String">e</span>&lt;<a href="../IntCon.sdf3/#IntCon_7_1" id="IntCon_7_22" title="Defined at ../IntCon.sdf3 line 8, 11, 13">IntCon</a>&gt;&gt; <span class="layout">//Change constructor name?</span>
+        <a href="#OptExp_9_55" id="OptExp_8_2" title="Referenced at line 10">OptExp</a>.<span class="cons_Constructor"><span id="Absent_8_9" title="Not referenced locally, nor via imports">Absent</span></span> = &lt;&gt;
         <span class="layout">//base:IntCon "." decimal:NatCon exp:OptExp  -&gt; RealCon {cons("real-con")}</span>
-        <a href="../../aterms/Aterms.sdf3/#RealCon_255_262" id="RealCon_245_252" title="Referenced at ../../aterms/Aterms.sdf3 line 15">RealCon</a>.<span class="cons_Constructor"><span id="RealCon_253_260" title="Not referenced locally, nor via imports">RealCon</span></span> = &lt;&lt;<span class="cons_Unquoted"><span id="base_265_269" title="Not referenced locally, nor via imports">base</span></span>:<a href="../IntCon.sdf3/#IntCon_93_99" id="IntCon_270_276" title="Defined at ../IntCon.sdf3 line 8, 11, 13">IntCon</a>&gt;<span class="cons_String">.</span>&lt;<span class="cons_Unquoted"><span id="decimal_279_286" title="Not referenced locally, nor via imports">decimal</span></span>:<a href="../NatCon.sdf3/#NatCon_44_50" id="NatCon_287_293" title="Defined at ../NatCon.sdf3 line 5">NatCon</a>&gt;&lt;<span class="cons_Unquoted"><span id="exp_295_298" title="Not referenced locally, nor via imports">exp</span></span>:<a href="#OptExp_92_98" id="OptExp_299_305" title="Defined at line 7, 8">OptExp</a>&gt;&gt;   
+        <a href="../../aterms/Aterms.sdf3/#RealCon_14_16" id="RealCon_10_2" title="Referenced at ../../aterms/Aterms.sdf3 line 15">RealCon</a>.<span class="cons_Constructor"><span id="RealCon_10_10" title="Not referenced locally, nor via imports">RealCon</span></span> = &lt;&lt;<span class="cons_Unquoted"><span id="base_10_22" title="Not referenced locally, nor via imports">base</span></span>:<a href="../IntCon.sdf3/#IntCon_7_1" id="IntCon_10_27" title="Defined at ../IntCon.sdf3 line 8, 11, 13">IntCon</a>&gt;<span class="cons_String">.</span>&lt;<span class="cons_Unquoted"><span id="decimal_10_36" title="Not referenced locally, nor via imports">decimal</span></span>:<a href="../NatCon.sdf3/#NatCon_4_1" id="NatCon_10_44" title="Defined at ../NatCon.sdf3 line 5">NatCon</a>&gt;&lt;<span class="cons_Unquoted"><span id="exp_10_52" title="Not referenced locally, nor via imports">exp</span></span>:<a href="#OptExp_6_1" id="OptExp_10_56" title="Defined at line 7, 8">OptExp</a>&gt;&gt;   
 </code></pre></td></tr></tbody></table></div>
+
+<div id="modal">
+  <div id="modal-content">
+    <span id="modal-close">&times;</span>
+    <h2 id="modal-h2"></h2>
+    <p  id="modal-p"></p>
+    <ul id="modal-ul"></ul>
+  </div>
+</div>

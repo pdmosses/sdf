@@ -18,7 +18,7 @@ hide:
 6
 7
 </pre></div></td>
-<td class="code"><pre><code><span class="keyword">module</span> <a href="../Comments.sdf3/#layout/Whitespace_34_51" id="layout/Whitespace_7_24" title="Referenced at ../Comments.sdf3 line 4; ../../constants/IntCon.sdf3 line 3">layout/Whitespace</a> 
+<td class="code"><pre><code><span class="keyword">module</span> <button class="modal-open" id="layout/Whitespace_1_8" title="Multi-file references" data-urls="../Comments.sdf3/#layout/Whitespace_4_3 ../../constants/IntCon.sdf3/#layout/Whitespace_3_9">layout/Whitespace</button> 
     
 <span class="keyword">lexical syntax</span>    
     <span class="keyword">LAYOUT</span> = [\ \t\n\r]
@@ -26,3 +26,12 @@ hide:
 <span class="keyword">context-free restrictions</span>
     <span class="keyword">LAYOUT</span>? -/- [\ \t\n\r] 
 </code></pre></td></tr></tbody></table></div>
+
+<div id="modal">
+  <div id="modal-content">
+    <span id="modal-close">&times;</span>
+    <h2 id="modal-h2"></h2>
+    <p  id="modal-p"></p>
+    <ul id="modal-ul"></ul>
+  </div>
+</div>

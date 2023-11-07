@@ -21,14 +21,23 @@ hide:
 9
 10
 </pre></div></td>
-<td class="code"><pre><code><span class="keyword">module</span> <a href="../../TemplateLang.sdf3/#constants/IdentifierCon_115_138" id="constants/IdentifierCon_7_30" title="Referenced at ../../TemplateLang.sdf3 line 8; ../../aterms/Aterms.sdf3 line 6; ../../labels/Labels.sdf3 line 5; ../../layout-constraints/Layout-Constraints.sdf3 line 7; ../../literals/Literals.sdf3 line 5">constants/IdentifierCon</a>
+<td class="code"><pre><code><span class="keyword">module</span> <button class="modal-open" id="constants/IdentifierCon_1_8" title="Multi-file references" data-urls="../../TemplateLang.sdf3/#constants/IdentifierCon_8_3 ../../aterms/Aterms.sdf3/#constants/IdentifierCon_6_9 ../../labels/Labels.sdf3/#constants/IdentifierCon_5_9 ../../layout-constraints/Layout-Constraints.sdf3/#constants/IdentifierCon_7_3 ../../literals/Literals.sdf3/#constants/IdentifierCon_5_2">constants/IdentifierCon</button>
 
 <span class="keyword">lexical syntax</span>
  
 <span class="layout">//head:[A-Za-z] tail:[A-Za-z\_\-0-9]* -&gt; IdCon {cons("default")}</span>
-<a href="#IdCon_178_183" id="IdCon_114_119" title="Referenced at line 10; ../../TemplateLang.sdf3 line 95; ../../aterms/Aterms.sdf3 line 10; ../../labels/Labels.sdf3 line 10; ../../layout-constraints/Layout-Constraints.sdf3 line 24; ../../literals/Literals.sdf3 line 19">IdCon</a>.<span class="cons_Constructor"><span id="Default_120_127" title="Not referenced locally, nor via imports">Default</span></span> = [<span class="cons_Regular">A</span>-<span class="cons_Regular">Z</span><span class="cons_Regular">a</span>-<span class="cons_Regular">z</span>][<span class="cons_Regular">A</span>-<span class="cons_Regular">Z</span><span class="cons_Regular">a</span>-<span class="cons_Regular">z</span>\_\-<span class="cons_Regular">0</span>-<span class="cons_Regular">9</span>]*
+<button class="modal-open" id="IdCon_6_1" title="Multi-file references" data-urls="#IdCon_10_1 ../../TemplateLang.sdf3/#IdCon_95_29 ../../aterms/Aterms.sdf3/#IdCon_10_20 ../../labels/Labels.sdf3/#IdCon_10_20 ../../layout-constraints/Layout-Constraints.sdf3/#IdCon_24_32 ../../literals/Literals.sdf3/#IdCon_19_31">IdCon</button>.<span class="cons_Constructor"><span id="Default_6_7" title="Not referenced locally, nor via imports">Default</span></span> = [<span class="cons_Regular">A</span>-<span class="cons_Regular">Z</span><span class="cons_Regular">a</span>-<span class="cons_Regular">z</span>][<span class="cons_Regular">A</span>-<span class="cons_Regular">Z</span><span class="cons_Regular">a</span>-<span class="cons_Regular">z</span>\_\-<span class="cons_Regular">0</span>-<span class="cons_Regular">9</span>]*
 
 <span class="keyword">lexical restrictions</span>
 
-<a href="#IdCon_114_119" id="IdCon_178_183" title="Defined at line 6">IdCon</a> -/- [<span class="cons_Regular">A</span>-<span class="cons_Regular">Z</span><span class="cons_Regular">a</span>-<span class="cons_Regular">z</span>\_\-<span class="cons_Regular">0</span>-<span class="cons_Regular">9</span>]
+<a href="#IdCon_5_0" id="IdCon_10_1" title="Defined at line 6">IdCon</a> -/- [<span class="cons_Regular">A</span>-<span class="cons_Regular">Z</span><span class="cons_Regular">a</span>-<span class="cons_Regular">z</span>\_\-<span class="cons_Regular">0</span>-<span class="cons_Regular">9</span>]
 </code></pre></td></tr></tbody></table></div>
+
+<div id="modal">
+  <div id="modal-content">
+    <span id="modal-close">&times;</span>
+    <h2 id="modal-h2"></h2>
+    <p  id="modal-p"></p>
+    <ul id="modal-ul"></ul>
+  </div>
+</div>

@@ -42,30 +42,30 @@ hide:
 30
 31
 </pre></div></td>
-<td class="code"><pre><code><span class="keyword">module</span> <a href="../../grammar/Grammars.sdf3/#layout/Comments_33_48" id="layout/Comments_7_22" title="Referenced at ../../grammar/Grammars.sdf3 line 3; ../../symbols/Symbols.sdf3 line 3">layout/Comments</a>
+<td class="code"><pre><code><span class="keyword">module</span> <button class="modal-open" id="layout/Comments_1_8" title="Multi-file references" data-urls="../../grammar/Grammars.sdf3/#layout/Comments_3_9 ../../symbols/Symbols.sdf3/#layout/Comments_3_9">layout/Comments</button>
 
 <span class="keyword">imports</span>
-  <a href="../Whitespace.sdf3/#layout/Whitespace_7_24" id="layout/Whitespace_34_51" title="Defined at ../Whitespace.sdf3 line 1">layout/Whitespace</a>
+  <a href="../Whitespace.sdf3/#layout/Whitespace_0_7" id="layout/Whitespace_4_3" title="Defined at ../Whitespace.sdf3 line 1">layout/Whitespace</a>
  
 <span class="keyword">lexical syntax</span>
-        <span class="keyword">LAYOUT</span> = <span class="cons_Lit">"%%"</span> <span class="cons_Unquoted"><span id="line_84_88" title="Not referenced locally, nor via imports">line</span></span>:~[\n\r]* <a href="#LayoutNewlineAlt_138_154" id="LayoutNewlineAlt_98_114" title="Defined at line 8, 9">LayoutNewlineAlt</a>        {<span class="cons_Unquoted">category</span>(<span class="cons_Quoted">"Comment"</span>)}
-        <a href="#LayoutNewlineAlt_98_114" id="LayoutNewlineAlt_138_154" title="Referenced at line 7, 15">LayoutNewlineAlt</a> = [\n\r]
-        <a href="#LayoutNewlineAlt_98_114" id="LayoutNewlineAlt_165_181" title="Referenced at line 7, 15">LayoutNewlineAlt</a> = <a href="#EOF_427_430" id="EOF_184_187" title="Defined at line 16">EOF</a>
-    <span class="keyword">LAYOUT</span> = <span class="cons_Lit">"%"</span> <span class="cons_Unquoted"><span id="content_205_212" title="Not referenced locally, nor via imports">content</span></span>:~[\%\n\r]+ <span class="cons_Lit">"%"</span>        {<span class="cons_Unquoted">category</span>(<span class="cons_Quoted">"Comment"</span>)}
-    <span class="keyword">LAYOUT</span> = <span class="cons_Lit">"/*"</span> <a href="#LayoutCommentAlt_296_312" id="LayoutCommentAlt_268_284" title="Defined at line 12, 13">LayoutCommentAlt</a>* <span class="cons_Lit">"*/"</span> 
-    <a href="#LayoutCommentAlt_268_284" id="LayoutCommentAlt_296_312" title="Referenced at line 11">LayoutCommentAlt</a> = ~[\*]
-    <a href="#LayoutCommentAlt_268_284" id="LayoutCommentAlt_325_341" title="Referenced at line 11">LayoutCommentAlt</a> = <a href="#CommentChar_360_371" id="CommentChar_344_355" title="Defined at line 14">CommentChar</a>
-    <a href="#CommentChar_344_355" id="CommentChar_360_371" title="Referenced at line 13, 20">CommentChar</a> = [\*]
-    <span class="keyword">LAYOUT</span> = <span class="cons_Lit">"//"</span> ~[\n\r]* <a href="#LayoutNewlineAlt_138_154" id="LayoutNewlineAlt_406_422" title="Defined at line 8, 9">LayoutNewlineAlt</a>
-    <a href="#EOF_184_187" id="EOF_427_430" title="Referenced at line 9, 24">EOF</a> = 
+        <span class="keyword">LAYOUT</span> = <span class="cons_Lit">"%%"</span> <span class="cons_Unquoted"><span id="line_7_16" title="Not referenced locally, nor via imports">line</span></span>:~[\n\r]* <a href="#LayoutNewlineAlt_7_1" id="LayoutNewlineAlt_7_30" title="Defined at line 8, 9">LayoutNewlineAlt</a>        {<span class="cons_Unquoted">category</span>(<span class="cons_Quoted">"Comment"</span>)}
+        <a href="#LayoutNewlineAlt_6_29" id="LayoutNewlineAlt_8_2" title="Referenced at line 7, 15">LayoutNewlineAlt</a> = [\n\r]
+        <a href="#LayoutNewlineAlt_6_29" id="LayoutNewlineAlt_9_2" title="Referenced at line 7, 15">LayoutNewlineAlt</a> = <a href="#EOF_15_4" id="EOF_9_21" title="Defined at line 16">EOF</a>
+    <span class="keyword">LAYOUT</span> = <span class="cons_Lit">"%"</span> <span class="cons_Unquoted"><span id="content_10_18" title="Not referenced locally, nor via imports">content</span></span>:~[\%\n\r]+ <span class="cons_Lit">"%"</span>        {<span class="cons_Unquoted">category</span>(<span class="cons_Quoted">"Comment"</span>)}
+    <span class="keyword">LAYOUT</span> = <span class="cons_Lit">"/*"</span> <a href="#LayoutCommentAlt_11_4" id="LayoutCommentAlt_11_19" title="Defined at line 12, 13">LayoutCommentAlt</a>* <span class="cons_Lit">"*/"</span> 
+    <a href="#LayoutCommentAlt_10_18" id="LayoutCommentAlt_12_5" title="Referenced at line 11">LayoutCommentAlt</a> = ~[\*]
+    <a href="#LayoutCommentAlt_10_18" id="LayoutCommentAlt_13_5" title="Referenced at line 11">LayoutCommentAlt</a> = <a href="#CommentChar_13_4" id="CommentChar_13_24" title="Defined at line 14">CommentChar</a>
+    <a href="#CommentChar_12_23" id="CommentChar_14_5" title="Referenced at line 13, 20">CommentChar</a> = [\*]
+    <span class="keyword">LAYOUT</span> = <span class="cons_Lit">"//"</span> ~[\n\r]* <a href="#LayoutNewlineAlt_7_1" id="LayoutNewlineAlt_15_28" title="Defined at line 8, 9">LayoutNewlineAlt</a>
+    <a href="#EOF_8_20" id="EOF_16_5" title="Referenced at line 9, 24">EOF</a> = 
     
 <span class="keyword">lexical restrictions</span>
 
-    <a href="#CommentChar_360_371" id="CommentChar_465_476" title="Defined at line 14">CommentChar</a>   -/- [\/]
+    <a href="#CommentChar_13_4" id="CommentChar_20_5" title="Defined at line 14">CommentChar</a>   -/- [\/]
 
     <span class="layout">%% EOF may not be followed by any char</span>
 
-    <a href="#EOF_427_430" id="EOF_537_540" title="Defined at line 16">EOF</a>           -/- ~[]          
+    <a href="#EOF_15_4" id="EOF_24_5" title="Defined at line 16">EOF</a>           -/- ~[]          
        
 
 <span class="keyword">context-free restrictions</span> 
@@ -74,3 +74,12 @@ hide:
     <span class="keyword">LAYOUT</span>? -/- [\/].[\/]
     <span class="keyword">LAYOUT</span>? -/- [\/].[\*]
 </code></pre></td></tr></tbody></table></div>
+
+<div id="modal">
+  <div id="modal-content">
+    <span id="modal-close">&times;</span>
+    <h2 id="modal-h2"></h2>
+    <p  id="modal-p"></p>
+    <ul id="modal-ul"></ul>
+  </div>
+</div>

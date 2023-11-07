@@ -71,66 +71,66 @@ hide:
 59
 60
 </pre></div></td>
-<td class="code"><pre><code><span class="keyword">module</span> <a href="../../TemplateLang.sdf3/#basic/Basic_205_216" id="basic/Basic_7_18" title="Referenced at ../../TemplateLang.sdf3 line 12; ../../sdf2-core/Sdf2-Syntax.sdf3 line 4; ../../sorts/Sorts.sdf3 line 5">basic/Basic</a>
+<td class="code"><pre><code><span class="keyword">module</span> <button class="modal-open" id="basic/Basic_1_8" title="Multi-file references" data-urls="../../TemplateLang.sdf3/#basic/Basic_12_3 ../../sdf2-core/Sdf2-Syntax.sdf3/#basic/Basic_4_9 ../../sorts/Sorts.sdf3/#basic/Basic_5_1">basic/Basic</button>
 
-<span class="keyword">imports</span> <a href="../../kernel/Kernel.sdf3/#kernel/Kernel_7_20" id="kernel/Kernel_28_41" title="Defined at ../../kernel/Kernel.sdf3 line 1">kernel/Kernel</a>
-                <a href="../../sorts/Sorts.sdf3/#sorts/Sorts_7_18" id="sorts/Sorts_44_55" title="Defined at ../../sorts/Sorts.sdf3 line 1">sorts/Sorts</a>
-                <a href="../../TemplateLang.sdf3/#TemplateLang_7_19" id="TemplateLang_58_70" title="Defined at ../../TemplateLang.sdf3 line 1">TemplateLang</a>
+<span class="keyword">imports</span> <a href="../../kernel/Kernel.sdf3/#kernel/Kernel_0_7" id="kernel/Kernel_3_9" title="Defined at ../../kernel/Kernel.sdf3 line 1">kernel/Kernel</a>
+                <a href="../../sorts/Sorts.sdf3/#sorts/Sorts_0_7" id="sorts/Sorts_4_3" title="Defined at ../../sorts/Sorts.sdf3 line 1">sorts/Sorts</a>
+                <a href="../../TemplateLang.sdf3/#TemplateLang_0_7" id="TemplateLang_5_3" title="Defined at ../../TemplateLang.sdf3 line 1">TemplateLang</a>
 
 <span class="keyword">context-free syntax</span>
  
-<span id="Grammar_94_101" title="Not referenced locally, nor via imports">Grammar</span>.<span class="cons_Constructor"><span id="Lexical_102_109" title="Not referenced locally, nor via imports">Lexical</span></span> = &lt;
+<span id="Grammar_9_1" title="Not referenced locally, nor via imports">Grammar</span>.<span class="cons_Constructor"><span id="Lexical_9_9" title="Not referenced locally, nor via imports">Lexical</span></span> = &lt;
         <span class="cons_String">lexical</span> <span class="cons_String">syntax</span>
         
-                &lt;<a href="../../kernel/Kernel.sdf3/#Productions_1641_1652" id="Productions_135_146" title="Defined at ../../kernel/Kernel.sdf3 line 52">Productions</a>&gt;
+                &lt;<a href="../../kernel/Kernel.sdf3/#Productions_51_0" id="Productions_12_4" title="Defined at ../../kernel/Kernel.sdf3 line 52">Productions</a>&gt;
         
         &gt;
-<span id="Grammar_153_160" title="Not referenced locally, nor via imports">Grammar</span>.<span class="cons_Constructor"><span id="Contextfree_161_172" title="Not referenced locally, nor via imports">Contextfree</span></span> = &lt;
+<span id="Grammar_15_1" title="Not referenced locally, nor via imports">Grammar</span>.<span class="cons_Constructor"><span id="Contextfree_15_9" title="Not referenced locally, nor via imports">Contextfree</span></span> = &lt;
         <span class="cons_String">context-free</span> <span class="cons_String">syntax</span>
         
-                &lt;<a href="../../kernel/Kernel.sdf3/#Productions_1641_1652" id="Productions_203_214" title="Defined at ../../kernel/Kernel.sdf3 line 52">Productions</a>&gt;
+                &lt;<a href="../../kernel/Kernel.sdf3/#Productions_51_0" id="Productions_18_4" title="Defined at ../../kernel/Kernel.sdf3 line 52">Productions</a>&gt;
         
         &gt;
-<span id="Grammar_221_228" title="Not referenced locally, nor via imports">Grammar</span>.<span class="cons_Constructor"><span id="Variables_229_238" title="Not referenced locally, nor via imports">Variables</span></span> = &lt;
+<span id="Grammar_21_1" title="Not referenced locally, nor via imports">Grammar</span>.<span class="cons_Constructor"><span id="Variables_21_9" title="Not referenced locally, nor via imports">Variables</span></span> = &lt;
         <span class="cons_String">variables</span>
         
-                &lt;<a href="../../kernel/Kernel.sdf3/#Productions_1641_1652" id="Productions_259_270" title="Defined at ../../kernel/Kernel.sdf3 line 52">Productions</a>&gt;
+                &lt;<a href="../../kernel/Kernel.sdf3/#Productions_51_0" id="Productions_24_4" title="Defined at ../../kernel/Kernel.sdf3 line 52">Productions</a>&gt;
         
         &gt;
-<span id="Grammar_277_284" title="Not referenced locally, nor via imports">Grammar</span>.<span class="cons_Constructor"><span id="VariablesProductive_285_304" title="Not referenced locally, nor via imports">VariablesProductive</span></span> = &lt;
+<span id="Grammar_27_1" title="Not referenced locally, nor via imports">Grammar</span>.<span class="cons_Constructor"><span id="VariablesProductive_27_9" title="Not referenced locally, nor via imports">VariablesProductive</span></span> = &lt;
     <span class="cons_String">variables</span>
     
-            &lt;{<a href="../../TemplateLang.sdf3/#SdfProduction_1702_1715" id="SdfProduction_335_348" title="Defined at ../../TemplateLang.sdf3 line 85, 86">SdfProduction</a> <span class="cons_Lit">"\n"</span>}*&gt;
+            &lt;{<a href="../../TemplateLang.sdf3/#SdfProduction_84_0" id="SdfProduction_30_8" title="Defined at ../../TemplateLang.sdf3 line 85, 86">SdfProduction</a> <span class="cons_Lit">"\n"</span>}*&gt;
             
     &gt;        {<span class="keyword">prefer</span>}
         
-<span id="Grammar_380_387" title="Not referenced locally, nor via imports">Grammar</span>.<span class="cons_Constructor"><span id="LexVariables_388_400" title="Not referenced locally, nor via imports">LexVariables</span></span> = &lt;
+<span id="Grammar_34_1" title="Not referenced locally, nor via imports">Grammar</span>.<span class="cons_Constructor"><span id="LexVariables_34_9" title="Not referenced locally, nor via imports">LexVariables</span></span> = &lt;
         <span class="cons_String">lexical</span> <span class="cons_String">variables</span>
         
-                &lt;<a href="../../kernel/Kernel.sdf3/#Productions_1641_1652" id="Productions_429_440" title="Defined at ../../kernel/Kernel.sdf3 line 52">Productions</a>&gt;
+                &lt;<a href="../../kernel/Kernel.sdf3/#Productions_51_0" id="Productions_37_4" title="Defined at ../../kernel/Kernel.sdf3 line 52">Productions</a>&gt;
         
         &gt;
         
-<span id="Grammar_449_456" title="Not referenced locally, nor via imports">Grammar</span>.<span class="cons_Constructor"><span id="LexVariablesProductive_457_479" title="Not referenced locally, nor via imports">LexVariablesProductive</span></span> = &lt;
+<span id="Grammar_41_1" title="Not referenced locally, nor via imports">Grammar</span>.<span class="cons_Constructor"><span id="LexVariablesProductive_41_9" title="Not referenced locally, nor via imports">LexVariablesProductive</span></span> = &lt;
     <span class="cons_String">lexical</span> <span class="cons_String">variables</span>
     
-            &lt;{<a href="../../TemplateLang.sdf3/#SdfProduction_1702_1715" id="SdfProduction_518_531" title="Defined at ../../TemplateLang.sdf3 line 85, 86">SdfProduction</a> <span class="cons_Lit">"\n"</span>}*&gt;
+            &lt;{<a href="../../TemplateLang.sdf3/#SdfProduction_84_0" id="SdfProduction_44_8" title="Defined at ../../TemplateLang.sdf3 line 85, 86">SdfProduction</a> <span class="cons_Lit">"\n"</span>}*&gt;
 
     &gt; {<span class="keyword">prefer</span>}
 
-<a href="#Symbol_571_577" id="Symbol_557_563" title="Referenced at line 48, 49, 50; ../../TemplateLang.sdf3 line 48, 106">Symbol</a>.<span class="cons_Constructor"><a href="../../sorts/Sorts.sdf3/#Cf_1163_1165" id="Cf_564_566" title="Referenced at ../../sorts/Sorts.sdf3 line 50">Cf</a></span> = &lt;&lt;<a href="#Symbol_557_563" id="Symbol_571_577" title="Defined at line 48, 49, 50, 51">Symbol</a>&gt;<span class="cons_String">-CF</span>&gt;
-<a href="#Symbol_571_577" id="Symbol_583_589" title="Referenced at line 48, 49, 50; ../../TemplateLang.sdf3 line 48, 106">Symbol</a>.<span class="cons_Constructor"><a href="../../sorts/Sorts.sdf3/#Lex_1173_1176" id="Lex_590_593" title="Referenced at ../../sorts/Sorts.sdf3 line 50">Lex</a></span> = &lt;&lt;<a href="#Symbol_557_563" id="Symbol_598_604" title="Defined at line 48, 49, 50, 51">Symbol</a>&gt;<span class="cons_String">-LEX</span>&gt;
-<a href="#Symbol_571_577" id="Symbol_611_617" title="Referenced at line 48, 49, 50; ../../TemplateLang.sdf3 line 48, 106">Symbol</a>.<span class="cons_Constructor"><a href="../../sorts/Sorts.sdf3/#Varsym_1184_1190" id="Varsym_618_624" title="Referenced at ../../sorts/Sorts.sdf3 line 50">Varsym</a></span> = &lt;&lt;<a href="#Symbol_557_563" id="Symbol_629_635" title="Defined at line 48, 49, 50, 51">Symbol</a>&gt;<span class="cons_String">-VAR</span>&gt;
-<a href="#Symbol_571_577" id="Symbol_642_648" title="Referenced at line 48, 49, 50; ../../TemplateLang.sdf3 line 48, 106">Symbol</a>.<span class="cons_Constructor"><span id="Layout_649_655" title="Not referenced locally, nor via imports">Layout</span></span> = &lt;<span class="cons_String">LAYOUT</span>&gt;  
+<button class="modal-open" id="Symbol_48_1" title="Multi-file references" data-urls="#Symbol_48_15 ../../TemplateLang.sdf3/#Symbol_48_29">Symbol</button>.<span class="cons_Constructor"><a href="../../sorts/Sorts.sdf3/#Cf_49_50" id="Cf_48_8" title="Referenced at ../../sorts/Sorts.sdf3 line 50">Cf</a></span> = &lt;&lt;<a href="#Symbol_47_0" id="Symbol_48_15" title="Defined at line 48, 49, 50, 51">Symbol</a>&gt;<span class="cons_String">-CF</span>&gt;
+<button class="modal-open" id="Symbol_49_1" title="Multi-file references" data-urls="#Symbol_48_15 ../../TemplateLang.sdf3/#Symbol_48_29">Symbol</button>.<span class="cons_Constructor"><a href="../../sorts/Sorts.sdf3/#Lex_49_60" id="Lex_49_8" title="Referenced at ../../sorts/Sorts.sdf3 line 50">Lex</a></span> = &lt;&lt;<a href="#Symbol_47_0" id="Symbol_49_16" title="Defined at line 48, 49, 50, 51">Symbol</a>&gt;<span class="cons_String">-LEX</span>&gt;
+<button class="modal-open" id="Symbol_50_1" title="Multi-file references" data-urls="#Symbol_48_15 ../../TemplateLang.sdf3/#Symbol_48_29">Symbol</button>.<span class="cons_Constructor"><a href="../../sorts/Sorts.sdf3/#Varsym_49_71" id="Varsym_50_8" title="Referenced at ../../sorts/Sorts.sdf3 line 50">Varsym</a></span> = &lt;&lt;<a href="#Symbol_47_0" id="Symbol_50_19" title="Defined at line 48, 49, 50, 51">Symbol</a>&gt;<span class="cons_String">-VAR</span>&gt;
+<button class="modal-open" id="Symbol_51_1" title="Multi-file references" data-urls="#Symbol_48_15 ../../TemplateLang.sdf3/#Symbol_48_29">Symbol</button>.<span class="cons_Constructor"><span id="Layout_51_8" title="Not referenced locally, nor via imports">Layout</span></span> = &lt;<span class="cons_String">LAYOUT</span>&gt;  
 
 <span class="keyword">lexical syntax</span>
 
-<a href="#Sort_693_697" id="Sort_686_690" title="Referenced at line 55, 56, 57">Sort</a> = <a href="#Sort_686_690" id="Sort_693_697" title="Defined at line 55, 56, 57, 58, 59, 60">Sort</a> <span class="cons_Lit">"-LEX"</span> {<span class="keyword">reject</span>}
-<a href="#Sort_693_697" id="Sort_714_718" title="Referenced at line 55, 56, 57">Sort</a> = <a href="#Sort_686_690" id="Sort_721_725" title="Defined at line 55, 56, 57, 58, 59, 60">Sort</a> <span class="cons_Lit">"-CF"</span> {<span class="keyword">reject</span>}
-<a href="#Sort_693_697" id="Sort_741_745" title="Referenced at line 55, 56, 57">Sort</a> = <a href="#Sort_686_690" id="Sort_748_752" title="Defined at line 55, 56, 57, 58, 59, 60">Sort</a> <span class="cons_Lit">"-VAR"</span> {<span class="keyword">reject</span>}
-<a href="#Sort_693_697" id="Sort_769_773" title="Referenced at line 55, 56, 57">Sort</a> = <span class="cons_Lit">"LAYOUT"</span> <span class="cons_Lit">"-LEX"</span> {<span class="keyword">reject</span>}
-<a href="#Sort_693_697" id="Sort_801_805" title="Referenced at line 55, 56, 57">Sort</a> = <span class="cons_Lit">"LAYOUT"</span> <span class="cons_Lit">"-CF"</span> {<span class="keyword">reject</span>}
-<a href="#Sort_693_697" id="Sort_832_836" title="Referenced at line 55, 56, 57">Sort</a> = <span class="cons_Lit">"LAYOUT"</span> <span class="cons_Lit">"-VAR"</span> {<span class="keyword">reject</span>}
+<a href="#Sort_54_7" id="Sort_55_1" title="Referenced at line 55, 56, 57">Sort</a> = <a href="#Sort_54_0" id="Sort_55_8" title="Defined at line 55, 56, 57, 58, 59, 60">Sort</a> <span class="cons_Lit">"-LEX"</span> {<span class="keyword">reject</span>}
+<a href="#Sort_54_7" id="Sort_56_1" title="Referenced at line 55, 56, 57">Sort</a> = <a href="#Sort_54_0" id="Sort_56_8" title="Defined at line 55, 56, 57, 58, 59, 60">Sort</a> <span class="cons_Lit">"-CF"</span> {<span class="keyword">reject</span>}
+<a href="#Sort_54_7" id="Sort_57_1" title="Referenced at line 55, 56, 57">Sort</a> = <a href="#Sort_54_0" id="Sort_57_8" title="Defined at line 55, 56, 57, 58, 59, 60">Sort</a> <span class="cons_Lit">"-VAR"</span> {<span class="keyword">reject</span>}
+<a href="#Sort_54_7" id="Sort_58_1" title="Referenced at line 55, 56, 57">Sort</a> = <span class="cons_Lit">"LAYOUT"</span> <span class="cons_Lit">"-LEX"</span> {<span class="keyword">reject</span>}
+<a href="#Sort_54_7" id="Sort_59_1" title="Referenced at line 55, 56, 57">Sort</a> = <span class="cons_Lit">"LAYOUT"</span> <span class="cons_Lit">"-CF"</span> {<span class="keyword">reject</span>}
+<a href="#Sort_54_7" id="Sort_60_1" title="Referenced at line 55, 56, 57">Sort</a> = <span class="cons_Lit">"LAYOUT"</span> <span class="cons_Lit">"-VAR"</span> {<span class="keyword">reject</span>}
 
 
 
@@ -139,3 +139,12 @@ hide:
 
 
 </code></pre></td></tr></tbody></table></div>
+
+<div id="modal">
+  <div id="modal-content">
+    <span id="modal-close">&times;</span>
+    <h2 id="modal-h2"></h2>
+    <p  id="modal-p"></p>
+    <ul id="modal-ul"></ul>
+  </div>
+</div>

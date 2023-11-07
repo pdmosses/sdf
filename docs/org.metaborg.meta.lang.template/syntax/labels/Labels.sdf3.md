@@ -22,15 +22,24 @@ hide:
 10
 11
 </pre></div></td>
-<td class="code"><pre><code><span class="keyword">module</span> <a href="../../TemplateLang.sdf3/#labels/Labels_99_112" id="labels/Labels_7_20" title="Referenced at ../../TemplateLang.sdf3 line 7; ../../regular/Regular.sdf3 line 3; ../../sdf2-core/Sdf2-Syntax.sdf3 line 13">labels/Labels</a>
+<td class="code"><pre><code><span class="keyword">module</span> <button class="modal-open" id="labels/Labels_1_8" title="Multi-file references" data-urls="../../TemplateLang.sdf3/#labels/Labels_7_3 ../../regular/Regular.sdf3/#labels/Labels_3_73 ../../sdf2-core/Sdf2-Syntax.sdf3/#labels/Labels_13_9">labels/Labels</button>
 
-<span class="keyword">imports</span> <a href="../../kernel/Kernel.sdf3/#kernel/Kernel_7_20" id="kernel/Kernel_30_43" title="Defined at ../../kernel/Kernel.sdf3 line 1">kernel/Kernel</a> 
-        <a href="../../constants/StrCon.sdf3/#constants/StrCon_7_23" id="constants/StrCon_53_69" title="Defined at ../../constants/StrCon.sdf3 line 1">constants/StrCon</a>
-        <a href="../../constants/IdentifierCon.sdf3/#constants/IdentifierCon_7_30" id="constants/IdentifierCon_78_101" title="Defined at ../../constants/IdentifierCon.sdf3 line 1">constants/IdentifierCon</a>
+<span class="keyword">imports</span> <a href="../../kernel/Kernel.sdf3/#kernel/Kernel_0_7" id="kernel/Kernel_3_9" title="Defined at ../../kernel/Kernel.sdf3 line 1">kernel/Kernel</a> 
+        <a href="../../constants/StrCon.sdf3/#constants/StrCon_0_7" id="constants/StrCon_4_9" title="Defined at ../../constants/StrCon.sdf3 line 1">constants/StrCon</a>
+        <a href="../../constants/IdentifierCon.sdf3/#constants/IdentifierCon_0_7" id="constants/IdentifierCon_5_9" title="Defined at ../../constants/IdentifierCon.sdf3 line 1">constants/IdentifierCon</a>
  
 <span class="keyword">context-free syntax</span>
 
-<a href="#Label_195_200" id="Label_125_130" title="Referenced at line 11">Label</a>.<span class="cons_Constructor"><span id="Quoted_131_137" title="Not referenced locally, nor via imports">Quoted</span></span> = &lt;&lt;<a href="../../constants/StrCon.sdf3/#StrCon_323_329" id="StrCon_142_148" title="Defined at ../../constants/StrCon.sdf3 line 12">StrCon</a>&gt;&gt;
-<a href="#Label_195_200" id="Label_151_156" title="Referenced at line 11">Label</a>.<span class="cons_Constructor"><span id="Unquoted_157_165" title="Not referenced locally, nor via imports">Unquoted</span></span> = &lt;&lt;<a href="../../constants/IdentifierCon.sdf3/#IdCon_114_119" id="IdCon_170_175" title="Defined at ../../constants/IdentifierCon.sdf3 line 6">IdCon</a>&gt;&gt;
-<a href="#Symbol_203_209" id="Symbol_178_184" title="Referenced at line 11">Symbol</a>.<span class="cons_Constructor"><a href="../../regular/Regular.sdf3/#Label_1303_1308" id="Label_185_190" title="Referenced at ../../regular/Regular.sdf3 line 47">Label</a></span> = &lt;&lt;<a href="#Label_125_130" id="Label_195_200" title="Defined at line 9, 10">Label</a>&gt;<span class="cons_String">:</span>&lt;<a href="#Symbol_178_184" id="Symbol_203_209" title="Defined at line 11">Symbol</a>&gt;&gt;
+<a href="#Label_10_17" id="Label_9_1" title="Referenced at line 11">Label</a>.<span class="cons_Constructor"><span id="Quoted_9_7" title="Not referenced locally, nor via imports">Quoted</span></span> = &lt;&lt;<a href="../../constants/StrCon.sdf3/#StrCon_11_4" id="StrCon_9_18" title="Defined at ../../constants/StrCon.sdf3 line 12">StrCon</a>&gt;&gt;
+<a href="#Label_10_17" id="Label_10_1" title="Referenced at line 11">Label</a>.<span class="cons_Constructor"><span id="Unquoted_10_7" title="Not referenced locally, nor via imports">Unquoted</span></span> = &lt;&lt;<a href="../../constants/IdentifierCon.sdf3/#IdCon_5_0" id="IdCon_10_20" title="Defined at ../../constants/IdentifierCon.sdf3 line 6">IdCon</a>&gt;&gt;
+<a href="#Symbol_10_25" id="Symbol_11_1" title="Referenced at line 11">Symbol</a>.<span class="cons_Constructor"><a href="../../regular/Regular.sdf3/#Label_46_8" id="Label_11_8" title="Referenced at ../../regular/Regular.sdf3 line 47">Label</a></span> = &lt;&lt;<a href="#Label_8_0" id="Label_11_18" title="Defined at line 9, 10">Label</a>&gt;<span class="cons_String">:</span>&lt;<a href="#Symbol_10_0" id="Symbol_11_26" title="Defined at line 11">Symbol</a>&gt;&gt;
 </code></pre></td></tr></tbody></table></div>
+
+<div id="modal">
+  <div id="modal-content">
+    <span id="modal-close">&times;</span>
+    <h2 id="modal-h2"></h2>
+    <p  id="modal-p"></p>
+    <ul id="modal-ul"></ul>
+  </div>
+</div>

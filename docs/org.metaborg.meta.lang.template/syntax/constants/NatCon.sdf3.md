@@ -21,14 +21,23 @@ hide:
 9
 10
 </pre></div></td>
-<td class="code"><pre><code><span class="keyword">module</span> <a href="../IntCon.sdf3/#constants/NatCon_52_68" id="constants/NatCon_7_23" title="Referenced at ../IntCon.sdf3 line 4; ../RealCon.sdf3 line 4; ../../layout-constraints/Layout-Constraints.sdf3 line 5; ../../priority/Priority.sdf3 line 3; ../../sdf2-core/Sdf2.sdf3 line 7">constants/NatCon</a>
+<td class="code"><pre><code><span class="keyword">module</span> <button class="modal-open" id="constants/NatCon_1_8" title="Multi-file references" data-urls="../IntCon.sdf3/#constants/NatCon_4_2 ../RealCon.sdf3/#constants/NatCon_4_3 ../../layout-constraints/Layout-Constraints.sdf3/#constants/NatCon_5_3 ../../priority/Priority.sdf3/#constants/NatCon_3_23 ../../sdf2-core/Sdf2.sdf3/#constants/NatCon_7_3">constants/NatCon</button>
 
 <span class="keyword">lexical syntax</span>
   
- <a href="#NatCon_91_97" id="NatCon_44_50" title="Referenced at line 9; ../IntCon.sdf3 line 8, 11, 13; ../RealCon.sdf3 line 10; ../../layout-constraints/Layout-Constraints.sdf3 line 22, 38, 62, 64; ../../priority/Priority.sdf3 line 15; ../../sdf2-core/Sdf2.sdf3 line 102">NatCon</a>.<span class="cons_Constructor"><span id="Digits_51_57" title="Not referenced locally, nor via imports">Digits</span></span> = [<span class="cons_Regular">0</span>-<span class="cons_Regular">9</span>]+
+ <button class="modal-open" id="NatCon_5_2" title="Multi-file references" data-urls="#NatCon_9_2 ../IntCon.sdf3/#NatCon_8_21 ../RealCon.sdf3/#NatCon_10_44 ../../layout-constraints/Layout-Constraints.sdf3/#NatCon_22_30 ../../priority/Priority.sdf3/#NatCon_15_44 ../../sdf2-core/Sdf2.sdf3/#NatCon_102_5">NatCon</button>.<span class="cons_Constructor"><span id="Digits_5_9" title="Not referenced locally, nor via imports">Digits</span></span> = [<span class="cons_Regular">0</span>-<span class="cons_Regular">9</span>]+
 
 <span class="keyword">lexical restrictions</span>
 
- <a href="#NatCon_44_50" id="NatCon_91_97" title="Defined at line 5">NatCon</a> -/- [<span class="cons_Regular">0</span>-<span class="cons_Regular">9</span>]
+ <a href="#NatCon_4_1" id="NatCon_9_2" title="Defined at line 5">NatCon</a> -/- [<span class="cons_Regular">0</span>-<span class="cons_Regular">9</span>]
   
 </code></pre></td></tr></tbody></table></div>
+
+<div id="modal">
+  <div id="modal-content">
+    <span id="modal-close">&times;</span>
+    <h2 id="modal-h2"></h2>
+    <p  id="modal-p"></p>
+    <ul id="modal-ul"></ul>
+  </div>
+</div>

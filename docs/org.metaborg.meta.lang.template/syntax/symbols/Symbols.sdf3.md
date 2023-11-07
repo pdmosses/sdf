@@ -20,13 +20,22 @@ hide:
 8
 9
 </pre></div></td>
-<td class="code"><pre><code><span class="keyword">module</span> <a href="../Start-Symbols.sdf3/#symbols/Symbols_52_67" id="symbols/Symbols_7_22" title="Referenced at ../Start-Symbols.sdf3 line 4; ../../TemplateLang.sdf3 line 6; ../../aliases/Aliases.sdf3 line 4; ../../kernel/Kernel.sdf3 line 4; ../../modules/Modules.sdf3 line 5; ../../regular/Regular.sdf3 line 3; ../../renaming/Renaming.sdf3 line 3; ../../restrictions/Restrictions.sdf3 line 5; ../../sorts/Sorts.sdf3 line 4">symbols/Symbols</a>
+<td class="code"><pre><code><span class="keyword">module</span> <button class="modal-open" id="symbols/Symbols_1_8" title="Multi-file references" data-urls="../Start-Symbols.sdf3/#symbols/Symbols_4_1 ../../TemplateLang.sdf3/#symbols/Symbols_6_3 ../../aliases/Aliases.sdf3/#symbols/Symbols_4_3 ../../kernel/Kernel.sdf3/#symbols/Symbols_4_9 ../../modules/Modules.sdf3/#symbols/Symbols_5_9 ../../regular/Regular.sdf3/#symbols/Symbols_3_40 ../../renaming/Renaming.sdf3/#symbols/Symbols_3_23 ../../restrictions/Restrictions.sdf3/#symbols/Symbols_5_3 ../../sorts/Sorts.sdf3/#symbols/Symbols_4_1">symbols/Symbols</button>
 
-<span class="keyword">imports</span> <a href="../../layout/Comments.sdf3/#layout/Comments_7_22" id="layout/Comments_32_47" title="Defined at ../../layout/Comments.sdf3 line 1">layout/Comments</a>
+<span class="keyword">imports</span> <a href="../../layout/Comments.sdf3/#layout/Comments_0_7" id="layout/Comments_3_9" title="Defined at ../../layout/Comments.sdf3 line 1">layout/Comments</a>
  
 <span class="keyword">context-free syntax</span>
 
-<a href="#Symbol_83_89" id="Symbol_71_77" title="Referenced at line 7, 8, 9; ../../aliases/Aliases.sdf3 line 22; ../../kernel/Kernel.sdf3 line 50; ../../renaming/Renaming.sdf3 line 8; ../../restrictions/Restrictions.sdf3 line 20">Symbol</a> = &lt;<span class="cons_String">(</span>&lt;<a href="#Symbol_71_77" id="Symbol_83_89" title="Defined at line 7">Symbol</a>&gt;<span class="cons_String">)</span>&gt; {<span class="keyword">bracket</span>}
-<a href="../Start-Symbols.sdf3/#Symbols_137_144" id="Symbols_103_110" title="Referenced at ../Start-Symbols.sdf3 line 8, 13, 18; ../../kernel/Kernel.sdf3 line 50; ../../modules/Modules.sdf3 line 36">Symbols</a> = &lt;&lt;<span class="cons_Unquoted"><span id="list_115_119" title="Not referenced locally, nor via imports">list</span></span>:<a href="#Symbol_71_77" id="Symbol_120_126" title="Defined at line 7">Symbol</a>*&gt;&gt;
-<span id="SymbolDef_130_139" title="Not referenced locally, nor via imports">SymbolDef</span> = &lt;&lt;<a href="#Symbol_71_77" id="Symbol_144_150" title="Defined at line 7">Symbol</a>&gt;&gt;
+<button class="modal-open" id="Symbol_7_1" title="Multi-file references" data-urls="#Symbol_7_13 ../../aliases/Aliases.sdf3/#Symbol_22_17 ../../kernel/Kernel.sdf3/#Symbol_50_42 ../../renaming/Renaming.sdf3/#Symbol_8_26 ../../restrictions/Restrictions.sdf3/#Symbol_20_30">Symbol</button> = &lt;<span class="cons_String">(</span>&lt;<a href="#Symbol_6_0" id="Symbol_7_13" title="Defined at line 7">Symbol</a>&gt;<span class="cons_String">)</span>&gt; {<span class="keyword">bracket</span>}
+<button class="modal-open" id="Symbols_8_1" title="Multi-file references" data-urls="../Start-Symbols.sdf3/#Symbols_8_18 ../../kernel/Kernel.sdf3/#Symbols_50_21 ../../modules/Modules.sdf3/#Symbols_36_50">Symbols</button> = &lt;&lt;<span class="cons_Unquoted"><span id="list_8_13" title="Not referenced locally, nor via imports">list</span></span>:<a href="#Symbol_6_0" id="Symbol_8_18" title="Defined at line 7">Symbol</a>*&gt;&gt;
+<span id="SymbolDef_9_1" title="Not referenced locally, nor via imports">SymbolDef</span> = &lt;&lt;<a href="#Symbol_6_0" id="Symbol_9_15" title="Defined at line 7">Symbol</a>&gt;&gt;
 </code></pre></td></tr></tbody></table></div>
+
+<div id="modal">
+  <div id="modal-content">
+    <span id="modal-close">&times;</span>
+    <h2 id="modal-h2"></h2>
+    <p  id="modal-p"></p>
+    <ul id="modal-ul"></ul>
+  </div>
+</div>

@@ -18,11 +18,20 @@ hide:
 6
 7
 </pre></div></td>
-<td class="code"><pre><code><span class="keyword">module</span> <a href="../../restrictions/Restrictions.sdf3/#characterclass/CC_44_61" id="characterclass/CC_7_24" title="Referenced at ../../restrictions/Restrictions.sdf3 line 3; ../../sdf2-core/Sdf2-Syntax.sdf3 line 9">characterclass/CC</a>
+<td class="code"><pre><code><span class="keyword">module</span> <button class="modal-open" id="characterclass/CC_1_8" title="Multi-file references" data-urls="../../restrictions/Restrictions.sdf3/#characterclass/CC_3_9 ../../sdf2-core/Sdf2-Syntax.sdf3/#characterclass/CC_9_9">characterclass/CC</button>
 
-<span class="keyword">imports</span> <a href="../Character-Class.sdf3/#characterclass/Character-Class_7_37" id="characterclass/Character-Class_34_64" title="Defined at ../Character-Class.sdf3 line 1">characterclass/Character-Class</a> 
-        <a href="../../kernel/Kernel.sdf3/#kernel/Kernel_7_20" id="kernel/Kernel_74_87" title="Defined at ../../kernel/Kernel.sdf3 line 1">kernel/Kernel</a>
+<span class="keyword">imports</span> <a href="../Character-Class.sdf3/#characterclass/Character-Class_0_7" id="characterclass/Character-Class_3_9" title="Defined at ../Character-Class.sdf3 line 1">characterclass/Character-Class</a> 
+        <a href="../../kernel/Kernel.sdf3/#kernel/Kernel_0_7" id="kernel/Kernel_4_9" title="Defined at ../../kernel/Kernel.sdf3 line 1">kernel/Kernel</a>
  
 <span class="keyword">context-free syntax</span>
-    <span id="Symbol_114_120" title="Not referenced locally, nor via imports">Symbol</span>.<span class="cons_Constructor"><span id="CharClass_121_130" title="Not referenced locally, nor via imports">CharClass</span></span> = &lt;&lt;<a href="../Character-Class.sdf3/#CharClass_456_465" id="CharClass_135_144" title="Defined at ../Character-Class.sdf3 line 17, 18, 20, 22, 24, 25">CharClass</a>&gt;&gt;
+    <span id="Symbol_7_5" title="Not referenced locally, nor via imports">Symbol</span>.<span class="cons_Constructor"><span id="CharClass_7_12" title="Not referenced locally, nor via imports">CharClass</span></span> = &lt;&lt;<a href="../Character-Class.sdf3/#CharClass_16_0" id="CharClass_7_26" title="Defined at ../Character-Class.sdf3 line 17, 18, 20, 22, 24, 25">CharClass</a>&gt;&gt;
 </code></pre></td></tr></tbody></table></div>
+
+<div id="modal">
+  <div id="modal-content">
+    <span id="modal-close">&times;</span>
+    <h2 id="modal-h2"></h2>
+    <p  id="modal-p"></p>
+    <ul id="modal-ul"></ul>
+  </div>
+</div>

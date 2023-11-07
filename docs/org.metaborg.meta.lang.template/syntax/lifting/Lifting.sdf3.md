@@ -22,9 +22,9 @@ hide:
 10
 11
 </pre></div></td>
-<td class="code"><pre><code><span class="keyword">module</span> <a href="../../sdf2-core/Sdf2-Syntax.sdf3/#lifting/Lifting_128_143" id="lifting/Lifting_7_22" title="Referenced at ../../sdf2-core/Sdf2-Syntax.sdf3 line 7">lifting/Lifting</a>
+<td class="code"><pre><code><span class="keyword">module</span> <a href="../../sdf2-core/Sdf2-Syntax.sdf3/#lifting/Lifting_6_8" id="lifting/Lifting_1_8" title="Referenced at ../../sdf2-core/Sdf2-Syntax.sdf3 line 7">lifting/Lifting</a>
 
-<span class="keyword">imports</span> <a href="../../kernel/Kernel.sdf3/#kernel/Kernel_7_20" id="kernel/Kernel_32_45" title="Defined at ../../kernel/Kernel.sdf3 line 1">kernel/Kernel</a>
+<span class="keyword">imports</span> <a href="../../kernel/Kernel.sdf3/#kernel/Kernel_0_7" id="kernel/Kernel_3_9" title="Defined at ../../kernel/Kernel.sdf3 line 1">kernel/Kernel</a>
 
 
 <span class="keyword">context-free syntax</span>
@@ -34,3 +34,12 @@ hide:
 
      
 </code></pre></td></tr></tbody></table></div>
+
+<div id="modal">
+  <div id="modal-content">
+    <span id="modal-close">&times;</span>
+    <h2 id="modal-h2"></h2>
+    <p  id="modal-p"></p>
+    <ul id="modal-ul"></ul>
+  </div>
+</div>

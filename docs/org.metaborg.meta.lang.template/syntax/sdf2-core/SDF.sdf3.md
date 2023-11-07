@@ -21,14 +21,23 @@ hide:
 9
 10
 </pre></div></td>
-<td class="code"><pre><code><span class="keyword">module</span> <span id="sdf2-core/SDF_7_20" title="Not referenced locally, nor via imports">sdf2-core/SDF</span>
-<span class="keyword">imports</span> <a href="../Sdf2.sdf3/#sdf2-core/Sdf2_7_21" id="sdf2-core/Sdf2_29_43" title="Defined at ../Sdf2.sdf3 line 1">sdf2-core/Sdf2</a> <a href="../../modules/Modules.sdf3/#modules/Modules_7_22" id="modules/Modules_44_59" title="Defined at ../../modules/Modules.sdf3 line 1">modules/Modules</a>
+<td class="code"><pre><code><span class="keyword">module</span> <span id="sdf2-core/SDF_1_8" title="Not referenced locally, nor via imports">sdf2-core/SDF</span>
+<span class="keyword">imports</span> <a href="../Sdf2.sdf3/#sdf2-core/Sdf2_0_7" id="sdf2-core/Sdf2_2_9" title="Defined at ../Sdf2.sdf3 line 1">sdf2-core/Sdf2</a> <a href="../../modules/Modules.sdf3/#modules/Modules_0_7" id="modules/Modules_2_24" title="Defined at ../../modules/Modules.sdf3 line 1">modules/Modules</a>
 
 <span class="keyword">context-free syntax</span>
-<a href="#Group_105_110" id="Group_81_86" title="Referenced at line 5">Group</a>.<span class="cons_Constructor"><span id="NonTransitive_87_100" title="Not referenced locally, nor via imports">NonTransitive</span></span> = &lt;&lt;<a href="#Group_81_86" id="Group_105_110" title="Defined at line 5">Group</a>&gt;<span class="cons_String">.</span>&gt; {<span class="keyword">non-assoc</span>}
+<a href="#Group_4_24" id="Group_5_1" title="Referenced at line 5">Group</a>.<span class="cons_Constructor"><span id="NonTransitive_5_7" title="Not referenced locally, nor via imports">NonTransitive</span></span> = &lt;&lt;<a href="#Group_4_0" id="Group_5_25" title="Defined at line 5">Group</a>&gt;<span class="cons_String">.</span>&gt; {<span class="keyword">non-assoc</span>}
 
 <span class="layout">%% HACK</span>
 <span class="layout">//  context-free syntax</span>
 <span class="layout">//  Group "." -&gt; Group {non-assoc,cons("non-transitive")}</span>
  
 </code></pre></td></tr></tbody></table></div>
+
+<div id="modal">
+  <div id="modal-content">
+    <span id="modal-close">&times;</span>
+    <h2 id="modal-h2"></h2>
+    <p  id="modal-p"></p>
+    <ul id="modal-ul"></ul>
+  </div>
+</div>

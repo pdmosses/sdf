@@ -21,15 +21,24 @@ hide:
 9
 10
 </pre></div></td>
-<td class="code"><pre><code><span class="keyword">module</span> <a href="../grammar.stx/#statix/section/section_42_64" id="statix/section/section_7_29" title="Referenced at ../grammar.stx line 5; ../template.stx line 5; ../../main.stx line 8; ../../module.stx line 5"><span class="token sort_Id">statix/section/section</span></a>
+<td class="code"><pre><code><span class="keyword">module</span> <button class="modal-open" id="statix/section/section_0_7" title="Multi-file references" data-urls="../grammar.stx/#statix/section/section_5_3 ../template.stx/#statix/section/section_5_3 ../../main.stx/#statix/section/section_8_3 ../../module.stx/#statix/section/section_5_3"><span class="token sort_Id">statix/section/section</span></button>
 
 <span class="keyword">signature</span>
 
-  <span class="keyword">sorts</span> <span class="cons_SortDecl"><a href="#Section_87_94" id="Section_50_57" title="Referenced at line 9; ../grammar.stx line 12; ../template.stx line 16, 96; ../../module.stx line 13"><span class="token sort_Id">Section</span></a></span>
+  <span class="keyword">sorts</span> <span class="cons_SortDecl"><button class="modal-open" id="Section_4_8" title="Multi-file references" data-urls="#Section_9_22 ../grammar.stx/#Section_12_29 ../template.stx/#Section_16_51 ../../module.stx/#Section_13_51"><span class="token sort_Id">Section</span></button></span>
 
 <span class="keyword">rules</span>
 
-  <a href="#sectionOK_113_122" id="sectionOK_68_77" title="Referenced at line 10; ../grammar.stx line 18; ../template.stx line 46, 103"><span class="token sort_Id">sectionOK</span></a><span class="operator">:</span> <span class="cons_ScopeSort">scope</span> <span class="operator">*</span> <span class="cons_SimpleSort"><a href="#Section_50_57" id="Section_87_94" title="Defined at line 5"><span class="token sort_Id">Section</span></a></span>
-  <a href="../../module.stx/#sectionsOK_686_696" id="sectionsOK_97_107" title="Referenced at ../../module.stx line 29"><span class="token sort_Id">sectionsOK</span></a> <span class="keyword">maps</span> <a href="#sectionOK_68_77" id="sectionOK_113_122" title="Defined at line 9"><span class="token sort_Id">sectionOK</span></a><span class="operator">(*,</span> <span class="keyword">list</span><span class="operator">(*))</span>
+  <button class="modal-open" id="sectionOK_8_2" title="Multi-file references" data-urls="#sectionOK_10_19 ../grammar.stx/#sectionOK_18_3 ../template.stx/#sectionOK_46_3"><span class="token sort_Id">sectionOK</span></button><span class="operator">:</span> <span class="cons_ScopeSort">scope</span> <span class="operator">*</span> <span class="cons_SimpleSort"><a href="#Section_4_8" id="Section_8_21" title="Defined at line 5"><span class="token sort_Id">Section</span></a></span>
+  <a href="../../module.stx/#sectionsOK_28_4" id="sectionsOK_9_2" title="Referenced at ../../module.stx line 29"><span class="token sort_Id">sectionsOK</span></a> <span class="keyword">maps</span> <a href="#sectionOK_8_2" id="sectionOK_9_18" title="Defined at line 9"><span class="token sort_Id">sectionOK</span></a><span class="operator">(*,</span> <span class="keyword">list</span><span class="operator">(*))</span>
 
 </code></pre></td></tr></tbody></table></div>
+
+<div id="modal">
+  <div id="modal-content">
+    <span id="modal-close">&times;</span>
+    <h2 id="modal-h2"></h2>
+    <p  id="modal-p"></p>
+    <ul id="modal-ul"></ul>
+  </div>
+</div>

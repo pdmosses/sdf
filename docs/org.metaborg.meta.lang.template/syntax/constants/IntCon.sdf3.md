@@ -25,19 +25,28 @@ hide:
 13
 14
 </pre></div></td>
-<td class="code"><pre><code><span class="keyword">module</span> <a href="../RealCon.sdf3/#constants/IntCon_34_50" id="constants/IntCon_7_23" title="Referenced at ../RealCon.sdf3 line 3; ../../aterms/Aterms.sdf3 line 3; ../../regular/Regular.sdf3 line 3">constants/IntCon</a>
+<td class="code"><pre><code><span class="keyword">module</span> <button class="modal-open" id="constants/IntCon_1_8" title="Multi-file references" data-urls="../RealCon.sdf3/#constants/IntCon_3_9 ../../aterms/Aterms.sdf3/#constants/IntCon_3_9 ../../regular/Regular.sdf3/#constants/IntCon_3_23">constants/IntCon</button>
 
-<span class="keyword">imports</span> <a href="../../layout/Whitespace.sdf3/#layout/Whitespace_7_24" id="layout/Whitespace_33_50" title="Defined at ../../layout/Whitespace.sdf3 line 1">layout/Whitespace</a>
-        <a href="../NatCon.sdf3/#constants/NatCon_7_23" id="constants/NatCon_52_68" title="Defined at ../NatCon.sdf3 line 1">constants/NatCon</a>
+<span class="keyword">imports</span> <a href="../../layout/Whitespace.sdf3/#layout/Whitespace_0_7" id="layout/Whitespace_3_9" title="Defined at ../../layout/Whitespace.sdf3 line 1">layout/Whitespace</a>
+        <a href="../NatCon.sdf3/#constants/NatCon_0_7" id="constants/NatCon_4_2" title="Defined at ../NatCon.sdf3 line 1">constants/NatCon</a>
 
 <span class="keyword">context-free syntax</span>
  
-        <a href="../RealCon.sdf3/#IntCon_112_118" id="IntCon_93_99" title="Referenced at ../RealCon.sdf3 line 7, 10; ../../aterms/Aterms.sdf3 line 14">IntCon</a>.<span class="cons_Constructor"><span id="Natural_100_107" title="Not referenced locally, nor via imports">Natural</span></span> = &lt;&lt;<a href="../NatCon.sdf3/#NatCon_44_50" id="NatCon_112_118" title="Defined at ../NatCon.sdf3 line 5">NatCon</a>&gt;&gt;
+        <button class="modal-open" id="IntCon_8_2" title="Multi-file references" data-urls="../RealCon.sdf3/#IntCon_7_22 ../../aterms/Aterms.sdf3/#IntCon_14_16">IntCon</button>.<span class="cons_Constructor"><span id="Natural_8_9" title="Not referenced locally, nor via imports">Natural</span></span> = &lt;&lt;<a href="../NatCon.sdf3/#NatCon_4_1" id="NatCon_8_21" title="Defined at ../NatCon.sdf3 line 5">NatCon</a>&gt;&gt;
         
         <span class="layout">//pos:"+" NatCon -&gt; IntCon {cons("positive")}</span>
-        <a href="../RealCon.sdf3/#IntCon_112_118" id="IntCon_171_177" title="Referenced at ../RealCon.sdf3 line 7, 10; ../../aterms/Aterms.sdf3 line 14">IntCon</a>.<span class="cons_Constructor"><span id="Positive_178_186" title="Not referenced locally, nor via imports">Positive</span></span> = &lt;<span class="cons_String">+</span>&lt;<a href="../NatCon.sdf3/#NatCon_44_50" id="NatCon_192_198" title="Defined at ../NatCon.sdf3 line 5">NatCon</a>&gt;&gt;
+        <button class="modal-open" id="IntCon_11_2" title="Multi-file references" data-urls="../RealCon.sdf3/#IntCon_7_22 ../../aterms/Aterms.sdf3/#IntCon_14_16">IntCon</button>.<span class="cons_Constructor"><span id="Positive_11_9" title="Not referenced locally, nor via imports">Positive</span></span> = &lt;<span class="cons_String">+</span>&lt;<a href="../NatCon.sdf3/#NatCon_4_1" id="NatCon_11_23" title="Defined at ../NatCon.sdf3 line 5">NatCon</a>&gt;&gt;
         <span class="layout">//neg:"-" NatCon -&gt; IntCon {cons("negative")}</span>
-        <a href="../RealCon.sdf3/#IntCon_112_118" id="IntCon_249_255" title="Referenced at ../RealCon.sdf3 line 7, 10; ../../aterms/Aterms.sdf3 line 14">IntCon</a>.<span class="cons_Constructor"><span id="Negative_256_264" title="Not referenced locally, nor via imports">Negative</span></span> = &lt;<span class="cons_String">-</span>&lt;<a href="../NatCon.sdf3/#NatCon_44_50" id="NatCon_270_276" title="Defined at ../NatCon.sdf3 line 5">NatCon</a>&gt;&gt;
+        <button class="modal-open" id="IntCon_13_2" title="Multi-file references" data-urls="../RealCon.sdf3/#IntCon_7_22 ../../aterms/Aterms.sdf3/#IntCon_14_16">IntCon</button>.<span class="cons_Constructor"><span id="Negative_13_9" title="Not referenced locally, nor via imports">Negative</span></span> = &lt;<span class="cons_String">-</span>&lt;<a href="../NatCon.sdf3/#NatCon_4_1" id="NatCon_13_23" title="Defined at ../NatCon.sdf3 line 5">NatCon</a>&gt;&gt;
     
 
 </code></pre></td></tr></tbody></table></div>
+
+<div id="modal">
+  <div id="modal-content">
+    <span id="modal-close">&times;</span>
+    <h2 id="modal-h2"></h2>
+    <p  id="modal-p"></p>
+    <ul id="modal-ul"></ul>
+  </div>
+</div>
