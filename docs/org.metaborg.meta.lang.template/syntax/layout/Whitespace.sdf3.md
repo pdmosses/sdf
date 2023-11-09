@@ -18,7 +18,7 @@ hide:
 6
 7
 </pre></div></td>
-<td class="code"><pre><code><span class="keyword">module</span> <button class="modal-open" id="layout/Whitespace_1_8" title="Multi-file references" data-urls="../Comments.sdf3/#layout/Whitespace_4_3 ../../constants/IntCon.sdf3/#layout/Whitespace_3_9">layout/Whitespace</button> 
+<td class="code"><pre><code><span class="keyword">module</span> <button class="modal-open" id="layout/Whitespace_1_8" title="Multi-file references" data-urls="../Comments.sdf3/#layout/Whitespace_4_3 line 4; ../../constants/IntCon.sdf3/#layout/Whitespace_3_9 line 3">layout/Whitespace</button> 
     
 <span class="keyword">lexical syntax</span>    
     <span class="keyword">LAYOUT</span> = [\ \t\n\r]

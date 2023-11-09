@@ -34,10 +34,10 @@ hide:
 22
 23
 </pre></div></td>
-<td class="code"><pre><code><span class="keyword">module</span> <a href="../../sdf2-core/Sdf2-Syntax.sdf3/#aliases/Aliases_14_8" id="aliases/Aliases_1_8" title="Referenced at ../../sdf2-core/Sdf2-Syntax.sdf3 line 15">aliases/Aliases</a>
+<td class="code"><pre><code><span class="keyword">module</span> <a href="../../sdf2-core/Sdf2-Syntax.sdf3/#aliases/Aliases_15_9" id="aliases/Aliases_1_8" title="Referenced at ../../sdf2-core/Sdf2-Syntax.sdf3 line 15">aliases/Aliases</a>
 
-<span class="keyword">imports</span> <a href="../../kernel/Kernel.sdf3/#kernel/Kernel_0_7" id="kernel/Kernel_3_9" title="Defined at ../../kernel/Kernel.sdf3 line 1">kernel/Kernel</a>
-                <a href="../../symbols/Symbols.sdf3/#symbols/Symbols_0_7" id="symbols/Symbols_4_3" title="Defined at ../../symbols/Symbols.sdf3 line 1">symbols/Symbols</a>
+<span class="keyword">imports</span> <a href="../../kernel/Kernel.sdf3/#kernel/Kernel_1_8" id="kernel/Kernel_3_9" title="Defined at ../../kernel/Kernel.sdf3 line 1">kernel/Kernel</a>
+                <a href="../../symbols/Symbols.sdf3/#symbols/Symbols_1_8" id="symbols/Symbols_4_3" title="Defined at ../../symbols/Symbols.sdf3 line 1">symbols/Symbols</a>
   
 <span class="layout">//context-free syntax </span>
 
@@ -48,15 +48,15 @@ hide:
          
 <span class="keyword">context-free syntax</span>  
 
-<span id="Grammar_15_1" title="Not referenced locally, nor via imports">Grammar</span>.<span class="cons_Constructor"><span id="Aliases_15_9" title="Not referenced locally, nor via imports">Aliases</span></span> = &lt;
+<span id="Grammar_15_1" title="Not referenced">Grammar</span>.<span class="cons_Constructor"><span id="Aliases_15_9" title="Not referenced">Aliases</span></span> = &lt;
         <span class="cons_String">aliases</span> 
         
-                &lt;<a href="#Aliases_22_0" id="Aliases_18_4" title="Defined at line 23">Aliases</a>&gt;
+                &lt;<a href="#Aliases_23_1" id="Aliases_18_4" title="Defined at line 23">Aliases</a>&gt;
                 
         &gt;
         <span class="layout">//Symbol arrow:"-&gt;" alias:Symbol -&gt; Alias    {cons("alias")}</span>
-<a href="#Alias_22_21" id="Alias_22_1" title="Referenced at line 23">Alias</a>.<span class="cons_Constructor"><span id="Alias_22_7" title="Not referenced locally, nor via imports">Alias</span></span> = &lt;&lt;<a href="../../symbols/Symbols.sdf3/#Symbol_6_0" id="Symbol_22_17" title="Defined at ../../symbols/Symbols.sdf3 line 7">Symbol</a>&gt; <span class="cons_String">-</span>\&gt; &lt;<span class="cons_Unquoted"><span id="alias_22_30" title="Not referenced locally, nor via imports">alias</span></span>:<a href="../../symbols/Symbols.sdf3/#Symbol_6_0" id="Symbol_22_36" title="Defined at ../../symbols/Symbols.sdf3 line 7">Symbol</a>&gt;&gt;
-<a href="#Aliases_17_3" id="Aliases_23_1" title="Referenced at line 18">Aliases</a>     = &lt;&lt;<span class="cons_Unquoted"><span id="list_23_17" title="Not referenced locally, nor via imports">list</span></span>:<a href="#Alias_21_0" id="Alias_23_22" title="Defined at line 22">Alias</a>*&gt;&gt; 
+<a href="#Alias_23_22" id="Alias_22_1" title="Referenced at line 23">Alias</a>.<span class="cons_Constructor"><span id="Alias_22_7" title="Not referenced">Alias</span></span> = &lt;&lt;<a href="../../symbols/Symbols.sdf3/#Symbol_7_1" id="Symbol_22_17" title="Defined at ../../symbols/Symbols.sdf3 line 7">Symbol</a>&gt; <span class="cons_String">-</span>\&gt; &lt;<span class="cons_Unquoted"><span id="alias_22_30" title="Not referenced">alias</span></span>:<a href="../../symbols/Symbols.sdf3/#Symbol_7_1" id="Symbol_22_36" title="Defined at ../../symbols/Symbols.sdf3 line 7">Symbol</a>&gt;&gt;
+<a href="#Aliases_18_4" id="Aliases_23_1" title="Referenced at line 18">Aliases</a>     = &lt;&lt;<span class="cons_Unquoted"><span id="list_23_17" title="Not referenced">list</span></span>:<a href="#Alias_22_1" id="Alias_23_22" title="Defined at line 22">Alias</a>*&gt;&gt; 
 </code></pre></td></tr></tbody></table></div>
 
 <div id="modal">
