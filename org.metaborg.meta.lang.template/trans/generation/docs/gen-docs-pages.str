@@ -4,6 +4,7 @@ imports
 
   generation/docs/gen-docs-website
   generation/docs/gen-docs-css
+  generation/docs/gen-docs-meta
   generation/docs/gen-node-markup
   generation/docs/gen-tokens-markup
   generation/docs/name-binding
@@ -34,11 +35,12 @@ rules // Actions
     ; colorer-file :=
         <!$[[meta-language-project-path]/editor/Colorer-CF.esv]; file-exists 
          <+ !$[[meta-language-project-path]/editor/Colorer.esv]>
-    ; say(!$[Generate website [repo-name]/[<base-filename> project-path]: *.[meta-language] ...])
+   ; say(!$[
+            Generate website [repo-name]/[<base-filename> project-path]: *.[meta-language] ...])
     ; say(!"Configuration ...")
-    ; <gen-docs> (meta-language, repo-clone, repo-name, project-path)
-    ; <gen-mkdocs> (repo-clone, repo-name)
-    ; <gen-ci> (meta-language-project-path, repo-clone, repo-name)
+    ; <gen-docs(not(file-exists))> (meta-language, repo-clone, repo-name, project-path)
+    ; <gen-mkdocs(not(file-exists))> (repo-clone, repo-name)
+    ; <gen-ci(not(file-exists))> (meta-language-project-path, repo-clone, repo-name)
     ; say(!"CSS ...")
     ; <gen-metaborg-css(not(file-exists))> (meta-language, meta-language-project-path, repo-clone, repo-name)
     ; <gen-modal-css(not(file-exists))> (meta-language, meta-language-project-path, repo-clone, repo-name)
