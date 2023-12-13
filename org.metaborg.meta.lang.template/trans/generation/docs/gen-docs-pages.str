@@ -70,7 +70,7 @@ rules // Actions
     ; file-ast-list := <zip> (file-list, ast-list)
     ; cons := <parse-file; collect(?Constructor(_))> colorer-file
     ; <gen-docs-page(|meta-language, repo-clone, repo-name, project-path, file-ast-list, cons)>
-        (path, <lookup> (path, file-ast-list))
+        (path, <lookup> ($[[project-path]/[path]], file-ast-list))
     ; say(!"... done")
 
   // meta-project-path: ext:String -> path:String
