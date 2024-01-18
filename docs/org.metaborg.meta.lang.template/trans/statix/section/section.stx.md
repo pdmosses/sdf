@@ -29,7 +29,7 @@ hide:
 
 <span class="keyword">rules</span>
 
-  <button class="modal-open" id="sectionOK_9_3" title="Multi-file references" data-urls="#sectionOK_10_19 line 10; ../grammar.stx/#sectionOK_18_3 line 18; ../template.stx/#sectionOK_46_3 line 46, 103"><span class="token sort_Id">sectionOK</span></button><span class="operator">:</span> <span class="cons_ScopeSort">scope</span> <span class="operator">*</span> <span class="cons_SimpleSort"><a href="#Section_5_9" id="Section_9_22" title="Defined at line 5"><span class="token sort_Id">Section</span></a></span>
+  <button class="modal-open" id="sectionOK_9_3" title="Multi-file references" data-urls="#sectionOK_10_19 line 10; ../grammar.stx/#sectionOK_18_3 line 18; ../template.stx/#sectionOK_46_3 line 46, 103"><span class="token sort_Id">sectionOK</span></button><span class="operator">:</span> <span class="cons_ScopeSort"><span class="keyword">scope</span></span> <span class="operator">*</span> <span class="cons_SimpleSort"><a href="#Section_5_9" id="Section_9_22" title="Defined at line 5"><span class="token sort_Id">Section</span></a></span>
   <a href="../../module.stx/#sectionsOK_29_5" id="sectionsOK_10_3" title="Referenced at ../../module.stx line 29"><span class="token sort_Id">sectionsOK</span></a> <span class="keyword">maps</span> <a href="#sectionOK_9_3" id="sectionOK_10_19" title="Defined at line 9"><span class="token sort_Id">sectionOK</span></a><span class="operator">(*,</span> <span class="keyword">list</span><span class="operator">(*))</span>
 
 </code></pre></td></tr></tbody></table></div>
