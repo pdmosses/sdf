@@ -1,0 +1,3135 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://pdmosses.github.io/sdf/org.metaborg.meta.lang.template/trans/statix/section/syntax.stx/">
+      
+      
+        <link rel="prev" href="../start_symbol.stx/">
+      
+      
+        <link rel="next" href="../template.stx/">
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.9">
+    
+    
+      
+        <title>syntax.stx - sdf</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.f2e4d321.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../stylesheets/metaborg.css">
+    
+      <link rel="stylesheet" href="../../../../../stylesheets/modal.css">
+    
+      <link rel="stylesheet" href="../../../../../stylesheets/sdf3.css">
+    
+      <link rel="stylesheet" href="../../../../../stylesheets/nab.css">
+    
+      <link rel="stylesheet" href="../../../../../stylesheets/stx.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#syntaxstx" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="sdf" class="md-header__button md-logo" aria-label="sdf" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            sdf
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              syntax.stx
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/pdmosses/sdf/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pdmosses/sdf
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Hyperlinked Twin
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../../" class="md-tabs__link">
+          
+  
+    
+  
+  org.metaborg.meta.lang.template
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="sdf" class="md-nav__button md-logo" aria-label="sdf" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    sdf
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/pdmosses/sdf/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pdmosses/sdf
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hyperlinked Twin
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    org.metaborg.meta.lang.template
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            org.metaborg.meta.lang.template
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    syntax
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            syntax
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../syntax/TemplateLang.sdf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TemplateLang.sdf3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    aliases
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            aliases
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../syntax/aliases/Aliases.sdf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aliases.sdf3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    aterms
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            aterms
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../syntax/aterms/Aterms.sdf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aterms.sdf3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_4" id="__nav_2_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    basic
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            basic
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../syntax/basic/Basic.sdf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basic.sdf3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_5" id="__nav_2_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    characterclass
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            characterclass
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../syntax/characterclass/CC.sdf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CC.sdf3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../syntax/characterclass/Character-Class.sdf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Character-Class.sdf3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../syntax/characterclass/Character.sdf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Character.sdf3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_6" id="__nav_2_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    constants
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            constants
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../syntax/constants/IdentifierCon.sdf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IdentifierCon.sdf3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../syntax/constants/IntCon.sdf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IntCon.sdf3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../syntax/constants/NatCon.sdf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NatCon.sdf3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../syntax/constants/RealCon.sdf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RealCon.sdf3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../syntax/constants/StrCon.sdf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    StrCon.sdf3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_7" id="__nav_2_2_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    grammar
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            grammar
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../syntax/grammar/Grammars.sdf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Grammars.sdf3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_8" id="__nav_2_2_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    kernel
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            kernel
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../syntax/kernel/Kernel.sdf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kernel.sdf3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_9" id="__nav_2_2_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    labels
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            labels
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../syntax/labels/Labels.sdf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Labels.sdf3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_10" id="__nav_2_2_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    layout
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_10">
+            <span class="md-nav__icon md-icon"></span>
+            layout
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../syntax/layout/Comments.sdf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Comments.sdf3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../syntax/layout/Whitespace.sdf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Whitespace.sdf3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_11" id="__nav_2_2_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    layout-constraints
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_11">
+            <span class="md-nav__icon md-icon"></span>
+            layout-constraints
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../syntax/layout-constraints/Layout-Constraints.sdf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Layout-Constraints.sdf3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_12" id="__nav_2_2_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    lifting
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_12">
+            <span class="md-nav__icon md-icon"></span>
+            lifting
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../syntax/lifting/Lifting.sdf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lifting.sdf3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_13" id="__nav_2_2_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    literals
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_13">
+            <span class="md-nav__icon md-icon"></span>
+            literals
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../syntax/literals/Literals.sdf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Literals.sdf3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_14" id="__nav_2_2_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_14">
+            <span class="md-nav__icon md-icon"></span>
+            modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../syntax/modules/Modules.sdf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modules.sdf3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_15" id="__nav_2_2_15_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    priority
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_15">
+            <span class="md-nav__icon md-icon"></span>
+            priority
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../syntax/priority/Priority.sdf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Priority.sdf3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_16" id="__nav_2_2_16_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    regular
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_16">
+            <span class="md-nav__icon md-icon"></span>
+            regular
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../syntax/regular/Regular.sdf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Regular.sdf3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_17" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_17" id="__nav_2_2_17_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    renaming
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_17">
+            <span class="md-nav__icon md-icon"></span>
+            renaming
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../syntax/renaming/Renaming.sdf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Renaming.sdf3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_18" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_18" id="__nav_2_2_18_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    restrictions
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_18">
+            <span class="md-nav__icon md-icon"></span>
+            restrictions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../syntax/restrictions/Restrictions.sdf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Restrictions.sdf3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_19" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_19" id="__nav_2_2_19_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    sdf2-core
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_19_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_19">
+            <span class="md-nav__icon md-icon"></span>
+            sdf2-core
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../syntax/sdf2-core/SDF.sdf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SDF.sdf3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../syntax/sdf2-core/Sdf2-Syntax.sdf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sdf2-Syntax.sdf3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../syntax/sdf2-core/Sdf2.sdf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sdf2.sdf3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_20" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_20" id="__nav_2_2_20_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    sorts
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_20_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_20">
+            <span class="md-nav__icon md-icon"></span>
+            sorts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../syntax/sorts/Sorts.sdf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sorts.sdf3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_21" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_21" id="__nav_2_2_21_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    symbols
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_21_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_21">
+            <span class="md-nav__icon md-icon"></span>
+            symbols
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../syntax/symbols/Start-Symbols.sdf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Start-Symbols.sdf3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../syntax/symbols/Symbols.sdf3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Symbols.sdf3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    trans
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            trans
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_1" id="__nav_2_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    analysis
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            analysis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../analysis/names.nab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    names.nab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    statix
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            statix
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../attribute.stx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    attribute.stx
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cons.stx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    cons.stx
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../label.stx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    label.stx
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../main.stx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    main.stx
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../module.stx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    module.stx
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../name.stx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    name.stx
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../production.stx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    production.stx
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_2_8" id="__nav_2_3_2_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    section
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_3_2_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            section
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../grammar.stx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    grammar.stx
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../priority.stx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    priority.stx
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../restriction.stx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    restriction.stx
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../section.stx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    section.stx
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sort.stx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sort.stx
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../start_symbol.stx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    start_symbol.stx
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    syntax.stx
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../template.stx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    template.stx
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sort.stx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sort.stx
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sort_cons.stx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sort_cons.stx
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../symbol.stx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    symbol.stx
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../type.stx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    type.stx
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../util.stx/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    util.stx
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="syntaxstx"><code>syntax.stx</code></h1>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></span> <a href="https://github.com/pdmosses/sdf/blob/master/org.metaborg.meta.lang.template/trans/statix/section/syntax.stx" title="The source file on GitHub">pdmosses/sdf/org.metaborg.meta.lang.template/trans/statix/section/syntax.stx</a></p>
+<div class="stx"><table class="highlighttable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+</pre></div></td>
+<td class="code"><pre><code><span class="keyword">module</span> <button class="modal-open" id="statix/section/syntax_1_8" title="a definition with multiple references" data-urls="../priority.stx/#statix/section/syntax line 6_3; ../../main.stx/#statix/section/syntax line 11_3"><span class="token sort_Id">statix/section/syntax</span></button>
+
+<span class="keyword">imports</span>
+
+  <a href="../grammar.stx/#statix/section/grammar_1_8" id="statix/section/grammar_5_3" title="a reference to a single-file definition"><span class="token sort_Id">statix/section/grammar</span></a>
+  <a href="../template.stx/#statix/section/template_1_8" id="statix/section/template_6_3" title="a reference to a single-file definition"><span class="token sort_Id">statix/section/template</span></a>
+  <a href="../../name.stx/#statix/name_1_8" id="statix/name_7_3" title="a reference to a single-file definition"><span class="token sort_Id">statix/name</span></a>
+  <a href="../../type.stx/#statix/type_1_8" id="statix/type_8_3" title="a reference to a single-file definition"><span class="token sort_Id">statix/type</span></a>
+  <a href="../../sort_cons.stx/#statix/sort_cons_1_8" id="statix/sort_cons_9_3" title="a reference to a single-file definition"><span class="token sort_Id">statix/sort_cons</span></a>
+  <a href="../../symbol.stx/#statix/symbol_1_8" id="statix/symbol_10_3" title="a reference to a single-file definition"><span class="token sort_Id">statix/symbol</span></a>
+  <a href="../../production.stx/#statix/production_1_8" id="statix/production_11_3" title="a reference to a single-file definition"><span class="token sort_Id">statix/production</span></a>
+  <a href="../../attribute.stx/#statix/attribute_1_8" id="statix/attribute_12_3" title="a reference to a single-file definition"><span class="token sort_Id">statix/attribute</span></a>
+
+<span class="keyword">signature</span>
+
+  <span class="keyword">constructors</span>
+    <span class="cons_OpDecl"><a href="#Syntax_44_16" id="Syntax_17_5" title="a definition with a single reference"><span class="token sort_Id">Syntax</span></a>                 <span class="operator">:</span> <span class="keyword">list</span><span class="operator">(</span><span class="cons_SimpleSort"><a href="#Production_28_9" id="Production_17_35" title="a reference to a single-file definition"><span class="token sort_Id">Production</span></a></span><span class="operator">)</span>        <span class="operator">-&gt;</span> <span class="cons_SimpleSort"><a href="../grammar.stx/#Grammar_9_9" id="Grammar_17_57" title="a reference to a single-file definition"><span class="token sort_Id">Grammar</span></a></span></span>
+    <span class="cons_OpDecl"><a href="#Lexical_45_16" id="Lexical_18_5" title="a definition with a single reference"><span class="token sort_Id">Lexical</span></a>                <span class="operator">:</span> <span class="keyword">list</span><span class="operator">(</span><span class="cons_SimpleSort"><a href="#Production_28_9" id="Production_18_35" title="a reference to a single-file definition"><span class="token sort_Id">Production</span></a></span><span class="operator">)</span>        <span class="operator">-&gt;</span> <span class="cons_SimpleSort"><a href="../grammar.stx/#Grammar_9_9" id="Grammar_18_57" title="a reference to a single-file definition"><span class="token sort_Id">Grammar</span></a></span></span>
+    <span class="cons_OpDecl"><a href="#Contextfree_46_16" id="Contextfree_19_5" title="a definition with a single reference"><span class="token sort_Id">Contextfree</span></a>            <span class="operator">:</span> <span class="keyword">list</span><span class="operator">(</span><span class="cons_SimpleSort"><a href="#Production_28_9" id="Production_19_35" title="a reference to a single-file definition"><span class="token sort_Id">Production</span></a></span><span class="operator">)</span>        <span class="operator">-&gt;</span> <span class="cons_SimpleSort"><a href="../grammar.stx/#Grammar_9_9" id="Grammar_19_57" title="a reference to a single-file definition"><span class="token sort_Id">Grammar</span></a></span></span>
+    <span class="cons_OpDecl"><a href="#Variables_47_16" id="Variables_20_5" title="a definition with a single reference"><span class="token sort_Id">Variables</span></a>              <span class="operator">:</span> <span class="keyword">list</span><span class="operator">(</span><span class="cons_SimpleSort"><a href="#Production_28_9" id="Production_20_35" title="a reference to a single-file definition"><span class="token sort_Id">Production</span></a></span><span class="operator">)</span>        <span class="operator">-&gt;</span> <span class="cons_SimpleSort"><a href="../grammar.stx/#Grammar_9_9" id="Grammar_20_57" title="a reference to a single-file definition"><span class="token sort_Id">Grammar</span></a></span></span>
+    <span class="cons_OpDecl"><a href="#LexVariables_48_16" id="LexVariables_21_5" title="a definition with a single reference"><span class="token sort_Id">LexVariables</span></a>           <span class="operator">:</span> <span class="keyword">list</span><span class="operator">(</span><span class="cons_SimpleSort"><a href="#Production_28_9" id="Production_21_35" title="a reference to a single-file definition"><span class="token sort_Id">Production</span></a></span><span class="operator">)</span>        <span class="operator">-&gt;</span> <span class="cons_SimpleSort"><a href="../grammar.stx/#Grammar_9_9" id="Grammar_21_57" title="a reference to a single-file definition"><span class="token sort_Id">Grammar</span></a></span></span>
+    <span class="cons_OpDecl"><a href="#VariablesProductive_49_16" id="VariablesProductive_22_5" title="a definition with a single reference"><span class="token sort_Id">VariablesProductive</span></a>    <span class="operator">:</span> <span class="keyword">list</span><span class="operator">(</span><span class="cons_SimpleSort"><a href="#SdfProduction_35_9" id="SdfProduction_22_35" title="a reference to a single-file definition"><span class="token sort_Id">SdfProduction</span></a></span><span class="operator">)</span>     <span class="operator">-&gt;</span> <span class="cons_SimpleSort"><a href="../grammar.stx/#Grammar_9_9" id="Grammar_22_57" title="a reference to a single-file definition"><span class="token sort_Id">Grammar</span></a></span></span>
+    <span class="cons_OpDecl"><a href="#LexVariablesProductive_50_16" id="LexVariablesProductive_23_5" title="a definition with a single reference"><span class="token sort_Id">LexVariablesProductive</span></a> <span class="operator">:</span> <span class="keyword">list</span><span class="operator">(</span><span class="cons_SimpleSort"><a href="#SdfProduction_35_9" id="SdfProduction_23_35" title="a reference to a single-file definition"><span class="token sort_Id">SdfProduction</span></a></span><span class="operator">)</span>     <span class="operator">-&gt;</span> <span class="cons_SimpleSort"><a href="../grammar.stx/#Grammar_9_9" id="Grammar_23_57" title="a reference to a single-file definition"><span class="token sort_Id">Grammar</span></a></span></span>
+    <span class="cons_OpDecl"><a href="#Kernel_51_16" id="Kernel_24_5" title="a definition with a single reference"><span class="token sort_Id">Kernel</span></a>                 <span class="operator">:</span> <span class="keyword">list</span><span class="operator">(</span><span class="cons_SimpleSort"><a href="#SdfProduction_35_9" id="SdfProduction_24_35" title="a reference to a single-file definition"><span class="token sort_Id">SdfProduction</span></a></span><span class="operator">)</span>     <span class="operator">-&gt;</span> <span class="cons_SimpleSort"><a href="../grammar.stx/#Grammar_9_9" id="Grammar_24_57" title="a reference to a single-file definition"><span class="token sort_Id">Grammar</span></a></span></span>
+    <span class="cons_OpDecl"><a href="#LexicalSyntax_52_16" id="LexicalSyntax_25_5" title="a definition with a single reference"><span class="token sort_Id">LexicalSyntax</span></a>          <span class="operator">:</span> <span class="keyword">list</span><span class="operator">(</span><span class="cons_SimpleSort"><a href="#SdfProduction_35_9" id="SdfProduction_25_35" title="a reference to a single-file definition"><span class="token sort_Id">SdfProduction</span></a></span><span class="operator">)</span>     <span class="operator">-&gt;</span> <span class="cons_SimpleSort"><a href="../grammar.stx/#Grammar_9_9" id="Grammar_25_57" title="a reference to a single-file definition"><span class="token sort_Id">Grammar</span></a></span></span>
+    <span class="cons_OpDecl"><a href="#ContextFreeSyntax_53_16" id="ContextFreeSyntax_26_5" title="a definition with a single reference"><span class="token sort_Id">ContextFreeSyntax</span></a>      <span class="operator">:</span> <span class="keyword">list</span><span class="operator">(</span><span class="cons_SimpleSort"><a href="#GeneralProduction_31_9" id="GeneralProduction_26_35" title="a reference to a single-file definition"><span class="token sort_Id">GeneralProduction</span></a></span><span class="operator">)</span> <span class="operator">-&gt;</span> <span class="cons_SimpleSort"><a href="../grammar.stx/#Grammar_9_9" id="Grammar_26_57" title="a reference to a single-file definition"><span class="token sort_Id">Grammar</span></a></span></span>
+
+  <span class="keyword">sorts</span> <span class="cons_SortDecl"><button class="modal-open" id="Production_28_9" title="a definition with multiple references" data-urls="#Production line 17_35, 18_35, 19_35, 20_35, 21_35, 29_50, 55_25; ../priority.stx/#Production line 32_40"><span class="token sort_Id">Production</span></button></span> <span class="keyword">constructors</span> <span class="layout">// Kernel-style productions</span>
+    <span class="cons_OpDecl"><a href="#Prod_56_19" id="Prod_29_5" title="a definition with a single reference"><span class="token sort_Id">Prod</span></a> <span class="operator">:</span> <span class="keyword">list</span><span class="operator">(</span><span class="cons_SimpleSort"><a href="../../symbol.stx/#Symbol_11_9" id="Symbol_29_17" title="a reference to a single-file definition"><span class="token sort_Id">Symbol</span></a></span><span class="operator">)</span> <span class="operator">*</span> <span class="cons_SimpleSort"><a href="../../symbol.stx/#Symbol_11_9" id="Symbol_29_27" title="a reference to a single-file definition"><span class="token sort_Id">Symbol</span></a></span> <span class="operator">*</span> <span class="cons_SimpleSort"><a href="../../attribute.stx/#Attributes_9_9" id="Attributes_29_36" title="a reference to a single-file definition"><span class="token sort_Id">Attributes</span></a></span> <span class="operator">-&gt;</span> <span class="cons_SimpleSort"><a href="#Production_28_9" id="Production_29_50" title="a reference to a single-file definition"><span class="token sort_Id">Production</span></a></span></span>
+
+  <span class="keyword">sorts</span> <span class="cons_SortDecl"><button class="modal-open" id="GeneralProduction_31_9" title="a definition with multiple references" data-urls="#GeneralProduction line 26_35, 32_66, 33_66, 62_32"><span class="token sort_Id">GeneralProduction</span></button></span> <span class="keyword">constructors</span> <span class="layout">// General productions (explicated injection)</span>
+    <span class="cons_OpDecl"><a href="#GeneralProduction_SdfProduction_63_26" id="GeneralProduction_SdfProduction_32_5" title="a definition with a single reference"><span class="token sort_Id">GeneralProduction_SdfProduction</span></a>      <span class="operator">:</span> <span class="cons_SimpleSort"><a href="#SdfProduction_35_9" id="SdfProduction_32_44" title="a reference to a single-file definition"><span class="token sort_Id">SdfProduction</span></a></span>      <span class="operator">-&gt;</span> <span class="cons_SimpleSort"><a href="#GeneralProduction_31_9" id="GeneralProduction_32_66" title="a reference to a single-file definition"><span class="token sort_Id">GeneralProduction</span></a></span></span>
+    <span class="cons_OpDecl"><a href="#GeneralProduction_TemplateProduction_65_26" id="GeneralProduction_TemplateProduction_33_5" title="a definition with a single reference"><span class="token sort_Id">GeneralProduction_TemplateProduction</span></a> <span class="operator">:</span> <span class="cons_SimpleSort"><a href="../template.stx/#TemplateProduction_18_9" id="TemplateProduction_33_44" title="a reference to a single-file definition"><span class="token sort_Id">TemplateProduction</span></a></span> <span class="operator">-&gt;</span> <span class="cons_SimpleSort"><a href="#GeneralProduction_31_9" id="GeneralProduction_33_66" title="a reference to a single-file definition"><span class="token sort_Id">GeneralProduction</span></a></span></span>
+
+  <span class="keyword">sorts</span> <span class="cons_SortDecl"><button class="modal-open" id="SdfProduction_35_9" title="a definition with multiple references" data-urls="#SdfProduction line 22_35, 23_35, 24_35, 25_35, 32_44, 36_61, 37_61, 69_32; ../priority.stx/#SdfProduction line 31_40"><span class="token sort_Id">SdfProduction</span></button></span> <span class="keyword">constructors</span> <span class="layout">// SDF2-style productions</span>
+    <span class="cons_OpDecl"><a href="#SdfProduction_70_26" id="SdfProduction_36_5" title="a definition with a single reference"><span class="token sort_Id">SdfProduction</span></a>         <span class="operator">:</span> <span class="cons_SimpleSort"><a href="../../sort_cons.stx/#SymbolDef_20_9" id="SymbolDef_36_29" title="a reference to a single-file definition"><span class="token sort_Id">SymbolDef</span></a></span> <span class="operator">*</span> <span class="cons_SimpleSort"><a href="#RHS_39_9" id="RHS_36_41" title="a reference to a single-file definition"><span class="token sort_Id">RHS</span></a></span> <span class="operator">*</span> <span class="cons_SimpleSort"><a href="../../attribute.stx/#Attributes_9_9" id="Attributes_36_47" title="a reference to a single-file definition"><span class="token sort_Id">Attributes</span></a></span> <span class="operator">-&gt;</span> <span class="cons_SimpleSort"><a href="#SdfProduction_35_9" id="SdfProduction_36_61" title="a reference to a single-file definition"><span class="token sort_Id">SdfProduction</span></a></span></span>
+    <span class="cons_OpDecl"><a href="#SdfProductionWithCons_77_26" id="SdfProductionWithCons_37_5" title="a definition with a single reference"><span class="token sort_Id">SdfProductionWithCons</span></a> <span class="operator">:</span> <span class="cons_SimpleSort"><a href="../../sort_cons.stx/#SortCons_14_9" id="SortCons_37_29" title="a reference to a single-file definition"><span class="token sort_Id">SortCons</span></a></span>  <span class="operator">*</span> <span class="cons_SimpleSort"><a href="#RHS_39_9" id="RHS_37_41" title="a reference to a single-file definition"><span class="token sort_Id">RHS</span></a></span> <span class="operator">*</span> <span class="cons_SimpleSort"><a href="../../attribute.stx/#Attributes_9_9" id="Attributes_37_47" title="a reference to a single-file definition"><span class="token sort_Id">Attributes</span></a></span> <span class="operator">-&gt;</span> <span class="cons_SimpleSort"><a href="#SdfProduction_35_9" id="SdfProduction_37_61" title="a reference to a single-file definition"><span class="token sort_Id">SdfProduction</span></a></span></span>
+
+  <span class="keyword">sorts</span> <span class="cons_SortDecl"><button class="modal-open" id="RHS_39_9" title="a definition with multiple references" data-urls="#RHS line 36_41, 37_41, 40_27"><span class="token sort_Id">RHS</span></button></span> <span class="keyword">constructors</span>
+    <span class="cons_OpDecl"><button class="modal-open" id="Rhs_40_5" title="a definition with multiple references" data-urls="#Rhs line 70_55, 77_62"><span class="token sort_Id">Rhs</span></button> <span class="operator">:</span> <span class="keyword">list</span><span class="operator">(</span><span class="cons_SimpleSort"><a href="../../symbol.stx/#Symbol_11_9" id="Symbol_40_16" title="a reference to a single-file definition"><span class="token sort_Id">Symbol</span></a></span><span class="operator">)</span> <span class="operator">-&gt;</span> <span class="cons_SimpleSort"><a href="#RHS_39_9" id="RHS_40_27" title="a reference to a single-file definition"><span class="token sort_Id">RHS</span></a></span></span>
+
+<span class="keyword">rules</span>
+
+  <a href="../grammar.stx/#grammarOK_16_3" id="grammarOK_44_3" title="a reference to a single-file definition"><span class="token sort_Id">grammarOK</span></a><span class="operator">(</span><span class="cons_Var"><a href="#s_44_73" id="s_44_13" title="a definition with a single reference"><span class="token sort_Id">s</span></a></span><span class="operator">,</span> <span class="cons_Op"><a href="#Syntax_17_5" id="Syntax_44_16" title="a reference to a single-file definition"><span class="token sort_Id">Syntax</span></a><span class="operator">(</span><span class="cons_Var"><a href="#productions_44_76" id="productions_44_23" title="a definition with a single reference"><span class="token sort_Id">productions</span></a></span><span class="operator">)</span></span><span class="operator">)</span>                    <span class="operator">:-</span> <a href="#productionsOK_60_3" id="productionsOK_44_59" title="a reference to a single-file definition"><span class="token sort_Id">productionsOK</span></a><span class="operator">(</span><span class="cons_Var"><a href="#s_44_13" id="s_44_73" title="a reference to a single-file definition"><span class="token sort_Id">s</span></a></span><span class="operator">,</span> <span class="cons_Var"><a href="#productions_44_23" id="productions_44_76" title="a reference to a single-file definition"><span class="token sort_Id">productions</span></a></span><span class="operator">).</span>
+  <a href="../grammar.stx/#grammarOK_16_3" id="grammarOK_45_3" title="a reference to a single-file definition"><span class="token sort_Id">grammarOK</span></a><span class="operator">(</span><span class="cons_Var"><a href="#s_45_73" id="s_45_13" title="a definition with a single reference"><span class="token sort_Id">s</span></a></span><span class="operator">,</span> <span class="cons_Op"><a href="#Lexical_18_5" id="Lexical_45_16" title="a reference to a single-file definition"><span class="token sort_Id">Lexical</span></a><span class="operator">(</span><span class="cons_Var"><a href="#productions_45_76" id="productions_45_24" title="a definition with a single reference"><span class="token sort_Id">productions</span></a></span><span class="operator">)</span></span><span class="operator">)</span>                   <span class="operator">:-</span> <a href="#productionsOK_60_3" id="productionsOK_45_59" title="a reference to a single-file definition"><span class="token sort_Id">productionsOK</span></a><span class="operator">(</span><span class="cons_Var"><a href="#s_45_13" id="s_45_73" title="a reference to a single-file definition"><span class="token sort_Id">s</span></a></span><span class="operator">,</span> <span class="cons_Var"><a href="#productions_45_24" id="productions_45_76" title="a reference to a single-file definition"><span class="token sort_Id">productions</span></a></span><span class="operator">).</span>
+  <a href="../grammar.stx/#grammarOK_16_3" id="grammarOK_46_3" title="a reference to a single-file definition"><span class="token sort_Id">grammarOK</span></a><span class="operator">(</span><span class="cons_Var"><a href="#s_46_73" id="s_46_13" title="a definition with a single reference"><span class="token sort_Id">s</span></a></span><span class="operator">,</span> <span class="cons_Op"><a href="#Contextfree_19_5" id="Contextfree_46_16" title="a reference to a single-file definition"><span class="token sort_Id">Contextfree</span></a><span class="operator">(</span><span class="cons_Var"><a href="#productions_46_76" id="productions_46_28" title="a definition with a single reference"><span class="token sort_Id">productions</span></a></span><span class="operator">)</span></span><span class="operator">)</span>               <span class="operator">:-</span> <a href="#productionsOK_60_3" id="productionsOK_46_59" title="a reference to a single-file definition"><span class="token sort_Id">productionsOK</span></a><span class="operator">(</span><span class="cons_Var"><a href="#s_46_13" id="s_46_73" title="a reference to a single-file definition"><span class="token sort_Id">s</span></a></span><span class="operator">,</span> <span class="cons_Var"><a href="#productions_46_28" id="productions_46_76" title="a reference to a single-file definition"><span class="token sort_Id">productions</span></a></span><span class="operator">).</span>
+  <a href="../grammar.stx/#grammarOK_16_3" id="grammarOK_47_3" title="a reference to a single-file definition"><span class="token sort_Id">grammarOK</span></a><span class="operator">(</span><span class="cons_Var"><a href="#s_47_73" id="s_47_13" title="a definition with a single reference"><span class="token sort_Id">s</span></a></span><span class="operator">,</span> <span class="cons_Op"><a href="#Variables_20_5" id="Variables_47_16" title="a reference to a single-file definition"><span class="token sort_Id">Variables</span></a><span class="operator">(</span><span class="cons_Var"><a href="#productions_47_76" id="productions_47_26" title="a definition with a single reference"><span class="token sort_Id">productions</span></a></span><span class="operator">)</span></span><span class="operator">)</span>                 <span class="operator">:-</span> <a href="#productionsOK_60_3" id="productionsOK_47_59" title="a reference to a single-file definition"><span class="token sort_Id">productionsOK</span></a><span class="operator">(</span><span class="cons_Var"><a href="#s_47_13" id="s_47_73" title="a reference to a single-file definition"><span class="token sort_Id">s</span></a></span><span class="operator">,</span> <span class="cons_Var"><a href="#productions_47_26" id="productions_47_76" title="a reference to a single-file definition"><span class="token sort_Id">productions</span></a></span><span class="operator">).</span>
+  <a href="../grammar.stx/#grammarOK_16_3" id="grammarOK_48_3" title="a reference to a single-file definition"><span class="token sort_Id">grammarOK</span></a><span class="operator">(</span><span class="cons_Var"><a href="#s_48_73" id="s_48_13" title="a definition with a single reference"><span class="token sort_Id">s</span></a></span><span class="operator">,</span> <span class="cons_Op"><a href="#LexVariables_21_5" id="LexVariables_48_16" title="a reference to a single-file definition"><span class="token sort_Id">LexVariables</span></a><span class="operator">(</span><span class="cons_Var"><a href="#productions_48_76" id="productions_48_29" title="a definition with a single reference"><span class="token sort_Id">productions</span></a></span><span class="operator">)</span></span><span class="operator">)</span>              <span class="operator">:-</span> <a href="#productionsOK_60_3" id="productionsOK_48_59" title="a reference to a single-file definition"><span class="token sort_Id">productionsOK</span></a><span class="operator">(</span><span class="cons_Var"><a href="#s_48_13" id="s_48_73" title="a reference to a single-file definition"><span class="token sort_Id">s</span></a></span><span class="operator">,</span> <span class="cons_Var"><a href="#productions_48_29" id="productions_48_76" title="a reference to a single-file definition"><span class="token sort_Id">productions</span></a></span><span class="operator">).</span>
+  <a href="../grammar.stx/#grammarOK_16_3" id="grammarOK_49_3" title="a reference to a single-file definition"><span class="token sort_Id">grammarOK</span></a><span class="operator">(</span><span class="cons_Var"><a href="#s_49_80" id="s_49_13" title="a definition with a single reference"><span class="token sort_Id">s</span></a></span><span class="operator">,</span> <span class="cons_Op"><a href="#VariablesProductive_22_5" id="VariablesProductive_49_16" title="a reference to a single-file definition"><span class="token sort_Id">VariablesProductive</span></a><span class="operator">(</span><span class="cons_Var"><a href="#sdfProductions_49_83" id="sdfProductions_49_36" title="a definition with a single reference"><span class="token sort_Id">sdfProductions</span></a></span><span class="operator">)</span></span><span class="operator">)</span>    <span class="operator">:-</span> <a href="#typeOfSdfProductions_82_3" id="typeOfSdfProductions_49_59" title="a reference to a single-file definition"><span class="token sort_Id">typeOfSdfProductions</span></a><span class="operator">(</span><span class="cons_Var"><a href="#s_49_13" id="s_49_80" title="a reference to a single-file definition"><span class="token sort_Id">s</span></a></span><span class="operator">,</span> <span class="cons_Var"><a href="#sdfProductions_49_36" id="sdfProductions_49_83" title="a reference to a single-file definition"><span class="token sort_Id">sdfProductions</span></a></span><span class="operator">)</span> <span class="operator">==</span> <span class="operator">_.</span>
+  <a href="../grammar.stx/#grammarOK_16_3" id="grammarOK_50_3" title="a reference to a single-file definition"><span class="token sort_Id">grammarOK</span></a><span class="operator">(</span><span class="cons_Var"><a href="#s_50_80" id="s_50_13" title="a definition with a single reference"><span class="token sort_Id">s</span></a></span><span class="operator">,</span> <span class="cons_Op"><a href="#LexVariablesProductive_23_5" id="LexVariablesProductive_50_16" title="a reference to a single-file definition"><span class="token sort_Id">LexVariablesProductive</span></a><span class="operator">(</span><span class="cons_Var"><a href="#sdfProductions_50_83" id="sdfProductions_50_39" title="a definition with a single reference"><span class="token sort_Id">sdfProductions</span></a></span><span class="operator">)</span></span><span class="operator">)</span> <span class="operator">:-</span> <a href="#typeOfSdfProductions_82_3" id="typeOfSdfProductions_50_59" title="a reference to a single-file definition"><span class="token sort_Id">typeOfSdfProductions</span></a><span class="operator">(</span><span class="cons_Var"><a href="#s_50_13" id="s_50_80" title="a reference to a single-file definition"><span class="token sort_Id">s</span></a></span><span class="operator">,</span> <span class="cons_Var"><a href="#sdfProductions_50_39" id="sdfProductions_50_83" title="a reference to a single-file definition"><span class="token sort_Id">sdfProductions</span></a></span><span class="operator">)</span> <span class="operator">==</span> <span class="operator">_.</span>
+  <a href="../grammar.stx/#grammarOK_16_3" id="grammarOK_51_3" title="a reference to a single-file definition"><span class="token sort_Id">grammarOK</span></a><span class="operator">(</span><span class="cons_Var"><a href="#s_51_80" id="s_51_13" title="a definition with a single reference"><span class="token sort_Id">s</span></a></span><span class="operator">,</span> <span class="cons_Op"><a href="#Kernel_24_5" id="Kernel_51_16" title="a reference to a single-file definition"><span class="token sort_Id">Kernel</span></a><span class="operator">(</span><span class="cons_Var"><a href="#sdfProductions_51_83" id="sdfProductions_51_23" title="a definition with a single reference"><span class="token sort_Id">sdfProductions</span></a></span><span class="operator">)</span></span><span class="operator">)</span>                 <span class="operator">:-</span> <a href="#typeOfSdfProductions_82_3" id="typeOfSdfProductions_51_59" title="a reference to a single-file definition"><span class="token sort_Id">typeOfSdfProductions</span></a><span class="operator">(</span><span class="cons_Var"><a href="#s_51_13" id="s_51_80" title="a reference to a single-file definition"><span class="token sort_Id">s</span></a></span><span class="operator">,</span> <span class="cons_Var"><a href="#sdfProductions_51_23" id="sdfProductions_51_83" title="a reference to a single-file definition"><span class="token sort_Id">sdfProductions</span></a></span><span class="operator">)</span> <span class="operator">==</span> <span class="operator">_.</span>
+  <a href="../grammar.stx/#grammarOK_16_3" id="grammarOK_52_3" title="a reference to a single-file definition"><span class="token sort_Id">grammarOK</span></a><span class="operator">(</span><span class="cons_Var"><a href="#s_52_80" id="s_52_13" title="a definition with a single reference"><span class="token sort_Id">s</span></a></span><span class="operator">,</span> <span class="cons_Op"><a href="#LexicalSyntax_25_5" id="LexicalSyntax_52_16" title="a reference to a single-file definition"><span class="token sort_Id">LexicalSyntax</span></a><span class="operator">(</span><span class="cons_Var"><a href="#sdfProductions_52_83" id="sdfProductions_52_30" title="a definition with a single reference"><span class="token sort_Id">sdfProductions</span></a></span><span class="operator">)</span></span><span class="operator">)</span>          <span class="operator">:-</span> <a href="#typeOfSdfProductions_82_3" id="typeOfSdfProductions_52_59" title="a reference to a single-file definition"><span class="token sort_Id">typeOfSdfProductions</span></a><span class="operator">(</span><span class="cons_Var"><a href="#s_52_13" id="s_52_80" title="a reference to a single-file definition"><span class="token sort_Id">s</span></a></span><span class="operator">,</span> <span class="cons_Var"><a href="#sdfProductions_52_30" id="sdfProductions_52_83" title="a reference to a single-file definition"><span class="token sort_Id">sdfProductions</span></a></span><span class="operator">)</span> <span class="operator">==</span> <span class="operator">_.</span>
+  <a href="../grammar.stx/#grammarOK_16_3" id="grammarOK_53_3" title="a reference to a single-file definition"><span class="token sort_Id">grammarOK</span></a><span class="operator">(</span><span class="cons_Var"><a href="#s_53_80" id="s_53_13" title="a definition with a single reference"><span class="token sort_Id">s</span></a></span><span class="operator">,</span> <span class="cons_Op"><a href="#ContextFreeSyntax_26_5" id="ContextFreeSyntax_53_16" title="a reference to a single-file definition"><span class="token sort_Id">ContextFreeSyntax</span></a><span class="operator">(</span><span class="cons_Var"><a href="#generalProductions_53_83" id="generalProductions_53_34" title="a definition with a single reference"><span class="token sort_Id">generalProductions</span></a></span><span class="operator">)</span></span><span class="operator">)</span>  <span class="operator">:-</span> <a href="#generalProductionsOK_67_3" id="generalProductionsOK_53_59" title="a reference to a single-file definition"><span class="token sort_Id">generalProductionsOK</span></a><span class="operator">(</span><span class="cons_Var"><a href="#s_53_13" id="s_53_80" title="a reference to a single-file definition"><span class="token sort_Id">s</span></a></span><span class="operator">,</span> <span class="cons_Var"><a href="#generalProductions_53_34" id="generalProductions_53_83" title="a reference to a single-file definition"><span class="token sort_Id">generalProductions</span></a></span><span class="operator">).</span>
+
+  <button class="modal-open" id="productionOK_55_3" title="a definition with multiple references" data-urls="#productionOK line 56_3, 60_22; ../priority.stx/#productionOK line 64_79"><span class="token sort_Id">productionOK</span></button><span class="operator">:</span> <span class="cons_ScopeSort"><span class="keyword">scope</span></span> <span class="operator">*</span> <span class="cons_SimpleSort"><a href="#Production_28_9" id="Production_55_25" title="a reference to a single-file definition"><span class="token sort_Id">Production</span></a></span>
+  <a href="#productionOK_55_3" id="productionOK_56_3" title="a reference to a single-file definition"><span class="token sort_Id">productionOK</span></a><span class="operator">(</span><span class="cons_Var"><a href="#s_57_27" id="s_56_16" title="a definition with a single reference"><span class="token sort_Id">s</span></a></span><span class="operator">,</span> <span class="cons_Op"><a href="#Prod_29_5" id="Prod_56_19" title="a reference to a single-file definition"><span class="token sort_Id">Prod</span></a><span class="operator">(</span><span class="cons_Var"><a href="#symbols_58_27" id="symbols_56_24" title="a definition with a single reference"><span class="token sort_Id">symbols</span></a></span><span class="operator">,</span> <span class="cons_Var"><a href="#symbol_59_25" id="symbol_56_33" title="a definition with a single reference"><span class="token sort_Id">symbol</span></a></span><span class="operator">,</span> <span class="operator">_)</span></span><span class="operator">)</span> <span class="operator">:-</span> <span class="operator">{</span><span class="cons_Var"><button class="modal-open" id="sProd_56_49" title="a definition with multiple references" data-urls="#sProd line 57_9, 57_16, 58_20, 59_18"><span class="token sort_Id">sProd</span></button></span><span class="operator">}</span>
+    <span class="keyword">new</span> <span class="cons_Var"><a href="#sProd_56_49" id="sProd_57_9" title="a reference to a single-file definition"><span class="token sort_Id">sProd</span></a></span><span class="operator">,</span> <span class="cons_Var"><a href="#sProd_56_49" id="sProd_57_16" title="a reference to a single-file definition"><span class="token sort_Id">sProd</span></a></span> <span class="operator">-</span><span class="cons_Label"><a href="../../name.stx/#P_16_12" id="P_57_23" title="a reference to a single-file definition"><span class="token sort_Id">P</span></a></span><span class="operator">-&gt;</span> <span class="cons_Var"><a href="#s_56_16" id="s_57_27" title="a reference to a single-file definition"><span class="token sort_Id">s</span></a></span><span class="operator">,</span>
+    <a href="../../symbol.stx/#typesOfSymbols_77_3" id="typesOfSymbols_58_5" title="a reference to a single-file definition"><span class="token sort_Id">typesOfSymbols</span></a><span class="operator">(</span><span class="cons_Var"><a href="#sProd_56_49" id="sProd_58_20" title="a reference to a single-file definition"><span class="token sort_Id">sProd</span></a></span><span class="operator">,</span> <span class="cons_Var"><a href="#symbols_56_24" id="symbols_58_27" title="a reference to a single-file definition"><span class="token sort_Id">symbols</span></a></span><span class="operator">)</span> <span class="operator">==</span> <span class="operator">_,</span>
+    <a href="../../symbol.stx/#typeOfSymbol_36_3" id="typeOfSymbol_59_5" title="a reference to a single-file definition"><span class="token sort_Id">typeOfSymbol</span></a><span class="operator">(</span><span class="cons_Var"><a href="#sProd_56_49" id="sProd_59_18" title="a reference to a single-file definition"><span class="token sort_Id">sProd</span></a></span><span class="operator">,</span> <span class="cons_Var"><a href="#symbol_56_33" id="symbol_59_25" title="a reference to a single-file definition"><span class="token sort_Id">symbol</span></a></span><span class="operator">)</span> <span class="operator">==</span> <span class="operator">_.</span>
+  <button class="modal-open" id="productionsOK_60_3" title="a definition with multiple references" data-urls="#productionsOK line 44_59, 45_59, 46_59, 47_59, 48_59"><span class="token sort_Id">productionsOK</span></button> <span class="keyword">maps</span> <a href="#productionOK_55_3" id="productionOK_60_22" title="a reference to a single-file definition"><span class="token sort_Id">productionOK</span></a><span class="operator">(*,</span> <span class="keyword">list</span><span class="operator">(*))</span>
+
+  <button class="modal-open" id="generalProductionOK_62_3" title="a definition with multiple references" data-urls="#generalProductionOK line 63_3, 65_3, 67_29"><span class="token sort_Id">generalProductionOK</span></button><span class="operator">:</span> <span class="cons_ScopeSort"><span class="keyword">scope</span></span> <span class="operator">*</span> <span class="cons_SimpleSort"><a href="#GeneralProduction_31_9" id="GeneralProduction_62_32" title="a reference to a single-file definition"><span class="token sort_Id">GeneralProduction</span></a></span>
+  <a href="#generalProductionOK_62_3" id="generalProductionOK_63_3" title="a reference to a single-file definition"><span class="token sort_Id">generalProductionOK</span></a><span class="operator">(</span><span class="cons_Var"><a href="#s_64_25" id="s_63_23" title="a definition with a single reference"><span class="token sort_Id">s</span></a></span><span class="operator">,</span> <span class="cons_Op"><a href="#GeneralProduction_SdfProduction_32_5" id="GeneralProduction_SdfProduction_63_26" title="a reference to a single-file definition"><span class="token sort_Id">GeneralProduction_SdfProduction</span></a><span class="operator">(</span><span class="cons_Var"><a href="#sdfProduction_64_28" id="sdfProduction_63_58" title="a definition with a single reference"><span class="token sort_Id">sdfProduction</span></a></span><span class="operator">)</span></span><span class="operator">)</span>           <span class="operator">:-</span>
+    <a href="#typeOfSdfProduction_69_3" id="typeOfSdfProduction_64_5" title="a reference to a single-file definition"><span class="token sort_Id">typeOfSdfProduction</span></a><span class="operator">(</span><span class="cons_Var"><a href="#s_63_23" id="s_64_25" title="a reference to a single-file definition"><span class="token sort_Id">s</span></a></span><span class="operator">,</span> <span class="cons_Var"><a href="#sdfProduction_63_58" id="sdfProduction_64_28" title="a reference to a single-file definition"><span class="token sort_Id">sdfProduction</span></a></span><span class="operator">)</span> <span class="operator">==</span> <span class="operator">_.</span>
+  <a href="#generalProductionOK_62_3" id="generalProductionOK_65_3" title="a reference to a single-file definition"><span class="token sort_Id">generalProductionOK</span></a><span class="operator">(</span><span class="cons_Var"><a href="#s_66_30" id="s_65_23" title="a definition with a single reference"><span class="token sort_Id">s</span></a></span><span class="operator">,</span> <span class="cons_Op"><a href="#GeneralProduction_TemplateProduction_33_5" id="GeneralProduction_TemplateProduction_65_26" title="a reference to a single-file definition"><span class="token sort_Id">GeneralProduction_TemplateProduction</span></a><span class="operator">(</span><span class="cons_Var"><a href="#templateProduction_66_33" id="templateProduction_65_63" title="a definition with a single reference"><span class="token sort_Id">templateProduction</span></a></span><span class="operator">)</span></span><span class="operator">)</span> <span class="operator">:-</span>
+    <a href="../template.stx/#typeOfTemplateProduction_48_3" id="typeOfTemplateProduction_66_5" title="a reference to a single-file definition"><span class="token sort_Id">typeOfTemplateProduction</span></a><span class="operator">(</span><span class="cons_Var"><a href="#s_65_23" id="s_66_30" title="a reference to a single-file definition"><span class="token sort_Id">s</span></a></span><span class="operator">,</span> <span class="cons_Var"><a href="#templateProduction_65_63" id="templateProduction_66_33" title="a reference to a single-file definition"><span class="token sort_Id">templateProduction</span></a></span><span class="operator">)</span> <span class="operator">==</span> <span class="operator">_.</span>
+  <a href="#generalProductionsOK_53_59" id="generalProductionsOK_67_3" title="a definition with a single reference"><span class="token sort_Id">generalProductionsOK</span></a> <span class="keyword">maps</span> <a href="#generalProductionOK_62_3" id="generalProductionOK_67_29" title="a reference to a single-file definition"><span class="token sort_Id">generalProductionOK</span></a><span class="operator">(*,</span> <span class="keyword">list</span><span class="operator">(*))</span>
+
+  <button class="modal-open" id="typeOfSdfProduction_69_3" title="a definition with multiple references" data-urls="#typeOfSdfProduction line 64_5, 70_3, 77_3, 82_29; ../priority.stx/#typeOfSdfProduction line 63_79"><span class="token sort_Id">typeOfSdfProduction</span></button><span class="operator">:</span> <span class="cons_ScopeSort"><span class="keyword">scope</span></span> <span class="operator">*</span> <span class="cons_SimpleSort"><a href="#SdfProduction_35_9" id="SdfProduction_69_32" title="a reference to a single-file definition"><span class="token sort_Id">SdfProduction</span></a></span> <span class="operator">-&gt;</span> <span class="cons_SimpleSort"><a href="../../type.stx/#TYPE_5_9" id="TYPE_69_49" title="a reference to a single-file definition"><span class="token sort_Id">TYPE</span></a></span>
+  <a href="#typeOfSdfProduction_69_3" id="typeOfSdfProduction_70_3" title="a reference to a single-file definition"><span class="token sort_Id">typeOfSdfProduction</span></a><span class="operator">(</span><span class="cons_Var"><button class="modal-open" id="s_70_23" title="a definition with multiple references" data-urls="#s line 71_21, 72_27"><span class="token sort_Id">s</span></button></span><span class="operator">,</span> <span class="cons_Op"><a href="#SdfProduction_36_5" id="SdfProduction_70_26" title="a reference to a single-file definition"><span class="token sort_Id">SdfProduction</span></a><span class="operator">(</span><span class="cons_Var"><button class="modal-open" id="symbolDef_70_40" title="a definition with multiple references" data-urls="#symbolDef line 71_24, 75_41"><span class="token sort_Id">symbolDef</span></button></span><span class="operator">,</span> <span class="cons_Var"><a href="#rhs_76_6" id="rhs_70_51" title="a definition with a single reference"><span class="token sort_Id">rhs</span></a></span><span class="operator">@</span><span class="cons_Op"><a href="#Rhs_40_5" id="Rhs_70_55" title="a reference to a single-file definition"><span class="token sort_Id">Rhs</span></a><span class="operator">(</span><span class="cons_Var"><a href="#symbols_73_27" id="symbols_70_59" title="a definition with a single reference"><span class="token sort_Id">symbols</span></a></span><span class="operator">)</span></span><span class="operator">,</span> <span class="cons_Var"><a href="#attrs_75_34" id="attrs_70_69" title="a definition with a single reference"><span class="token sort_Id">attrs</span></a></span><span class="operator">)</span></span><span class="operator">)</span> <span class="operator">=</span> <span class="cons_Var"><button class="modal-open" id="Tprod_70_79" title="a definition with multiple references" data-urls="#Tprod line 74_5, 75_27, 76_18"><span class="token sort_Id">Tprod</span></button></span> <span class="operator">:-</span> <span class="operator">{</span><span class="cons_Var"><button class="modal-open" id="sProd_70_89" title="a definition with multiple references" data-urls="#sProd line 72_9, 72_16, 73_20"><span class="token sort_Id">sProd</span></button></span> <span class="cons_Var"><button class="modal-open" id="Tsymbols_70_95" title="a definition with multiple references" data-urls="#Tsymbols line 73_39, 74_18"><span class="token sort_Id">Tsymbols</span></button></span> <span class="cons_Var"><button class="modal-open" id="Tsort_70_104" title="a definition with multiple references" data-urls="#Tsort line 71_38, 74_28"><span class="token sort_Id">Tsort</span></button></span><span class="operator">}</span>
+    <a href="../../sort_cons.stx/#typeOfSymbolDef_37_3" id="typeOfSymbolDef_71_5" title="a reference to a single-file definition"><span class="token sort_Id">typeOfSymbolDef</span></a><span class="operator">(</span><span class="cons_Var"><a href="#s_70_23" id="s_71_21" title="a reference to a single-file definition"><span class="token sort_Id">s</span></a></span><span class="operator">,</span> <span class="cons_Var"><a href="#symbolDef_70_40" id="symbolDef_71_24" title="a reference to a single-file definition"><span class="token sort_Id">symbolDef</span></a></span><span class="operator">)</span> <span class="operator">==</span> <span class="cons_Var"><a href="#Tsort_70_104" id="Tsort_71_38" title="a reference to a single-file definition"><span class="token sort_Id">Tsort</span></a></span><span class="operator">,</span>
+    <span class="keyword">new</span> <span class="cons_Var"><a href="#sProd_70_89" id="sProd_72_9" title="a reference to a single-file definition"><span class="token sort_Id">sProd</span></a></span><span class="operator">,</span> <span class="cons_Var"><a href="#sProd_70_89" id="sProd_72_16" title="a reference to a single-file definition"><span class="token sort_Id">sProd</span></a></span> <span class="operator">-</span><span class="cons_Label"><a href="../../name.stx/#P_16_12" id="P_72_23" title="a reference to a single-file definition"><span class="token sort_Id">P</span></a></span><span class="operator">-&gt;</span> <span class="cons_Var"><a href="#s_70_23" id="s_72_27" title="a reference to a single-file definition"><span class="token sort_Id">s</span></a></span><span class="operator">,</span>
+    <a href="../../symbol.stx/#typesOfSymbols_77_3" id="typesOfSymbols_73_5" title="a reference to a single-file definition"><span class="token sort_Id">typesOfSymbols</span></a><span class="operator">(</span><span class="cons_Var"><a href="#sProd_70_89" id="sProd_73_20" title="a reference to a single-file definition"><span class="token sort_Id">sProd</span></a></span><span class="operator">,</span> <span class="cons_Var"><a href="#symbols_70_59" id="symbols_73_27" title="a reference to a single-file definition"><span class="token sort_Id">symbols</span></a></span><span class="operator">)</span> <span class="operator">==</span> <span class="cons_Var"><a href="#Tsymbols_70_95" id="Tsymbols_73_39" title="a reference to a single-file definition"><span class="token sort_Id">Tsymbols</span></a></span><span class="operator">,</span>
+    <span class="cons_Var"><a href="#Tprod_70_79" id="Tprod_74_5" title="a reference to a single-file definition"><span class="token sort_Id">Tprod</span></a></span> <span class="operator">==</span> <span class="cons_Op"><a href="../../type.stx/#INJ_13_5" id="INJ_74_14" title="a reference to a single-file definition"><span class="token sort_Id">INJ</span></a><span class="operator">(</span><span class="cons_Var"><a href="#Tsymbols_70_95" id="Tsymbols_74_18" title="a reference to a single-file definition"><span class="token sort_Id">Tsymbols</span></a></span><span class="operator">,</span> <span class="cons_Var"><a href="#Tsort_70_104" id="Tsort_74_28" title="a reference to a single-file definition"><span class="token sort_Id">Tsort</span></a></span><span class="operator">)</span></span><span class="operator">,</span>
+    <a href="../../production.stx/#injectionProductionOK_11_3" id="injectionProductionOK_75_5" title="a reference to a single-file definition"><span class="token sort_Id">injectionProductionOK</span></a><span class="operator">(</span><span class="cons_Var"><a href="#Tprod_70_79" id="Tprod_75_27" title="a reference to a single-file definition"><span class="token sort_Id">Tprod</span></a></span><span class="operator">,</span> <span class="cons_Var"><a href="#attrs_70_69" id="attrs_75_34" title="a reference to a single-file definition"><span class="token sort_Id">attrs</span></a></span><span class="operator">,</span> <span class="cons_Var"><a href="#symbolDef_70_40" id="symbolDef_75_41" title="a reference to a single-file definition"><span class="token sort_Id">symbolDef</span></a></span><span class="operator">),</span>
+    <span class="operator">@</span><span class="cons_Var"><a href="#rhs_70_51" id="rhs_76_6" title="a reference to a single-file definition"><span class="token sort_Id">rhs</span></a></span><span class="operator">.</span><span class="token sort_Id">type</span> <span class="operator">:=</span> <span class="cons_Var"><a href="#Tprod_70_79" id="Tprod_76_18" title="a reference to a single-file definition"><span class="token sort_Id">Tprod</span></a></span><span class="operator">.</span>
+  <a href="#typeOfSdfProduction_69_3" id="typeOfSdfProduction_77_3" title="a reference to a single-file definition"><span class="token sort_Id">typeOfSdfProduction</span></a><span class="operator">(</span><span class="cons_Var"><button class="modal-open" id="s_77_23" title="a definition with multiple references" data-urls="#s line 78_21, 79_27"><span class="token sort_Id">s</span></button></span><span class="operator">,</span> <span class="cons_Op"><a href="#SdfProductionWithCons_37_5" id="SdfProductionWithCons_77_26" title="a reference to a single-file definition"><span class="token sort_Id">SdfProductionWithCons</span></a><span class="operator">(</span><span class="cons_Var"><a href="#sortCons_78_34" id="sortCons_77_48" title="a definition with a single reference"><span class="token sort_Id">sortCons</span></a></span><span class="operator">,</span> <span class="cons_Var"><a href="#rhs_81_6" id="rhs_77_58" title="a definition with a single reference"><span class="token sort_Id">rhs</span></a></span><span class="operator">@</span><span class="cons_Op"><a href="#Rhs_40_5" id="Rhs_77_62" title="a reference to a single-file definition"><span class="token sort_Id">Rhs</span></a><span class="operator">(</span><span class="cons_Var"><a href="#symbols_80_27" id="symbols_77_66" title="a definition with a single reference"><span class="token sort_Id">symbols</span></a></span><span class="operator">)</span></span><span class="operator">,</span> <span class="operator">_)</span></span><span class="operator">)</span> <span class="operator">=</span> <span class="cons_Var"><button class="modal-open" id="Tprod_77_82" title="a definition with multiple references" data-urls="#Tprod line 78_47, 81_18"><span class="token sort_Id">Tprod</span></button></span> <span class="operator">:-</span> <span class="operator">{</span><span class="cons_Var"><button class="modal-open" id="sProd_77_92" title="a definition with multiple references" data-urls="#sProd line 79_9, 79_16, 80_20"><span class="token sort_Id">sProd</span></button></span> <span class="cons_Var"><button class="modal-open" id="Tsymbols_77_98" title="a definition with multiple references" data-urls="#Tsymbols line 78_24, 80_39"><span class="token sort_Id">Tsymbols</span></button></span> <span class="cons_Var"><span id="Tsort_77_107" title="a definition with no references"><span class="token sort_Id">Tsort</span></span></span><span class="operator">}</span>
+    <a href="../../sort_cons.stx/#declareSortCons_32_3" id="declareSortCons_78_5" title="a reference to a single-file definition"><span class="token sort_Id">declareSortCons</span></a><span class="operator">(</span><span class="cons_Var"><a href="#s_77_23" id="s_78_21" title="a reference to a single-file definition"><span class="token sort_Id">s</span></a></span><span class="operator">,</span> <span class="cons_Var"><a href="#Tsymbols_77_98" id="Tsymbols_78_24" title="a reference to a single-file definition"><span class="token sort_Id">Tsymbols</span></a></span><span class="operator">,</span> <span class="cons_Var"><a href="#sortCons_77_48" id="sortCons_78_34" title="a reference to a single-file definition"><span class="token sort_Id">sortCons</span></a></span><span class="operator">)</span> <span class="operator">==</span> <span class="cons_Var"><a href="#Tprod_77_82" id="Tprod_78_47" title="a reference to a single-file definition"><span class="token sort_Id">Tprod</span></a></span><span class="operator">,</span>
+    <span class="keyword">new</span> <span class="cons_Var"><a href="#sProd_77_92" id="sProd_79_9" title="a reference to a single-file definition"><span class="token sort_Id">sProd</span></a></span><span class="operator">,</span> <span class="cons_Var"><a href="#sProd_77_92" id="sProd_79_16" title="a reference to a single-file definition"><span class="token sort_Id">sProd</span></a></span> <span class="operator">-</span><span class="cons_Label"><a href="../../name.stx/#P_16_12" id="P_79_23" title="a reference to a single-file definition"><span class="token sort_Id">P</span></a></span><span class="operator">-&gt;</span> <span class="cons_Var"><a href="#s_77_23" id="s_79_27" title="a reference to a single-file definition"><span class="token sort_Id">s</span></a></span><span class="operator">,</span>
+    <a href="../../symbol.stx/#typesOfSymbols_77_3" id="typesOfSymbols_80_5" title="a reference to a single-file definition"><span class="token sort_Id">typesOfSymbols</span></a><span class="operator">(</span><span class="cons_Var"><a href="#sProd_77_92" id="sProd_80_20" title="a reference to a single-file definition"><span class="token sort_Id">sProd</span></a></span><span class="operator">,</span> <span class="cons_Var"><a href="#symbols_77_66" id="symbols_80_27" title="a reference to a single-file definition"><span class="token sort_Id">symbols</span></a></span><span class="operator">)</span> <span class="operator">==</span> <span class="cons_Var"><a href="#Tsymbols_77_98" id="Tsymbols_80_39" title="a reference to a single-file definition"><span class="token sort_Id">Tsymbols</span></a></span><span class="operator">,</span>
+    <span class="operator">@</span><span class="cons_Var"><a href="#rhs_77_58" id="rhs_81_6" title="a reference to a single-file definition"><span class="token sort_Id">rhs</span></a></span><span class="operator">.</span><span class="token sort_Id">type</span> <span class="operator">:=</span> <span class="cons_Var"><a href="#Tprod_77_82" id="Tprod_81_18" title="a reference to a single-file definition"><span class="token sort_Id">Tprod</span></a></span><span class="operator">.</span>
+  <button class="modal-open" id="typeOfSdfProductions_82_3" title="a definition with multiple references" data-urls="#typeOfSdfProductions line 49_59, 50_59, 51_59, 52_59"><span class="token sort_Id">typeOfSdfProductions</span></button> <span class="keyword">maps</span> <a href="#typeOfSdfProduction_69_3" id="typeOfSdfProduction_82_29" title="a reference to a single-file definition"><span class="token sort_Id">typeOfSdfProduction</span></a><span class="operator">(*,</span> <span class="keyword">list</span><span class="operator">(*))</span> <span class="operator">=</span> <span class="keyword">list</span><span class="operator">(*)</span>
+
+</code></pre></td></tr></tbody></table></div>
+
+<div id="modal">
+  <div id="modal-content">
+    <span id="modal-close">&times;</span>
+    <h2 id="modal-h2"></h2>
+    <p  id="modal-p"></p>
+    <ul id="modal-ul"></ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["content.code.copy", "navigation.indexes", "navigation.tabs", "navigation.tabs.sticky"], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      
+        <script src="../../../../../javascripts/modal.js"></script>
+      
+    
+  </body>
+</html>
