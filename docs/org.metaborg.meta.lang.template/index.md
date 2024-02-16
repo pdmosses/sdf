@@ -25,10 +25,15 @@ This example demonstrates generation of a hyperlinked twin from a _bootstrapped_
 
 ## Name binding
 
+[`names.nab`](trans/analysis/names.nab.md)
+
+The name binding of SDF3 is specified in [NaBL] for use in Spoofax 2.
+
 [`main.stx`](trans/statix/main.stx.md)
 
-The name binding of SDF3 is specified in [Statix] (for use in Spoofax 3).
+The name binding of SDF3 is specified in [Statix] for use in Spoofax 3.
 
 [Spoofax]: https://spoofax.dev
 [SDF3]: https://spoofax.dev/references/sdf3
+[NaBL]: https://www.metaborg.org/en/latest/source/langdev/meta/lang/nabl2/nabl.html
 [Statix]: https://spoofax.dev/references/statix/

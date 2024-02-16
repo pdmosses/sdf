@@ -21,16 +21,16 @@ hide:
 9
 10
 </pre></div></td>
-<td class="code"><pre><code><span class="keyword">module</span> <a href="../../aterms/Aterms.sdf3/#constants/RealCon_4_3" id="constants/RealCon_1_8" title="Referenced at ../../aterms/Aterms.sdf3 line 4">constants/RealCon</a>
+<td class="code"><pre><code><span class="keyword">module</span> <a href="../../aterms/Aterms.sdf3/#constants/RealCon_4_3" id="constants/RealCon_1_8" title="a definition with a single reference">constants/RealCon</a>
 
-<span class="keyword">imports</span> <a href="../IntCon.sdf3/#constants/IntCon_1_8" id="constants/IntCon_3_9" title="Defined at ../IntCon.sdf3 line 1">constants/IntCon</a>
-                <a href="../NatCon.sdf3/#constants/NatCon_1_8" id="constants/NatCon_4_3" title="Defined at ../NatCon.sdf3 line 1">constants/NatCon</a>
+<span class="keyword">imports</span> <a href="../IntCon.sdf3/#constants/IntCon_1_8" id="constants/IntCon_3_9" title="a reference to a single-file definition">constants/IntCon</a>
+                <a href="../NatCon.sdf3/#constants/NatCon_1_8" id="constants/NatCon_4_3" title="a reference to a single-file definition">constants/NatCon</a>
 
 <span class="keyword">context-free syntax</span>
-        <a href="#OptExp_10_56" id="OptExp_7_2" title="Referenced at line 10">OptExp</a>.<span class="cons_Constructor"><span id="Present_7_9" title="Not referenced">Present</span></span> = &lt;<span class="cons_String">e</span>&lt;<a href="../IntCon.sdf3/#IntCon_8_2" id="IntCon_7_22" title="Defined at ../IntCon.sdf3 line 8, 11, 13">IntCon</a>&gt;&gt; <span class="layout">//Change constructor name?</span>
-        <a href="#OptExp_10_56" id="OptExp_8_2" title="Referenced at line 10">OptExp</a>.<span class="cons_Constructor"><span id="Absent_8_9" title="Not referenced">Absent</span></span> = &lt;&gt;
+        <a href="#OptExp_10_56" id="OptExp_7_2" title="a definition with a single reference">OptExp</a>.<span class="cons_Constructor"><span id="Present_7_9" title="a definition with no references">Present</span></span> = &lt;<span class="cons_String">e</span>&lt;<a href="../IntCon.sdf3/#IntCon_8_2" id="IntCon_7_22" title="a reference to a single-file definition">IntCon</a>&gt;&gt; <span class="layout">//Change constructor name?</span>
+        <a href="#OptExp_10_56" id="OptExp_8_2" title="a definition with a single reference">OptExp</a>.<span class="cons_Constructor"><span id="Absent_8_9" title="a definition with no references">Absent</span></span> = &lt;&gt;
         <span class="layout">//base:IntCon "." decimal:NatCon exp:OptExp  -&gt; RealCon {cons("real-con")}</span>
-        <a href="../../aterms/Aterms.sdf3/#RealCon_15_17" id="RealCon_10_2" title="Referenced at ../../aterms/Aterms.sdf3 line 15">RealCon</a>.<span class="cons_Constructor"><span id="RealCon_10_10" title="Not referenced">RealCon</span></span> = &lt;&lt;<span class="cons_Unquoted"><span id="base_10_22" title="Not referenced">base</span></span>:<a href="../IntCon.sdf3/#IntCon_8_2" id="IntCon_10_27" title="Defined at ../IntCon.sdf3 line 8, 11, 13">IntCon</a>&gt;<span class="cons_String">.</span>&lt;<span class="cons_Unquoted"><span id="decimal_10_36" title="Not referenced">decimal</span></span>:<a href="../NatCon.sdf3/#NatCon_5_2" id="NatCon_10_44" title="Defined at ../NatCon.sdf3 line 5">NatCon</a>&gt;&lt;<span class="cons_Unquoted"><span id="exp_10_52" title="Not referenced">exp</span></span>:<a href="#OptExp_7_2" id="OptExp_10_56" title="Defined at line 7, 8">OptExp</a>&gt;&gt;   
+        <a href="../../aterms/Aterms.sdf3/#RealCon_15_17" id="RealCon_10_2" title="a definition with a single reference">RealCon</a>.<span class="cons_Constructor"><span id="RealCon_10_10" title="a definition with no references">RealCon</span></span> = &lt;&lt;<span class="cons_Unquoted"><span id="base_10_22" title="a definition with no references">base</span></span>:<a href="../IntCon.sdf3/#IntCon_8_2" id="IntCon_10_27" title="a reference to a single-file definition">IntCon</a>&gt;<span class="cons_String">.</span>&lt;<span class="cons_Unquoted"><span id="decimal_10_36" title="a definition with no references">decimal</span></span>:<a href="../NatCon.sdf3/#NatCon_5_2" id="NatCon_10_44" title="a reference to a single-file definition">NatCon</a>&gt;&lt;<span class="cons_Unquoted"><span id="exp_10_52" title="a definition with no references">exp</span></span>:<a href="#OptExp_7_2" id="OptExp_10_56" title="a reference to a single-file definition">OptExp</a>&gt;&gt;   
 </code></pre></td></tr></tbody></table></div>
 
 <div id="modal">

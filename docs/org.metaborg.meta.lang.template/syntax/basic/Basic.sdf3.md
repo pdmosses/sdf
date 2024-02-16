@@ -71,66 +71,66 @@ hide:
 59
 60
 </pre></div></td>
-<td class="code"><pre><code><span class="keyword">module</span> <button class="modal-open" id="basic/Basic_1_8" title="Multi-file references" data-urls="../../TemplateLang.sdf3/#basic/Basic_12_3 line 12; ../../sdf2-core/Sdf2-Syntax.sdf3/#basic/Basic_4_9 line 4; ../../sorts/Sorts.sdf3/#basic/Basic_5_1 line 5">basic/Basic</button>
+<td class="code"><pre><code><span class="keyword">module</span> <button class="modal-open" id="basic/Basic_1_8" title="a definition with multiple references" data-urls="../../TemplateLang.sdf3/#basic/Basic line 12_3; ../../sdf2-core/Sdf2-Syntax.sdf3/#basic/Basic line 4_9; ../../sorts/Sorts.sdf3/#basic/Basic line 5_1">basic/Basic</button>
 
-<span class="keyword">imports</span> <a href="../../kernel/Kernel.sdf3/#kernel/Kernel_1_8" id="kernel/Kernel_3_9" title="Defined at ../../kernel/Kernel.sdf3 line 1">kernel/Kernel</a>
-                <a href="../../sorts/Sorts.sdf3/#sorts/Sorts_1_8" id="sorts/Sorts_4_3" title="Defined at ../../sorts/Sorts.sdf3 line 1">sorts/Sorts</a>
-                <a href="../../TemplateLang.sdf3/#TemplateLang_1_8" id="TemplateLang_5_3" title="Defined at ../../TemplateLang.sdf3 line 1">TemplateLang</a>
+<span class="keyword">imports</span> <a href="../../kernel/Kernel.sdf3/#kernel/Kernel_1_8" id="kernel/Kernel_3_9" title="a reference to a single-file definition">kernel/Kernel</a>
+                <a href="../../sorts/Sorts.sdf3/#sorts/Sorts_1_8" id="sorts/Sorts_4_3" title="a reference to a single-file definition">sorts/Sorts</a>
+                <a href="../../TemplateLang.sdf3/#TemplateLang_1_8" id="TemplateLang_5_3" title="a reference to a single-file definition">TemplateLang</a>
 
 <span class="keyword">context-free syntax</span>
  
-<span id="Grammar_9_1" title="Not referenced">Grammar</span>.<span class="cons_Constructor"><span id="Lexical_9_9" title="Not referenced">Lexical</span></span> = &lt;
+<span id="Grammar_9_1" title="a definition with no references">Grammar</span>.<span class="cons_Constructor"><span id="Lexical_9_9" title="a definition with no references">Lexical</span></span> = &lt;
         <span class="cons_String">lexical</span> <span class="cons_String">syntax</span>
         
-                &lt;<a href="../../kernel/Kernel.sdf3/#Productions_52_1" id="Productions_12_4" title="Defined at ../../kernel/Kernel.sdf3 line 52">Productions</a>&gt;
+                &lt;<a href="../../kernel/Kernel.sdf3/#Productions_52_1" id="Productions_12_4" title="a reference to a single-file definition">Productions</a>&gt;
         
         &gt;
-<span id="Grammar_15_1" title="Not referenced">Grammar</span>.<span class="cons_Constructor"><span id="Contextfree_15_9" title="Not referenced">Contextfree</span></span> = &lt;
+<span id="Grammar_15_1" title="a definition with no references">Grammar</span>.<span class="cons_Constructor"><span id="Contextfree_15_9" title="a definition with no references">Contextfree</span></span> = &lt;
         <span class="cons_String">context-free</span> <span class="cons_String">syntax</span>
         
-                &lt;<a href="../../kernel/Kernel.sdf3/#Productions_52_1" id="Productions_18_4" title="Defined at ../../kernel/Kernel.sdf3 line 52">Productions</a>&gt;
+                &lt;<a href="../../kernel/Kernel.sdf3/#Productions_52_1" id="Productions_18_4" title="a reference to a single-file definition">Productions</a>&gt;
         
         &gt;
-<span id="Grammar_21_1" title="Not referenced">Grammar</span>.<span class="cons_Constructor"><span id="Variables_21_9" title="Not referenced">Variables</span></span> = &lt;
+<span id="Grammar_21_1" title="a definition with no references">Grammar</span>.<span class="cons_Constructor"><span id="Variables_21_9" title="a definition with no references">Variables</span></span> = &lt;
         <span class="cons_String">variables</span>
         
-                &lt;<a href="../../kernel/Kernel.sdf3/#Productions_52_1" id="Productions_24_4" title="Defined at ../../kernel/Kernel.sdf3 line 52">Productions</a>&gt;
+                &lt;<a href="../../kernel/Kernel.sdf3/#Productions_52_1" id="Productions_24_4" title="a reference to a single-file definition">Productions</a>&gt;
         
         &gt;
-<span id="Grammar_27_1" title="Not referenced">Grammar</span>.<span class="cons_Constructor"><span id="VariablesProductive_27_9" title="Not referenced">VariablesProductive</span></span> = &lt;
+<span id="Grammar_27_1" title="a definition with no references">Grammar</span>.<span class="cons_Constructor"><span id="VariablesProductive_27_9" title="a definition with no references">VariablesProductive</span></span> = &lt;
     <span class="cons_String">variables</span>
     
-            &lt;{<a href="../../TemplateLang.sdf3/#SdfProduction_85_1" id="SdfProduction_30_8" title="Defined at ../../TemplateLang.sdf3 line 85, 86">SdfProduction</a> <span class="cons_Lit">"\n"</span>}*&gt;
+            &lt;{<a href="../../TemplateLang.sdf3/#SdfProduction_85_1" id="SdfProduction_30_8" title="a reference to a single-file definition">SdfProduction</a> <span class="cons_Lit">"\n"</span>}*&gt;
             
     &gt;        {<span class="keyword">prefer</span>}
         
-<span id="Grammar_34_1" title="Not referenced">Grammar</span>.<span class="cons_Constructor"><span id="LexVariables_34_9" title="Not referenced">LexVariables</span></span> = &lt;
+<span id="Grammar_34_1" title="a definition with no references">Grammar</span>.<span class="cons_Constructor"><span id="LexVariables_34_9" title="a definition with no references">LexVariables</span></span> = &lt;
         <span class="cons_String">lexical</span> <span class="cons_String">variables</span>
         
-                &lt;<a href="../../kernel/Kernel.sdf3/#Productions_52_1" id="Productions_37_4" title="Defined at ../../kernel/Kernel.sdf3 line 52">Productions</a>&gt;
+                &lt;<a href="../../kernel/Kernel.sdf3/#Productions_52_1" id="Productions_37_4" title="a reference to a single-file definition">Productions</a>&gt;
         
         &gt;
         
-<span id="Grammar_41_1" title="Not referenced">Grammar</span>.<span class="cons_Constructor"><span id="LexVariablesProductive_41_9" title="Not referenced">LexVariablesProductive</span></span> = &lt;
+<span id="Grammar_41_1" title="a definition with no references">Grammar</span>.<span class="cons_Constructor"><span id="LexVariablesProductive_41_9" title="a definition with no references">LexVariablesProductive</span></span> = &lt;
     <span class="cons_String">lexical</span> <span class="cons_String">variables</span>
     
-            &lt;{<a href="../../TemplateLang.sdf3/#SdfProduction_85_1" id="SdfProduction_44_8" title="Defined at ../../TemplateLang.sdf3 line 85, 86">SdfProduction</a> <span class="cons_Lit">"\n"</span>}*&gt;
+            &lt;{<a href="../../TemplateLang.sdf3/#SdfProduction_85_1" id="SdfProduction_44_8" title="a reference to a single-file definition">SdfProduction</a> <span class="cons_Lit">"\n"</span>}*&gt;
 
     &gt; {<span class="keyword">prefer</span>}
 
-<button class="modal-open" id="Symbol_48_1" title="Multi-file references" data-urls="#Symbol_48_15 line 48, 49, 50; ../../TemplateLang.sdf3/#Symbol_48_29 line 48, 106">Symbol</button>.<span class="cons_Constructor"><a href="../../sorts/Sorts.sdf3/#Cf_50_51" id="Cf_48_8" title="Referenced at ../../sorts/Sorts.sdf3 line 50">Cf</a></span> = &lt;&lt;<a href="#Symbol_48_1" id="Symbol_48_15" title="Defined at line 48, 49, 50, 51">Symbol</a>&gt;<span class="cons_String">-CF</span>&gt;
-<button class="modal-open" id="Symbol_49_1" title="Multi-file references" data-urls="#Symbol_48_15 line 48, 49, 50; ../../TemplateLang.sdf3/#Symbol_48_29 line 48, 106">Symbol</button>.<span class="cons_Constructor"><a href="../../sorts/Sorts.sdf3/#Lex_50_61" id="Lex_49_8" title="Referenced at ../../sorts/Sorts.sdf3 line 50">Lex</a></span> = &lt;&lt;<a href="#Symbol_48_1" id="Symbol_49_16" title="Defined at line 48, 49, 50, 51">Symbol</a>&gt;<span class="cons_String">-LEX</span>&gt;
-<button class="modal-open" id="Symbol_50_1" title="Multi-file references" data-urls="#Symbol_48_15 line 48, 49, 50; ../../TemplateLang.sdf3/#Symbol_48_29 line 48, 106">Symbol</button>.<span class="cons_Constructor"><a href="../../sorts/Sorts.sdf3/#Varsym_50_72" id="Varsym_50_8" title="Referenced at ../../sorts/Sorts.sdf3 line 50">Varsym</a></span> = &lt;&lt;<a href="#Symbol_48_1" id="Symbol_50_19" title="Defined at line 48, 49, 50, 51">Symbol</a>&gt;<span class="cons_String">-VAR</span>&gt;
-<button class="modal-open" id="Symbol_51_1" title="Multi-file references" data-urls="#Symbol_48_15 line 48, 49, 50; ../../TemplateLang.sdf3/#Symbol_48_29 line 48, 106">Symbol</button>.<span class="cons_Constructor"><span id="Layout_51_8" title="Not referenced">Layout</span></span> = &lt;<span class="cons_String">LAYOUT</span>&gt;  
+<button class="modal-open" id="Symbol_48_1" title="a definition with multiple references" data-urls="#Symbol line 48_15, 49_16, 50_19">Symbol</button>.<span class="cons_Constructor"><a href="../../sorts/Sorts.sdf3/#Cf_50_51" id="Cf_48_8" title="a definition with a single reference">Cf</a></span> = &lt;&lt;<a href="#Symbol_48_1" id="Symbol_48_15" title="a reference to a single-file definition">Symbol</a>&gt;<span class="cons_String">-CF</span>&gt;
+<button class="modal-open" id="Symbol_49_1" title="a definition with multiple references" data-urls="#Symbol line 48_15, 49_16, 50_19">Symbol</button>.<span class="cons_Constructor"><a href="../../sorts/Sorts.sdf3/#Lex_50_61" id="Lex_49_8" title="a definition with a single reference">Lex</a></span> = &lt;&lt;<a href="#Symbol_48_1" id="Symbol_49_16" title="a reference to a single-file definition">Symbol</a>&gt;<span class="cons_String">-LEX</span>&gt;
+<button class="modal-open" id="Symbol_50_1" title="a definition with multiple references" data-urls="#Symbol line 48_15, 49_16, 50_19">Symbol</button>.<span class="cons_Constructor"><a href="../../sorts/Sorts.sdf3/#Varsym_50_72" id="Varsym_50_8" title="a definition with a single reference">Varsym</a></span> = &lt;&lt;<a href="#Symbol_48_1" id="Symbol_50_19" title="a reference to a single-file definition">Symbol</a>&gt;<span class="cons_String">-VAR</span>&gt;
+<button class="modal-open" id="Symbol_51_1" title="a definition with multiple references" data-urls="#Symbol line 48_15, 49_16, 50_19">Symbol</button>.<span class="cons_Constructor"><span id="Layout_51_8" title="a definition with no references">Layout</span></span> = &lt;<span class="cons_String">LAYOUT</span>&gt;  
 
 <span class="keyword">lexical syntax</span>
 
-<a href="#Sort_55_8" id="Sort_55_1" title="Referenced at line 55, 56, 57">Sort</a> = <a href="#Sort_55_1" id="Sort_55_8" title="Defined at line 55, 56, 57, 58, 59, 60">Sort</a> <span class="cons_Lit">"-LEX"</span> {<span class="keyword">reject</span>}
-<a href="#Sort_55_8" id="Sort_56_1" title="Referenced at line 55, 56, 57">Sort</a> = <a href="#Sort_55_1" id="Sort_56_8" title="Defined at line 55, 56, 57, 58, 59, 60">Sort</a> <span class="cons_Lit">"-CF"</span> {<span class="keyword">reject</span>}
-<a href="#Sort_55_8" id="Sort_57_1" title="Referenced at line 55, 56, 57">Sort</a> = <a href="#Sort_55_1" id="Sort_57_8" title="Defined at line 55, 56, 57, 58, 59, 60">Sort</a> <span class="cons_Lit">"-VAR"</span> {<span class="keyword">reject</span>}
-<a href="#Sort_55_8" id="Sort_58_1" title="Referenced at line 55, 56, 57">Sort</a> = <span class="cons_Lit">"LAYOUT"</span> <span class="cons_Lit">"-LEX"</span> {<span class="keyword">reject</span>}
-<a href="#Sort_55_8" id="Sort_59_1" title="Referenced at line 55, 56, 57">Sort</a> = <span class="cons_Lit">"LAYOUT"</span> <span class="cons_Lit">"-CF"</span> {<span class="keyword">reject</span>}
-<a href="#Sort_55_8" id="Sort_60_1" title="Referenced at line 55, 56, 57">Sort</a> = <span class="cons_Lit">"LAYOUT"</span> <span class="cons_Lit">"-VAR"</span> {<span class="keyword">reject</span>}
+<button class="modal-open" id="Sort_55_1" title="a definition with multiple references" data-urls="#Sort line 55_8, 56_8, 57_8">Sort</button> = <a href="#Sort_55_1" id="Sort_55_8" title="a reference to a single-file definition">Sort</a> <span class="cons_Lit">"-LEX"</span> {<span class="keyword">reject</span>}
+<button class="modal-open" id="Sort_56_1" title="a definition with multiple references" data-urls="#Sort line 55_8, 56_8, 57_8">Sort</button> = <a href="#Sort_55_1" id="Sort_56_8" title="a reference to a single-file definition">Sort</a> <span class="cons_Lit">"-CF"</span> {<span class="keyword">reject</span>}
+<button class="modal-open" id="Sort_57_1" title="a definition with multiple references" data-urls="#Sort line 55_8, 56_8, 57_8">Sort</button> = <a href="#Sort_55_1" id="Sort_57_8" title="a reference to a single-file definition">Sort</a> <span class="cons_Lit">"-VAR"</span> {<span class="keyword">reject</span>}
+<button class="modal-open" id="Sort_58_1" title="a definition with multiple references" data-urls="#Sort line 55_8, 56_8, 57_8">Sort</button> = <span class="cons_Lit">"LAYOUT"</span> <span class="cons_Lit">"-LEX"</span> {<span class="keyword">reject</span>}
+<button class="modal-open" id="Sort_59_1" title="a definition with multiple references" data-urls="#Sort line 55_8, 56_8, 57_8">Sort</button> = <span class="cons_Lit">"LAYOUT"</span> <span class="cons_Lit">"-CF"</span> {<span class="keyword">reject</span>}
+<button class="modal-open" id="Sort_60_1" title="a definition with multiple references" data-urls="#Sort line 55_8, 56_8, 57_8">Sort</button> = <span class="cons_Lit">"LAYOUT"</span> <span class="cons_Lit">"-VAR"</span> {<span class="keyword">reject</span>}
 
 
 

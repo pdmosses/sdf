@@ -22,9 +22,9 @@ hide:
 10
 11
 </pre></div></td>
-<td class="code"><pre><code><span class="keyword">module</span> <a href="../../sdf2-core/Sdf2-Syntax.sdf3/#lifting/Lifting_7_9" id="lifting/Lifting_1_8" title="Referenced at ../../sdf2-core/Sdf2-Syntax.sdf3 line 7">lifting/Lifting</a>
+<td class="code"><pre><code><span class="keyword">module</span> <a href="../../sdf2-core/Sdf2-Syntax.sdf3/#lifting/Lifting_7_9" id="lifting/Lifting_1_8" title="a definition with a single reference">lifting/Lifting</a>
 
-<span class="keyword">imports</span> <a href="../../kernel/Kernel.sdf3/#kernel/Kernel_1_8" id="kernel/Kernel_3_9" title="Defined at ../../kernel/Kernel.sdf3 line 1">kernel/Kernel</a>
+<span class="keyword">imports</span> <a href="../../kernel/Kernel.sdf3/#kernel/Kernel_1_8" id="kernel/Kernel_3_9" title="a reference to a single-file definition">kernel/Kernel</a>
 
 
 <span class="keyword">context-free syntax</span>

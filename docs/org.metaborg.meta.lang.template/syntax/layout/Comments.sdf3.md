@@ -42,30 +42,30 @@ hide:
 30
 31
 </pre></div></td>
-<td class="code"><pre><code><span class="keyword">module</span> <button class="modal-open" id="layout/Comments_1_8" title="Multi-file references" data-urls="../../grammar/Grammars.sdf3/#layout/Comments_3_9 line 3; ../../symbols/Symbols.sdf3/#layout/Comments_3_9 line 3">layout/Comments</button>
+<td class="code"><pre><code><span class="keyword">module</span> <button class="modal-open" id="layout/Comments_1_8" title="a definition with multiple references" data-urls="../../grammar/Grammars.sdf3/#layout/Comments line 3_9; ../../symbols/Symbols.sdf3/#layout/Comments line 3_9">layout/Comments</button>
 
 <span class="keyword">imports</span>
-  <a href="../Whitespace.sdf3/#layout/Whitespace_1_8" id="layout/Whitespace_4_3" title="Defined at ../Whitespace.sdf3 line 1">layout/Whitespace</a>
+  <a href="../Whitespace.sdf3/#layout/Whitespace_1_8" id="layout/Whitespace_4_3" title="a reference to a single-file definition">layout/Whitespace</a>
  
 <span class="keyword">lexical syntax</span>
-        <span class="keyword">LAYOUT</span> = <span class="cons_Lit">"%%"</span> <span class="cons_Unquoted"><span id="line_7_16" title="Not referenced">line</span></span>:~[\n\r]* <a href="#LayoutNewlineAlt_8_2" id="LayoutNewlineAlt_7_30" title="Defined at line 8, 9">LayoutNewlineAlt</a>        {<span class="cons_Unquoted">category</span>(<span class="cons_Quoted">"Comment"</span>)}
-        <a href="#LayoutNewlineAlt_7_30" id="LayoutNewlineAlt_8_2" title="Referenced at line 7, 15">LayoutNewlineAlt</a> = [\n\r]
-        <a href="#LayoutNewlineAlt_7_30" id="LayoutNewlineAlt_9_2" title="Referenced at line 7, 15">LayoutNewlineAlt</a> = <a href="#EOF_16_5" id="EOF_9_21" title="Defined at line 16">EOF</a>
-    <span class="keyword">LAYOUT</span> = <span class="cons_Lit">"%"</span> <span class="cons_Unquoted"><span id="content_10_18" title="Not referenced">content</span></span>:~[\%\n\r]+ <span class="cons_Lit">"%"</span>        {<span class="cons_Unquoted">category</span>(<span class="cons_Quoted">"Comment"</span>)}
-    <span class="keyword">LAYOUT</span> = <span class="cons_Lit">"/*"</span> <a href="#LayoutCommentAlt_12_5" id="LayoutCommentAlt_11_19" title="Defined at line 12, 13">LayoutCommentAlt</a>* <span class="cons_Lit">"*/"</span> 
-    <a href="#LayoutCommentAlt_11_19" id="LayoutCommentAlt_12_5" title="Referenced at line 11">LayoutCommentAlt</a> = ~[\*]
-    <a href="#LayoutCommentAlt_11_19" id="LayoutCommentAlt_13_5" title="Referenced at line 11">LayoutCommentAlt</a> = <a href="#CommentChar_14_5" id="CommentChar_13_24" title="Defined at line 14">CommentChar</a>
-    <a href="#CommentChar_13_24" id="CommentChar_14_5" title="Referenced at line 13, 20">CommentChar</a> = [\*]
-    <span class="keyword">LAYOUT</span> = <span class="cons_Lit">"//"</span> ~[\n\r]* <a href="#LayoutNewlineAlt_8_2" id="LayoutNewlineAlt_15_28" title="Defined at line 8, 9">LayoutNewlineAlt</a>
-    <a href="#EOF_9_21" id="EOF_16_5" title="Referenced at line 9, 24">EOF</a> = 
+        <span class="keyword">LAYOUT</span> = <span class="cons_Lit">"%%"</span> <span class="cons_Unquoted"><span id="line_7_16" title="a definition with no references">line</span></span>:~[\n\r]* <a href="#LayoutNewlineAlt_8_2" id="LayoutNewlineAlt_7_30" title="a reference to a single-file definition">LayoutNewlineAlt</a>        {<span class="cons_Unquoted">category</span>(<span class="cons_Quoted">"Comment"</span>)}
+        <button class="modal-open" id="LayoutNewlineAlt_8_2" title="a definition with multiple references" data-urls="#LayoutNewlineAlt line 7_30, 15_28">LayoutNewlineAlt</button> = [\n\r]
+        <button class="modal-open" id="LayoutNewlineAlt_9_2" title="a definition with multiple references" data-urls="#LayoutNewlineAlt line 7_30, 15_28">LayoutNewlineAlt</button> = <a href="#EOF_16_5" id="EOF_9_21" title="a reference to a single-file definition">EOF</a>
+    <span class="keyword">LAYOUT</span> = <span class="cons_Lit">"%"</span> <span class="cons_Unquoted"><span id="content_10_18" title="a definition with no references">content</span></span>:~[\%\n\r]+ <span class="cons_Lit">"%"</span>        {<span class="cons_Unquoted">category</span>(<span class="cons_Quoted">"Comment"</span>)}
+    <span class="keyword">LAYOUT</span> = <span class="cons_Lit">"/*"</span> <a href="#LayoutCommentAlt_12_5" id="LayoutCommentAlt_11_19" title="a reference to a single-file definition">LayoutCommentAlt</a>* <span class="cons_Lit">"*/"</span> 
+    <a href="#LayoutCommentAlt_11_19" id="LayoutCommentAlt_12_5" title="a definition with a single reference">LayoutCommentAlt</a> = ~[\*]
+    <a href="#LayoutCommentAlt_11_19" id="LayoutCommentAlt_13_5" title="a definition with a single reference">LayoutCommentAlt</a> = <a href="#CommentChar_14_5" id="CommentChar_13_24" title="a reference to a single-file definition">CommentChar</a>
+    <button class="modal-open" id="CommentChar_14_5" title="a definition with multiple references" data-urls="#CommentChar line 13_24, 20_5">CommentChar</button> = [\*]
+    <span class="keyword">LAYOUT</span> = <span class="cons_Lit">"//"</span> ~[\n\r]* <a href="#LayoutNewlineAlt_8_2" id="LayoutNewlineAlt_15_28" title="a reference to a single-file definition">LayoutNewlineAlt</a>
+    <button class="modal-open" id="EOF_16_5" title="a definition with multiple references" data-urls="#EOF line 9_21, 24_5">EOF</button> = 
     
 <span class="keyword">lexical restrictions</span>
 
-    <a href="#CommentChar_14_5" id="CommentChar_20_5" title="Defined at line 14">CommentChar</a>   -/- [\/]
+    <a href="#CommentChar_14_5" id="CommentChar_20_5" title="a reference to a single-file definition">CommentChar</a>   -/- [\/]
 
     <span class="layout">%% EOF may not be followed by any char</span>
 
-    <a href="#EOF_16_5" id="EOF_24_5" title="Defined at line 16">EOF</a>           -/- ~[]          
+    <a href="#EOF_16_5" id="EOF_24_5" title="a reference to a single-file definition">EOF</a>           -/- ~[]          
        
 
 <span class="keyword">context-free restrictions</span> 

@@ -21,16 +21,16 @@ hide:
 9
 10
 </pre></div></td>
-<td class="code"><pre><code><span class="keyword">module</span> <button class="modal-open" id="statix/section/section_1_8" title="Multi-file references" data-urls="../grammar.stx/#statix/section/section_5_3 line 5; ../template.stx/#statix/section/section_5_3 line 5; ../../main.stx/#statix/section/section_8_3 line 8; ../../module.stx/#statix/section/section_5_3 line 5"><span class="token sort_Id">statix/section/section</span></button>
+<td class="code"><pre><code><span class="keyword">module</span> <button class="modal-open" id="statix/section/section_1_8" title="a definition with multiple references" data-urls="../grammar.stx/#statix/section/section line 5_3; ../template.stx/#statix/section/section line 5_3; ../../main.stx/#statix/section/section line 8_3; ../../module.stx/#statix/section/section line 5_3"><span class="token sort_Id">statix/section/section</span></button>
 
 <span class="keyword">signature</span>
 
-  <span class="keyword">sorts</span> <span class="cons_SortDecl"><button class="modal-open" id="Section_5_9" title="Multi-file references" data-urls="#Section_9_22 line 9; ../grammar.stx/#Section_12_29 line 12; ../template.stx/#Section_16_51 line 16, 96; ../../module.stx/#Section_13_51 line 13"><span class="token sort_Id">Section</span></button></span>
+  <span class="keyword">sorts</span> <span class="cons_SortDecl"><button class="modal-open" id="Section_5_9" title="a definition with multiple references" data-urls="#Section line 9_22; ../grammar.stx/#Section line 12_29; ../template.stx/#Section line 16_51, 96_47; ../../module.stx/#Section line 13_51"><span class="token sort_Id">Section</span></button></span>
 
 <span class="keyword">rules</span>
 
-  <button class="modal-open" id="sectionOK_9_3" title="Multi-file references" data-urls="#sectionOK_10_19 line 10; ../grammar.stx/#sectionOK_18_3 line 18; ../template.stx/#sectionOK_46_3 line 46, 103"><span class="token sort_Id">sectionOK</span></button><span class="operator">:</span> <span class="cons_ScopeSort"><span class="keyword">scope</span></span> <span class="operator">*</span> <span class="cons_SimpleSort"><a href="#Section_5_9" id="Section_9_22" title="Defined at line 5"><span class="token sort_Id">Section</span></a></span>
-  <a href="../../module.stx/#sectionsOK_29_5" id="sectionsOK_10_3" title="Referenced at ../../module.stx line 29"><span class="token sort_Id">sectionsOK</span></a> <span class="keyword">maps</span> <a href="#sectionOK_9_3" id="sectionOK_10_19" title="Defined at line 9"><span class="token sort_Id">sectionOK</span></a><span class="operator">(*,</span> <span class="keyword">list</span><span class="operator">(*))</span>
+  <button class="modal-open" id="sectionOK_9_3" title="a definition with multiple references" data-urls="#sectionOK line 10_19; ../grammar.stx/#sectionOK line 18_3; ../template.stx/#sectionOK line 46_3, 103_3"><span class="token sort_Id">sectionOK</span></button><span class="operator">:</span> <span class="cons_ScopeSort"><span class="keyword">scope</span></span> <span class="operator">*</span> <span class="cons_SimpleSort"><a href="#Section_5_9" id="Section_9_22" title="a reference to a single-file definition"><span class="token sort_Id">Section</span></a></span>
+  <a href="../../module.stx/#sectionsOK_29_5" id="sectionsOK_10_3" title="a definition with a single reference"><span class="token sort_Id">sectionsOK</span></a> <span class="keyword">maps</span> <a href="#sectionOK_9_3" id="sectionOK_10_19" title="a reference to a single-file definition"><span class="token sort_Id">sectionOK</span></a><span class="operator">(*,</span> <span class="keyword">list</span><span class="operator">(*))</span>
 
 </code></pre></td></tr></tbody></table></div>
 
